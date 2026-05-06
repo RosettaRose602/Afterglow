@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="twnc-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#e8e0f4"/>
+      <stop offset="100%" stop-color="#d0c8e8"/>
+    </radialGradient>
+    <radialGradient id="twnc-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5058a0"/>
+      <stop offset="60%" stop-color="#3a4080"/>
+      <stop offset="100%" stop-color="#282860"/>
+    </radialGradient>
+    <linearGradient id="twnc-outfit" x1="0%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#3a4488"/>
+      <stop offset="100%" stop-color="#282060"/>
+    </linearGradient>
+    <linearGradient id="twnc-cap" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#4858a8"/>
+      <stop offset="100%" stop-color="#303878"/>
+    </linearGradient>
+    <radialGradient id="twnc-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#8090d8"/>
+      <stop offset="60%" stop-color="#5060b8"/>
+      <stop offset="100%" stop-color="#3040a0"/>
+    </radialGradient>
+    <!-- Waning crescent moon — small, very dim -->
+    <radialGradient id="twnc-moon" cx="35%" cy="40%" r="58%">
+      <stop offset="0%" stop-color="#d8e4f8"/>
+      <stop offset="60%" stop-color="#b0bce8"/>
+      <stop offset="100%" stop-color="#8090c8"/>
+    </radialGradient>
+    <!-- Deepest blue ambient glow — most gentle -->
+    <radialGradient id="twnc-moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8090c8" stop-opacity="0.40"/>
+      <stop offset="60%" stop-color="#5060a0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#3050a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="twnc-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4858a8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#384090" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Fluffy cloud behind head -->
+    <radialGradient id="twnc-cloudMain" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#d0d8f8"/>
+      <stop offset="70%" stop-color="#a8b4e0"/>
+      <stop offset="100%" stop-color="#8898c8"/>
+    </radialGradient>
+    <radialGradient id="twnc-cloudInner" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#e0e8ff"/>
+      <stop offset="100%" stop-color="#b8c4e8"/>
+    </radialGradient>
+    <filter id="twnc-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="twnc-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="twnc-cloudBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="twnc-moonSoft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Gentlest ambient glow — deepest indigo, barely lit -->
+  <g id="glow">
+    <ellipse cx="256" cy="350" rx="145" ry="92" fill="url(#twnc-glow)" filter="url(#twnc-blur)"/>
+    <!-- Soft haze from small moon -->
+    <ellipse cx="310" cy="68" rx="40" ry="40" fill="url(#twnc-moonGlow)" filter="url(#twnc-blur)"/>
+  </g>
+
+  <!-- Fluffy cloud BEHIND head — drawn before hair-back so head rests on/in it -->
+  <g id="hair-back">
+    <!-- Cloud pillow behind/below head — drawn first so character is in front -->
+    <g filter="url(#twnc-cloudBlur)" opacity="0.92">
+      <!-- Wide cloud base -->
+      <ellipse cx="256" cy="245" rx="105" ry="44" fill="url(#twnc-cloudMain)"/>
+      <!-- Cloud bumps across the top -->
+      <ellipse cx="192" cy="222" rx="38" ry="32" fill="url(#twnc-cloudMain)"/>
+      <ellipse cx="230" cy="212" rx="36" ry="30" fill="url(#twnc-cloudInner)"/>
+      <ellipse cx="256" cy="206" rx="38" ry="32" fill="url(#twnc-cloudInner)"/>
+      <ellipse cx="282" cy="212" rx="36" ry="30" fill="url(#twnc-cloudInner)"/>
+      <ellipse cx="320" cy="222" rx="38" ry="32" fill="url(#twnc-cloudMain)"/>
+      <!-- Extra soft puffs -->
+      <ellipse cx="168" cy="234" rx="26" ry="22" fill="url(#twnc-cloudMain)"/>
+      <ellipse cx="344" cy="234" rx="26" ry="22" fill="url(#twnc-cloudMain)"/>
+    </g>
+    <!-- Cloud highlight shimmer -->
+    <ellipse cx="244" cy="208" rx="28" ry="14" fill="white" fill-opacity="0.22"/>
+    <ellipse cx="278" cy="212" rx="20" ry="10" fill="white" fill-opacity="0.16"/>
+    <!-- Hair back (indigo) on top of cloud -->
+    <ellipse cx="256" cy="210" rx="90" ry="100" fill="url(#twnc-hair)"/>
+    <!-- Long back hair strands — slightly drooped, relaxed -->
+    <path d="M 177 238 Q 155 325 164 418 Q 168 434 180 434 Q 190 434 192 414 Q 196 338 204 272 Z" fill="#303070"/>
+    <path d="M 335 238 Q 357 325 348 418 Q 344 434 332 434 Q 322 434 320 414 Q 316 338 308 272 Z" fill="#303070"/>
+  </g>
+
+  <!-- Body — drooped arms, fully relaxed dozing pose -->
+  <g id="body">
+    <rect x="237" y="302" width="38" height="22" rx="9" fill="url(#twnc-skin)"/>
+    <path d="M 178 322 Q 196 306 256 304 Q 316 306 334 322 L 345 458 Q 298 480 256 482 Q 214 480 167 458 Z" fill="url(#twnc-outfit)"/>
+    <!-- Both arms drooped loosely downward, very relaxed -->
+    <ellipse cx="162" cy="380" rx="23" ry="54" fill="url(#twnc-outfit)" transform="rotate(-6,162,380)"/>
+    <ellipse cx="350" cy="380" rx="23" ry="54" fill="url(#twnc-outfit)" transform="rotate(6,350,380)"/>
+    <!-- Hands resting, slightly forward -->
+    <ellipse cx="155" cy="432" rx="19" ry="15" fill="url(#twnc-skin)"/>
+    <ellipse cx="357" cy="432" rx="19" ry="15" fill="url(#twnc-skin)"/>
+  </g>
+
+  <!-- Outfit detail -->
+  <g id="outfit">
+    <g fill="#6070a8" opacity="0.32">
+      <circle cx="220" cy="372" r="2.5"/>
+      <circle cx="292" cy="392" r="2"/>
+      <circle cx="256" cy="432" r="3"/>
+      <circle cx="228" cy="422" r="2"/>
+      <circle cx="284" cy="368" r="2"/>
+    </g>
+    <path d="M 180 320 Q 256 313 332 320 L 330 332 Q 256 324 182 332 Z" fill="#4a50a0"/>
+    <path d="M 170 455 Q 256 476 342 455 L 345 466 Q 256 488 167 466 Z" fill="#4a50a0"/>
+  </g>
+
+  <!-- Face — fully asleep, closed eyes, most relaxed state -->
+  <g id="face">
+    <ellipse cx="256" cy="210" rx="86" ry="91" fill="url(#twnc-skin)"/>
+    <ellipse cx="172" cy="220" rx="13" ry="17" fill="url(#twnc-skin)"/>
+    <ellipse cx="340" cy="220" rx="13" ry="17" fill="url(#twnc-skin)"/>
+    <ellipse cx="172" cy="220" rx="7" ry="10" fill="#c8c0e0"/>
+    <ellipse cx="340" cy="220" rx="7" ry="10" fill="#c8c0e0"/>
+
+    <!-- Very soft, relaxed brows — gentle slopes, no tension -->
+    <path d="M 210 172 Q 220 168 230 171" stroke="#5060a0" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 282 171 Q 292 168 302 172" stroke="#5060a0" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+    <!-- Fully closed eyes — curved sleeping arcs -->
+    <!-- Eye whites softly closed -->
+    <ellipse cx="220" cy="200" rx="26" ry="14" fill="white" fill-opacity="0.5"/>
+    <ellipse cx="288" cy="200" rx="26" ry="14" fill="white" fill-opacity="0.5"/>
+    <!-- Upper closed lids -->
+    <path d="M 196 198 Q 220 184 244 198 Q 232 208 220 210 Q 208 208 196 198 Z" fill="url(#twnc-hair)" opacity="0.82"/>
+    <path d="M 264 198 Q 288 184 312 198 Q 300 208 288 210 Q 276 208 264 198 Z" fill="url(#twnc-hair)" opacity="0.82"/>
+    <!-- Closed eye line arcs -->
+    <path d="M 196 198 Q 220 184 244 198" stroke="#5060a8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M 264 198 Q 288 184 312 198" stroke="#5060a8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <!-- Bottom lid softly curved up (squished from sleep smile) -->
+    <path d="M 200 204 Q 220 212 240 204" stroke="#9090c8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <path d="M 268 204 Q 288 212 308 204" stroke="#9090c8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+
+    <ellipse cx="256" cy="224" rx="4.5" ry="3" fill="#c8b8e0" fill-opacity="0.55"/>
+    <!-- Tiny sleeping smile — very gentle upward curve -->
+    <path d="M 243 236 Q 256 244 269 236" stroke="#a898cc" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+    <path d="M 247 239 Q 256 245 265 239" fill="#d8c8f0" fill-opacity="0.65" stroke="none"/>
+    <!-- Very soft dreamy blush -->
+    <ellipse cx="198" cy="220" rx="21" ry="12" fill="#b0a8d8" fill-opacity="0.26"/>
+    <ellipse cx="314" cy="220" rx="21" ry="12" fill="#b0a8d8" fill-opacity="0.26"/>
+    <!-- Tiny "z z" sleep text element as small shapes -->
+    <text x="330" y="182" font-family="serif" font-size="14" fill="#9090c8" fill-opacity="0.55" font-style="italic">z</text>
+    <text x="344" y="168" font-family="serif" font-size="11" fill="#8080b8" fill-opacity="0.42" font-style="italic">z</text>
+    <text x="355" y="156" font-family="serif" font-size="8" fill="#7070a8" fill-opacity="0.30" font-style="italic">z</text>
+  </g>
+
+  <!-- Hair front / sleep cap -->
+  <g id="hair-front">
+    <path d="M 172 188 Q 180 142 215 135 Q 235 130 256 130 Q 277 130 297 135 Q 332 142 340 188" fill="url(#twnc-hair)"/>
+    <path d="M 170 185 Q 180 140 256 128 Q 332 140 342 185 Q 310 175 256 172 Q 202 175 170 185 Z" fill="url(#twnc-cap)"/>
+    <path d="M 169 185 Q 256 192 343 185 Q 310 198 256 201 Q 202 198 169 185 Z" fill="#3848a0"/>
+    <path d="M 230 130 Q 256 65 282 130 Q 268 122 256 120 Q 244 122 230 130 Z" fill="url(#twnc-cap)"/>
+    <circle cx="256" cy="66" r="14" fill="#4858a8"/>
+    <!-- Cap stars — dimmer, most gentle -->
+    <g fill="#b8c8e8" filter="url(#twnc-soft)">
+      <path d="M 210 158 L 212 153 L 214 158 L 219 156 L 214 161 L 219 166 L 214 163 L 212 168 L 210 163 L 205 166 L 210 161 L 205 156 Z" opacity="0.68"/>
+      <path d="M 296 153 L 297 150 L 298 153 L 301 152 L 298 155 L 301 158 L 298 156 L 297 159 L 296 156 L 293 158 L 296 155 L 293 152 Z" opacity="0.58"/>
+    </g>
+    <!-- Left bang -->
+    <path d="M 190 188 Q 200 178 214 184 Q 219 194 212 200 Q 202 195 190 188 Z" fill="#3a4080"/>
+    <!-- Hair shine — very soft -->
+    <ellipse cx="234" cy="150" rx="22" ry="13" fill="#6070b0" fill-opacity="0.32" transform="rotate(-10,234,150)"/>
+  </g>
+
+  <!-- Moon motif — small waning crescent, separate from head, floating above-right -->
+  <g id="motif">
+    <!-- Small dark circle base at top-right, clear of character silhouette -->
+    <circle cx="318" cy="62" r="18" fill="#0e0e1e" filter="url(#twnc-moonSoft)"/>
+    <!-- Waning crescent: left thin sliver lit -->
+    <circle cx="306" cy="62" r="16" fill="#0e0e1e"/>
+    <!-- Crescent lit arc — just a thin left sliver -->
+    <path d="M 300,46 A 18,18 0 0 0 300,78 A 12,12 0 0 1 300,46 Z" fill="url(#twnc-moon)" filter="url(#twnc-moonSoft)"/>
+    <!-- Very soft glow around small crescent -->
+    <circle cx="318" cy="62" r="26" fill="url(#twnc-moonGlow)" filter="url(#twnc-blur)"/>
+    <!-- Tiny star companion -->
+    <path d="M 344 48 L 345.2 44.5 L 346.4 48 L 350 46.8 L 346.4 50.2 L 350 53.6 L 346.4 52.4 L 345.2 55.9 L 344 52.4 L 340.4 53.6 L 344 50.2 L 340.4 46.8 Z" fill="#b0c0e8" opacity="0.72" filter="url(#twnc-soft)"/>
+  </g>
+
+  <!-- Particles — sparsest stars, most peaceful -->
+  <g id="particles">
+    <!-- Bottom cloud wisps — character is resting on these too -->
+    <!-- Extended cloud platform beneath body -->
+    <ellipse cx="256" cy="468" rx="130" ry="38" fill="#3040a0" fill-opacity="0.42" filter="url(#twnc-soft)"/>
+    <ellipse cx="256" cy="458" rx="100" ry="28" fill="#3848a0" fill-opacity="0.52"/>
+    <!-- Side cloud tufts -->
+    <ellipse cx="168" cy="448" rx="55" ry="26" fill="#3848a0" fill-opacity="0.48" filter="url(#twnc-soft)"/>
+    <ellipse cx="168" cy="438" rx="40" ry="22" fill="#3a4490" fill-opacity="0.58"/>
+    <ellipse cx="344" cy="452" rx="52" ry="24" fill="#3848a0" fill-opacity="0.48" filter="url(#twnc-soft)"/>
+    <ellipse cx="344" cy="442" rx="38" ry="20" fill="#3a4490" fill-opacity="0.58"/>
+    <!-- Very sparse, dim stars — deep sleep -->
+    <g fill="#a0acd8" opacity="0.55">
+      <circle cx="140" cy="202" r="2"/>
+      <circle cx="372" cy="198" r="1.5"/>
+      <circle cx="132" cy="312" r="1.5"/>
+      <circle cx="380" cy="292" r="2"/>
+      <circle cx="150" cy="382" r="1.5"/>
+      <circle cx="364" cy="378" r="2"/>
+      <circle cx="198" cy="480" r="2.5" fill-opacity="0.45"/>
+      <circle cx="314" cy="478" r="2" fill-opacity="0.45"/>
+      <circle cx="116" cy="258" r="1.5"/>
+      <circle cx="396" cy="252" r="1.5"/>
+      <circle cx="126" cy="350" r="1"/>
+      <circle cx="386" cy="344" r="1"/>
+    </g>
+    <!-- A few dream dust sparkles drifting from sleeper -->
+    <g fill="#c0c8f0" opacity="0.40" filter="url(#twnc-soft)">
+      <circle cx="342" cy="180" r="2.5"/>
+      <circle cx="358" cy="164" r="1.5"/>
+      <circle cx="370" cy="152" r="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="tlq-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#e8e0f4"/>
+      <stop offset="100%" stop-color="#d0c8e8"/>
+    </radialGradient>
+    <radialGradient id="tlq-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5058a0"/>
+      <stop offset="60%" stop-color="#3a4080"/>
+      <stop offset="100%" stop-color="#282860"/>
+    </radialGradient>
+    <linearGradient id="tlq-outfit" x1="0%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#3a4488"/>
+      <stop offset="100%" stop-color="#282060"/>
+    </linearGradient>
+    <linearGradient id="tlq-cap" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#4858a8"/>
+      <stop offset="100%" stop-color="#303878"/>
+    </linearGradient>
+    <radialGradient id="tlq-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#8898e8"/>
+      <stop offset="60%" stop-color="#5868c0"/>
+      <stop offset="100%" stop-color="#3848a8"/>
+    </radialGradient>
+    <!-- Last quarter moon — left half lit, cooler palette -->
+    <linearGradient id="tlq-halfMoon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d8e0f8"/>
+      <stop offset="50%" stop-color="#c0ccea"/>
+      <stop offset="50%" stop-color="#181828"/>
+      <stop offset="100%" stop-color="#181828"/>
+    </linearGradient>
+    <radialGradient id="tlq-moonGlow" cx="30%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#b0bce8" stop-opacity="0.60"/>
+      <stop offset="55%" stop-color="#8090c8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#6070b0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tlq-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5868b0" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#4050a0" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Journal/book gradients -->
+    <linearGradient id="tlq-bookCover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3848a0"/>
+      <stop offset="100%" stop-color="#252868"/>
+    </linearGradient>
+    <filter id="tlq-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="tlq-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tlq-moonBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Clip to moon circle for half-moon shape -->
+    <clipPath id="tlq-moonClip"><circle cx="256" cy="44" r="26"/></clipPath>
+  </defs>
+
+  <!-- Ambient glow — cool blue, reflective and calm -->
+  <g id="glow">
+    <ellipse cx="256" cy="44" rx="65" ry="65" fill="url(#tlq-moonGlow)" filter="url(#tlq-blur)"/>
+    <ellipse cx="256" cy="345" rx="148" ry="94" fill="url(#tlq-glow)" filter="url(#tlq-blur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="200" rx="90" ry="100" fill="url(#tlq-hair)"/>
+    <path d="M 177 228 Q 158 320 166 415 Q 170 432 182 432 Q 192 432 194 412 Q 198 335 206 268 Z" fill="#303070"/>
+    <path d="M 335 228 Q 354 320 346 415 Q 342 432 330 432 Q 320 432 318 412 Q 314 335 306 268 Z" fill="#303070"/>
+  </g>
+
+  <!-- Body — left hand raised holding journal -->
+  <g id="body">
+    <rect x="237" y="292" width="38" height="22" rx="9" fill="url(#tlq-skin)"/>
+    <path d="M 178 312 Q 196 296 256 294 Q 316 296 334 312 L 345 450 Q 298 472 256 474 Q 214 472 167 450 Z" fill="url(#tlq-outfit)"/>
+    <!-- Left arm raised, holding journal -->
+    <ellipse cx="155" cy="356" rx="23" ry="52" fill="url(#tlq-outfit)" transform="rotate(-17,155,356)"/>
+    <!-- Right arm in normal resting position -->
+    <ellipse cx="345" cy="370" rx="23" ry="54" fill="url(#tlq-outfit)" transform="rotate(10,345,370)"/>
+    <!-- Left hand raised -->
+    <ellipse cx="142" cy="310" rx="18" ry="14" fill="url(#tlq-skin)"/>
+    <!-- Right hand resting -->
+    <ellipse cx="354" cy="418" rx="19" ry="15" fill="url(#tlq-skin)"/>
+    <!-- Journal/book in left (raised) hand -->
+    <g transform="translate(130,284)">
+      <!-- Book body -->
+      <rect x="-20" y="-26" width="40" height="32" rx="3" fill="url(#tlq-bookCover)" stroke="#6878c0" stroke-width="1.5"/>
+      <!-- Spine -->
+      <rect x="-20" y="-26" width="7" height="32" rx="3" fill="#4858b0"/>
+      <!-- Page lines -->
+      <line x1="-9" y1="-18" x2="14" y2="-18" stroke="#8090d0" stroke-width="1.5" opacity="0.65"/>
+      <line x1="-9" y1="-11" x2="14" y2="-11" stroke="#8090d0" stroke-width="1.5" opacity="0.65"/>
+      <line x1="-9" y1="-4" x2="10" y2="-4" stroke="#8090d0" stroke-width="1.5" opacity="0.65"/>
+      <line x1="-9" y1="3" x2="12" y2="3" stroke="#8090d0" stroke-width="1.2" opacity="0.50"/>
+      <!-- Moon motif on cover -->
+      <path d="M 10 -22 Q 16 -16 10 -10 Q 6 -14 6 -16 Q 6 -18 10 -22 Z" fill="#c8d4f8" fill-opacity="0.75"/>
+      <!-- Ribbon bookmark -->
+      <line x1="12" y1="-26" x2="12" y2="8" stroke="#9898e8" stroke-width="1.5" opacity="0.7"/>
+      <path d="M 10 8 L 12 12 L 14 8 Z" fill="#9898e8" fill-opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Outfit detail -->
+  <g id="outfit">
+    <g fill="#6878b8" opacity="0.33">
+      <circle cx="220" cy="362" r="2.5"/>
+      <circle cx="292" cy="382" r="2"/>
+      <circle cx="256" cy="422" r="3"/>
+      <circle cx="228" cy="412" r="2"/>
+      <circle cx="284" cy="357" r="2"/>
+    </g>
+    <path d="M 180 310 Q 256 303 332 310 L 330 322 Q 256 314 182 322 Z" fill="#4a50a0"/>
+    <path d="M 170 447 Q 256 468 342 447 L 345 458 Q 256 480 167 458 Z" fill="#4a50a0"/>
+  </g>
+
+  <!-- Face — calm, reflective expression -->
+  <g id="face">
+    <ellipse cx="256" cy="200" rx="86" ry="91" fill="url(#tlq-skin)"/>
+    <ellipse cx="172" cy="210" rx="13" ry="17" fill="url(#tlq-skin)"/>
+    <ellipse cx="340" cy="210" rx="13" ry="17" fill="url(#tlq-skin)"/>
+    <ellipse cx="172" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+    <ellipse cx="340" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+
+    <!-- Calm, level brows — thoughtful/reflective -->
+    <path d="M 208 162 Q 220 157 232 160" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 280 160 Q 292 157 304 162" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes — medium open, serene and pensive -->
+    <ellipse cx="220" cy="190" rx="26" ry="22" fill="white"/>
+    <ellipse cx="288" cy="190" rx="26" ry="22" fill="white"/>
+    <ellipse cx="220" cy="192" rx="20" ry="20" fill="url(#tlq-eye)"/>
+    <ellipse cx="288" cy="192" rx="20" ry="20" fill="url(#tlq-eye)"/>
+    <ellipse cx="221" cy="193" rx="10" ry="12" fill="#1a1840"/>
+    <ellipse cx="289" cy="193" rx="10" ry="12" fill="#1a1840"/>
+    <!-- Eye shine — subtle, cool blue tint -->
+    <ellipse cx="213" cy="182" rx="6" ry="5" fill="white" fill-opacity="0.88"/>
+    <ellipse cx="281" cy="182" rx="6" ry="5" fill="white" fill-opacity="0.88"/>
+    <ellipse cx="226" cy="196" rx="3" ry="3" fill="white" fill-opacity="0.55"/>
+    <ellipse cx="294" cy="196" rx="3" ry="3" fill="white" fill-opacity="0.55"/>
+    <!-- Lid lines -->
+    <path d="M 196 178 Q 220 166 244 178" stroke="#5060a8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 264 178 Q 288 166 312 178" stroke="#5060a8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Lower lid -->
+    <path d="M 200 209 Q 220 217 240 209" stroke="#9090c8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 268 209 Q 288 217 308 209" stroke="#9090c8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <ellipse cx="256" cy="214" rx="4.5" ry="3" fill="#c8b8e0" fill-opacity="0.6"/>
+    <!-- Quiet, still smile — at peace -->
+    <path d="M 242 228 Q 256 236 270 228" stroke="#a898cc" stroke-width="2.0" fill="none" stroke-linecap="round"/>
+    <path d="M 246 232 Q 256 238 266 232" fill="#d8c8f0" stroke="none"/>
+    <!-- Cool blue blush -->
+    <ellipse cx="198" cy="212" rx="20" ry="11" fill="#9898d0" fill-opacity="0.24"/>
+    <ellipse cx="314" cy="212" rx="20" ry="11" fill="#9898d0" fill-opacity="0.24"/>
+  </g>
+
+  <!-- Hair front / sleep cap -->
+  <g id="hair-front">
+    <path d="M 172 178 Q 180 132 215 125 Q 235 120 256 120 Q 277 120 297 125 Q 332 132 340 178" fill="url(#tlq-hair)"/>
+    <path d="M 170 175 Q 180 130 256 118 Q 332 130 342 175 Q 310 165 256 162 Q 202 165 170 175 Z" fill="url(#tlq-cap)"/>
+    <path d="M 169 175 Q 256 182 343 175 Q 310 188 256 191 Q 202 188 169 175 Z" fill="#3848a0"/>
+    <path d="M 230 120 Q 256 55 282 120 Q 268 112 256 110 Q 244 112 230 120 Z" fill="url(#tlq-cap)"/>
+    <circle cx="256" cy="56" r="14" fill="#4858a8"/>
+    <!-- Cap stars -->
+    <g fill="#c8d8f8" filter="url(#tlq-soft)">
+      <path d="M 210 148 L 212 143 L 214 148 L 219 146 L 214 151 L 219 156 L 214 153 L 212 158 L 210 153 L 205 156 L 210 151 L 205 146 Z" opacity="0.78"/>
+      <path d="M 296 143 L 297 140 L 298 143 L 301 142 L 298 145 L 301 148 L 298 146 L 297 149 L 296 146 L 293 148 L 296 145 L 293 142 Z" opacity="0.68"/>
+    </g>
+    <!-- Left bang -->
+    <path d="M 190 178 Q 200 168 214 174 Q 219 184 212 190 Q 202 185 190 178 Z" fill="#3a4080"/>
+    <!-- Hair shine -->
+    <ellipse cx="234" cy="140" rx="22" ry="13" fill="#7080c0" fill-opacity="0.38" transform="rotate(-10,234,140)"/>
+  </g>
+
+  <!-- Moon motif — last quarter (left half lit, right half dark) -->
+  <g id="motif">
+    <!-- Dark right half base -->
+    <circle cx="256" cy="44" r="26" fill="#181828"/>
+    <!-- Lit left half clipped to moon circle -->
+    <rect x="230" y="18" width="26" height="52" fill="#d8e0f8" clip-path="url(#tlq-moonClip)" filter="url(#tlq-moonBlur)"/>
+    <!-- Cool glow emanating left -->
+    <circle cx="256" cy="44" r="36" fill="url(#tlq-moonGlow)" filter="url(#tlq-blur)"/>
+    <!-- Subtle texture on lit side -->
+    <circle cx="243" cy="37" r="3.5" fill="#b8c8e8" fill-opacity="0.30" clip-path="url(#tlq-moonClip)"/>
+    <circle cx="247" cy="52" r="2.5" fill="#b8c8e8" fill-opacity="0.22" clip-path="url(#tlq-moonClip)"/>
+    <!-- Small reflective star to the right -->
+    <path d="M 294 30 L 295.5 25.5 L 297 30 L 301.5 28.5 L 297 32.5 L 301.5 36.5 L 297 35 L 295.5 39.5 L 294 35 L 289.5 36.5 L 294 32.5 L 289.5 28.5 Z" fill="#b8c8f0" opacity="0.78" filter="url(#tlq-soft)"/>
+  </g>
+
+  <!-- Particles — cool blue stars, reflective mood -->
+  <g id="particles">
+    <!-- Bottom cloud wisps -->
+    <ellipse cx="172" cy="438" rx="52" ry="24" fill="#3848a0" fill-opacity="0.5" filter="url(#tlq-soft)"/>
+    <ellipse cx="172" cy="428" rx="38" ry="20" fill="#3a4490" fill-opacity="0.6"/>
+    <ellipse cx="338" cy="442" rx="48" ry="22" fill="#3848a0" fill-opacity="0.5" filter="url(#tlq-soft)"/>
+    <ellipse cx="338" cy="432" rx="36" ry="19" fill="#3a4490" fill-opacity="0.6"/>
+    <!-- Stars — cool blue-white tones, calm density -->
+    <g fill="#b8c8f0" opacity="0.65">
+      <circle cx="138" cy="200" r="2.5"/>
+      <circle cx="374" cy="195" r="2"/>
+      <circle cx="130" cy="310" r="2"/>
+      <circle cx="382" cy="290" r="2.5"/>
+      <circle cx="148" cy="380" r="2"/>
+      <circle cx="366" cy="375" r="2.5"/>
+      <circle cx="196" cy="478" r="3" fill-opacity="0.5"/>
+      <circle cx="316" cy="475" r="2.5" fill-opacity="0.5"/>
+      <circle cx="113" cy="252" r="1.5"/>
+      <circle cx="400" cy="247" r="1.5"/>
+    </g>
+    <!-- Tiny glimmer near journal — moon-note sparkles -->
+    <g fill="#c8d8f8" opacity="0.55" filter="url(#tlq-soft)">
+      <circle cx="108" cy="270" r="2"/>
+      <circle cx="100" cy="295" r="1.5"/>
+      <circle cx="116" cy="300" r="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="dsi-skinGrad" cx="45%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#f5c9a0"/>
+      <stop offset="60%" stop-color="#e8aa78"/>
+      <stop offset="100%" stop-color="#d4925c"/>
+    </radialGradient>
+    <radialGradient id="dsi-hairGrad" cx="40%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#f4a07a"/>
+      <stop offset="55%" stop-color="#e8805a"/>
+      <stop offset="100%" stop-color="#c05840"/>
+    </radialGradient>
+    <linearGradient id="dsi-hairShine" x1="20%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#ffd4b8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#f4a07a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dsi-ponytailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4a07a"/>
+      <stop offset="55%" stop-color="#e8805a"/>
+      <stop offset="100%" stop-color="#c05840"/>
+    </linearGradient>
+    <linearGradient id="dsi-ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe280"/>
+      <stop offset="50%" stop-color="#ffd966"/>
+      <stop offset="100%" stop-color="#e8a820"/>
+    </linearGradient>
+    <radialGradient id="dsi-eyeIris" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#f0a060"/>
+      <stop offset="50%" stop-color="#d46030"/>
+      <stop offset="100%" stop-color="#8b3010"/>
+    </radialGradient>
+    <linearGradient id="dsi-jacketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f09070"/>
+      <stop offset="100%" stop-color="#d86848"/>
+    </linearGradient>
+    <linearGradient id="dsi-shortsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e87050"/>
+      <stop offset="100%" stop-color="#c04828"/>
+    </linearGradient>
+    <linearGradient id="dsi-legGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8a878"/>
+      <stop offset="100%" stop-color="#c88858"/>
+    </linearGradient>
+    <radialGradient id="dsi-ambientGlow" cx="50%" cy="58%" r="50%">
+      <stop offset="0%" stop-color="#f08060" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#f08060" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dsi-softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="dsi-glowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow -->
+  <g id="glow">
+    <ellipse cx="226" cy="318" rx="130" ry="95" fill="url(#dsi-ambientGlow)" filter="url(#dsi-softBlur)"/>
+    <ellipse cx="222" cy="168" rx="92" ry="82" fill="#f08060" fill-opacity="0.07" filter="url(#dsi-softBlur)"/>
+  </g>
+
+  <!-- Hair back + prominent side ponytail (main visual from side) -->
+  <g id="hair-back">
+    <!-- Back of head hair mass -->
+    <ellipse cx="220" cy="170" rx="90" ry="104" fill="url(#dsi-hairGrad)"/>
+    <!-- Ponytail sweeping dramatically upward and back — very visible from side -->
+    <path d="M 236 108 Q 292 74 350 55 Q 400 40 438 52 Q 462 62 458 86 Q 450 110 412 120 Q 370 130 330 136 Q 292 140 262 140 Q 248 136 242 124 Q 238 114 236 108 Z" fill="url(#dsi-ponytailGrad)" stroke="#c05840" stroke-width="0.8"/>
+    <!-- Ponytail width/volume bottom edge -->
+    <path d="M 236 108 Q 246 122 258 132 Q 268 140 280 138 Q 296 132 320 128 Q 354 122 390 118 Q 420 114 442 100 Q 450 88 444 76 Q 430 58 400 58 Q 362 60 322 72 Q 284 84 260 98 Q 246 104 236 108 Z" fill="#c05840" fill-opacity="0.35"/>
+    <!-- Ponytail hair strand lines -->
+    <path d="M 265 100 Q 330 72 418 54" stroke="#c05840" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 262 116 Q 325 90 408 78" stroke="#f4a07a" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.48"/>
+    <path d="M 255 130 Q 310 116 388 112" stroke="#c05840" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <!-- Ponytail tip curl -->
+    <path d="M 432 52 Q 468 36 470 58 Q 472 78 446 90 Q 426 96 416 84 Q 410 70 432 52 Z" fill="url(#dsi-ponytailGrad)" stroke="#c05840" stroke-width="1"/>
+    <!-- Back hair trailing down (side view) -->
+    <path d="M 225 200 Q 208 270 204 355 Q 200 392 212 396 Q 222 397 226 376 Q 230 326 238 270 Q 244 220 246 198 Z" fill="#c05840" fill-opacity="0.6"/>
+  </g>
+
+  <!-- Body (side profile, facing left) -->
+  <g id="body">
+    <!-- Neck -->
+    <rect x="214" y="265" width="30" height="27" rx="9" fill="url(#dsi-skinGrad)" stroke="#c07850" stroke-width="0.5"/>
+    <!-- Torso (side silhouette) -->
+    <path d="M 184 290 Q 200 276 240 274 Q 272 278 288 292 L 292 422 Q 266 447 235 450 Q 206 447 186 428 Z" fill="url(#dsi-jacketGrad)" stroke="#c06040" stroke-width="1"/>
+    <!-- Front arm (forward, relaxed) -->
+    <path d="M 272 298 Q 292 312 300 348 Q 304 370 296 390 Q 284 396 275 386 Q 272 362 264 340 Q 258 318 260 300 Z" fill="url(#dsi-jacketGrad)" stroke="#c06040" stroke-width="0.8"/>
+    <!-- Back arm (behind, slightly visible) -->
+    <path d="M 186 298 Q 168 315 160 348 Q 155 372 164 388 Q 174 394 182 384 Q 184 360 188 338 Q 194 316 196 300 Z" fill="#c86040" fill-opacity="0.72"/>
+    <!-- Front hand -->
+    <ellipse cx="296" cy="392" rx="16" ry="14" fill="url(#dsi-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Back hand -->
+    <ellipse cx="162" cy="388" rx="14" ry="12" fill="url(#dsi-skinGrad)" fill-opacity="0.8"/>
+    <!-- Front leg -->
+    <path d="M 216 420 Q 214 458 212 492 L 238 492 Q 244 458 248 420 Z" fill="url(#dsi-legGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Back leg slightly behind/darker -->
+    <path d="M 248 420 Q 252 452 255 488 L 280 488 Q 280 452 276 420 Z" fill="#c88858" fill-opacity="0.78"/>
+    <!-- Front shoe -->
+    <ellipse cx="224" cy="494" rx="28" ry="13" fill="#d86848" stroke="#a04030" stroke-width="1"/>
+    <!-- Back shoe -->
+    <ellipse cx="266" cy="490" rx="23" ry="11" fill="#c05838" fill-opacity="0.78"/>
+    <!-- Shoe gold stripe -->
+    <ellipse cx="212" cy="492" rx="9" ry="5" fill="#ffd966" fill-opacity="0.72"/>
+  </g>
+
+  <!-- Outfit details -->
+  <g id="outfit">
+    <!-- Side gold jacket stripe -->
+    <path d="M 286 300 Q 296 350 296 392 L 284 392 Q 284 350 274 300 Z" fill="#ffd966" fill-opacity="0.65"/>
+    <!-- Shorts -->
+    <path d="M 190 404 Q 218 418 258 420 Q 282 418 294 406 L 292 434 Q 266 450 235 450 Q 206 448 188 430 Z" fill="url(#dsi-shortsGrad)" stroke="#a03828" stroke-width="0.8"/>
+    <!-- Jacket collar side view -->
+    <path d="M 216 280 Q 242 274 270 282 L 270 296 Q 244 288 216 294 Z" fill="#e06040" stroke="#c04828" stroke-width="0.8"/>
+    <!-- Wing feather motif on side -->
+    <path d="M 266 332 Q 278 321 286 330 Q 280 340 277 346 Q 268 342 266 332 Z" fill="#ffd966" fill-opacity="0.82" stroke="#e8a820" stroke-width="0.8"/>
+    <path d="M 263 346 Q 276 334 283 343 Q 278 354 275 358 Q 267 354 263 346 Z" fill="#ffd966" fill-opacity="0.65" stroke="#e8a820" stroke-width="0.8"/>
+  </g>
+
+  <!-- Face (side profile, facing left) -->
+  <g id="face">
+    <!-- Head shape profile -->
+    <path d="M 186 130 Q 193 86 230 80 Q 270 76 292 108 Q 310 138 308 182 Q 306 222 292 246 Q 276 270 242 270 Q 210 270 194 250 Q 178 226 180 194 Q 180 162 186 130 Z" fill="url(#dsi-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Ear (far side) -->
+    <ellipse cx="183" cy="186" rx="13" ry="17" fill="url(#dsi-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <ellipse cx="183" cy="186" rx="7" ry="10" fill="#e8906a" fill-opacity="0.42"/>
+
+    <!-- Profile eyebrow (left/visible) -->
+    <path d="M 263 130 Q 280 120 298 124" stroke="#a04828" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Profile eye -->
+    <ellipse cx="280" cy="160" rx="24" ry="22" fill="white"/>
+    <ellipse cx="283" cy="162" rx="17" ry="18" fill="url(#dsi-eyeIris)"/>
+    <ellipse cx="284" cy="164" rx="9" ry="11" fill="#2a1008"/>
+    <ellipse cx="274" cy="153" rx="7" ry="6" fill="white" fill-opacity="0.92"/>
+    <circle cx="288" cy="170" r="3" fill="white" fill-opacity="0.5"/>
+    <!-- Eyelid -->
+    <path d="M 258 150 Q 280 137 304 150" stroke="#7a2a10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 260 172 Q 282 181 302 172" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Profile nose -->
+    <path d="M 300 188 Q 312 193 308 202 Q 304 208 297 204" stroke="#c07850" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+    <!-- Profile smile (upbeat) -->
+    <path d="M 282 220 Q 300 231 296 244 Q 285 250 274 242" stroke="#a05030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Smile teeth hint -->
+    <path d="M 283 222 Q 296 230 292 242 Q 282 246 276 241 Q 283 234 283 222 Z" fill="white" fill-opacity="0.55"/>
+
+    <!-- Blush on visible cheek -->
+    <ellipse cx="298" cy="188" rx="21" ry="12" fill="#f08060" fill-opacity="0.27"/>
+  </g>
+
+  <!-- Hair front / profile bangs -->
+  <g id="hair-front">
+    <!-- Profile front hair mass -->
+    <path d="M 214 88 Q 232 80 260 82 Q 285 84 300 102 Q 314 118 312 144 Q 304 138 296 130 Q 288 122 280 120 Q 272 118 266 124 Q 260 130 258 144 Q 250 133 241 124 Q 228 112 214 110 Q 204 108 202 120 Q 194 110 198 96 Q 206 86 214 88 Z" fill="url(#dsi-hairGrad)" stroke="#c05840" stroke-width="0.5"/>
+    <!-- Profile bang tip pointing forward -->
+    <path d="M 300 102 Q 314 115 310 132 Q 303 128 294 122 Q 290 112 300 102 Z" fill="#c05840"/>
+    <!-- Hair shine -->
+    <ellipse cx="252" cy="106" rx="26" ry="14" fill="url(#dsi-hairShine)" transform="rotate(-8,252,106)"/>
+    <!-- Gold ribbon at ponytail base -->
+    <ellipse cx="246" cy="126" rx="13" ry="9" fill="url(#dsi-ribbonGrad)" stroke="#c89020" stroke-width="1.5"/>
+    <!-- Ribbon bow loops -->
+    <path d="M 234 122 Q 224 113 228 126 Q 232 140 244 132 Z" fill="url(#dsi-ribbonGrad)" stroke="#c89020" stroke-width="1"/>
+    <path d="M 258 122 Q 268 113 264 126 Q 260 140 248 132 Z" fill="url(#dsi-ribbonGrad)" stroke="#c89020" stroke-width="1"/>
+    <!-- Ribbon center knot -->
+    <ellipse cx="246" cy="126" rx="5" ry="5" fill="#ffe280" stroke="#c89020" stroke-width="1"/>
+  </g>
+
+  <!-- Motif -->
+  <g id="motif">
+    <path d="M 230 344 Q 220 330 224 320 Q 234 316 238 325 Q 243 316 252 320 Q 256 330 247 344 Q 238 337 230 344 Z" fill="#ffd966" fill-opacity="0.76" stroke="#e8a820" stroke-width="1.2"/>
+    <line x1="238" y1="322" x2="233" y2="342" stroke="#e8a820" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="238" y1="322" x2="243" y2="342" stroke="#e8a820" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Particles -->
+  <g id="particles">
+    <circle cx="136" cy="232" r="3" fill="#ffd966" opacity="0.6"/>
+    <circle cx="358" cy="196" r="2.5" fill="#ffd966" opacity="0.5"/>
+    <circle cx="126" cy="332" r="2.5" fill="#f08060" opacity="0.5"/>
+    <circle cx="372" cy="288" r="3" fill="#f08060" opacity="0.45"/>
+    <circle cx="146" cy="432" r="3.5" fill="#ffd966" fill-opacity="0.42"/>
+    <path d="M 132 277 L 134 271 L 136 277 L 141 275 L 136 279 L 141 283 L 136 281 L 134 287 L 132 281 L 127 283 L 132 279 L 127 275 Z" fill="#ffd966" opacity="0.56"/>
+  </g>
+</svg>

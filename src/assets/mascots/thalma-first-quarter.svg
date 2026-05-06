@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="tq1-skin" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#e8e0f4"/><stop offset="100%" stop-color="#d0c8e8"/></radialGradient>
+    <radialGradient id="tq1-hair" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#5058a0"/><stop offset="60%" stop-color="#3a4080"/><stop offset="100%" stop-color="#282860"/></radialGradient>
+    <linearGradient id="tq1-outfit" x1="0%" y1="0%" x2="10%" y2="100%"><stop offset="0%" stop-color="#3a4488"/><stop offset="100%" stop-color="#282060"/></linearGradient>
+    <linearGradient id="tq1-cap" x1="0%" y1="0%" x2="20%" y2="100%"><stop offset="0%" stop-color="#4858a8"/><stop offset="100%" stop-color="#303878"/></linearGradient>
+    <radialGradient id="tq1-eye" cx="40%" cy="35%" r="55%"><stop offset="0%" stop-color="#9898e8"/><stop offset="60%" stop-color="#6868c0"/><stop offset="100%" stop-color="#4040a0"/></radialGradient>
+    <radialGradient id="tq1-moonGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f8e8a0" stop-opacity="0.65"/><stop offset="100%" stop-color="#f8e8a0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tq1-halfMoon" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f8ecc0"/><stop offset="50%" stop-color="#f8ecc0"/><stop offset="50%" stop-color="#181828"/><stop offset="100%" stop-color="#181828"/></linearGradient>
+    <radialGradient id="tq1-glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#6878c8" stop-opacity="0.28"/><stop offset="100%" stop-color="#6878c8" stop-opacity="0"/></radialGradient>
+    <filter id="tq1-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="tq1-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="tq1-moonClip"><circle cx="256" cy="42" r="24"/></clipPath>
+  </defs>
+  <g id="glow"><ellipse cx="256" cy="330" rx="148" ry="92" fill="url(#tq1-glow)" filter="url(#tq1-blur)"/></g>
+  <g id="hair-back">
+    <ellipse cx="256" cy="200" rx="90" ry="100" fill="url(#tq1-hair)"/>
+    <path d="M 177 228 Q 158 320 166 415 Q 170 432 182 432 Q 192 432 194 412 Q 198 335 206 268 Z" fill="#303070"/>
+    <path d="M 335 228 Q 354 320 346 415 Q 342 432 330 432 Q 320 432 318 412 Q 314 335 306 268 Z" fill="#303070"/>
+  </g>
+  <g id="body">
+    <rect x="237" y="292" width="38" height="22" rx="9" fill="url(#tq1-skin)"/>
+    <path d="M 178 312 Q 196 296 256 294 Q 316 296 334 312 L 345 450 Q 298 472 256 474 Q 214 472 167 450 Z" fill="url(#tq1-outfit)"/>
+    <ellipse cx="167" cy="365" rx="23" ry="52" fill="url(#tq1-outfit)" transform="rotate(-10,167,365)"/>
+    <ellipse cx="345" cy="365" rx="23" ry="52" fill="url(#tq1-outfit)" transform="rotate(10,345,365)"/>
+    <ellipse cx="158" cy="412" rx="19" ry="15" fill="url(#tq1-skin)"/>
+    <ellipse cx="354" cy="412" rx="19" ry="15" fill="url(#tq1-skin)"/>
+    <!-- Book in right hand -->
+    <g transform="translate(354,405)">
+      <rect x="-18" y="-22" width="36" height="28" rx="3" fill="#2a3870" stroke="#4858a0" stroke-width="1.5"/>
+      <rect x="-18" y="-22" width="6" height="28" rx="3" fill="#3848a0"/>
+      <line x1="-8" y1="-16" x2="12" y2="-16" stroke="#6878c0" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-8" y1="-10" x2="12" y2="-10" stroke="#6878c0" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-8" y1="-4" x2="8" y2="-4" stroke="#6878c0" stroke-width="1.5" opacity="0.6"/>
+      <!-- Star bookmark -->
+      <path d="M 14 -20 L 15.2 -16.8 L 18.6 -16.8 L 16 -14.7 L 17 -11.4 L 14 -13.2 L 11 -11.4 L 12 -14.7 L 9.4 -16.8 L 12.8 -16.8 Z" fill="#f8e060" opacity="0.9"/>
+    </g>
+  </g>
+  <g id="outfit">
+    <g fill="#6878b8" opacity="0.35"><circle cx="220" cy="360" r="2.5"/><circle cx="292" cy="380" r="2"/><circle cx="256" cy="420" r="3"/></g>
+    <path d="M 180 310 Q 256 303 332 310 L 330 322 Q 256 314 182 322 Z" fill="#4a50a0"/>
+    <path d="M 170 447 Q 256 468 342 447 L 345 458 Q 256 480 167 458 Z" fill="#4a50a0"/>
+  </g>
+  <g id="face">
+    <ellipse cx="256" cy="200" rx="86" ry="91" fill="url(#tq1-skin)"/>
+    <ellipse cx="172" cy="210" rx="13" ry="17" fill="url(#tq1-skin)"/>
+    <ellipse cx="340" cy="210" rx="13" ry="17" fill="url(#tq1-skin)"/>
+    <ellipse cx="172" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+    <ellipse cx="340" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+    <path d="M 208 162 Q 220 156 232 159" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 280 159 Q 292 156 304 162" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="220" cy="190" rx="26" ry="23" fill="white"/>
+    <ellipse cx="288" cy="190" rx="26" ry="23" fill="white"/>
+    <ellipse cx="220" cy="191" rx="20" ry="20" fill="url(#tq1-eye)"/>
+    <ellipse cx="288" cy="191" rx="20" ry="20" fill="url(#tq1-eye)"/>
+    <ellipse cx="221" cy="193" rx="10" ry="12" fill="#1a1840"/>
+    <ellipse cx="289" cy="193" rx="10" ry="12" fill="#1a1840"/>
+    <ellipse cx="213" cy="183" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="281" cy="183" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+    <path d="M 196 178 Q 220 166 244 178" stroke="#5060a8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 264 178 Q 288 166 312 178" stroke="#5060a8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 200 208 Q 220 216 240 208" stroke="#9090c8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 268 208 Q 288 216 308 208" stroke="#9090c8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="256" cy="214" rx="4.5" ry="3" fill="#c8b8e0" fill-opacity="0.6"/>
+    <path d="M 240 228 Q 256 238 272 228" stroke="#a898cc" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M 245 232 Q 256 241 267 232" fill="#d8c8f0" stroke="none"/>
+    <ellipse cx="198" cy="212" rx="20" ry="11" fill="#c0a8e0" fill-opacity="0.3"/>
+    <ellipse cx="314" cy="212" rx="20" ry="11" fill="#c0a8e0" fill-opacity="0.3"/>
+  </g>
+  <g id="hair-front">
+    <path d="M 172 178 Q 180 132 215 125 Q 235 120 256 120 Q 277 120 297 125 Q 332 132 340 178" fill="url(#tq1-hair)"/>
+    <path d="M 170 175 Q 180 130 256 118 Q 332 130 342 175 Q 310 165 256 162 Q 202 165 170 175 Z" fill="url(#tq1-cap)"/>
+    <path d="M 169 175 Q 256 182 343 175 Q 310 188 256 191 Q 202 188 169 175 Z" fill="#3848a0"/>
+    <path d="M 230 120 Q 256 55 282 120 Q 268 112 256 110 Q 244 112 230 120 Z" fill="url(#tq1-cap)"/>
+    <circle cx="256" cy="56" r="14" fill="#4858a8"/>
+    <g fill="#c8d8f8" filter="url(#tq1-soft)">
+      <path d="M 210 148 L 212 143 L 214 148 L 219 146 L 214 151 L 219 156 L 214 153 L 212 158 L 210 153 L 205 156 L 210 151 L 205 146 Z" opacity="0.8"/>
+      <path d="M 296 143 L 297 140 L 298 143 L 301 142 L 298 145 L 301 148 L 298 146 L 297 149 L 296 146 L 293 148 L 296 145 L 293 142 Z" opacity="0.7"/>
+    </g>
+    <path d="M 190 178 Q 200 168 214 174 Q 219 184 212 190 Q 202 185 190 178 Z" fill="#3a4080"/>
+    <ellipse cx="234" cy="140" rx="22" ry="13" fill="#7080c0" fill-opacity="0.4" transform="rotate(-10,234,140)"/>
+  </g>
+  <g id="motif">
+    <!-- Half moon (first quarter — right half lit) -->
+    <circle cx="256" cy="42" r="25" fill="#181828"/>
+    <rect x="256" y="18" width="25" height="48" fill="#f8ecc0" clip-path="url(#tq1-moonClip)"/>
+    <circle cx="256" cy="42" r="32" fill="url(#tq1-moonGlow)" filter="url(#tq1-blur)"/>
+    <!-- Small star beside -->
+    <path d="M 220 28 L 221.5 24 L 223 28 L 227 26.5 L 223 30.5 L 227 34.5 L 223 33 L 221.5 37 L 220 33 L 216 34.5 L 220 30.5 L 216 26.5 Z" fill="#f8e880" opacity="0.85" filter="url(#tq1-soft)"/>
+  </g>
+  <g id="particles">
+    <ellipse cx="172" cy="438" rx="52" ry="24" fill="#3848a0" fill-opacity="0.5" filter="url(#tq1-soft)"/>
+    <ellipse cx="172" cy="428" rx="38" ry="20" fill="#3a4490" fill-opacity="0.6"/>
+    <ellipse cx="338" cy="442" rx="48" ry="22" fill="#3848a0" fill-opacity="0.5" filter="url(#tq1-soft)"/>
+    <ellipse cx="338" cy="432" rx="36" ry="19" fill="#3a4490" fill-opacity="0.6"/>
+    <g fill="#d8e0f8" opacity="0.65"><circle cx="138" cy="200" r="2.5"/><circle cx="374" cy="195" r="2"/><circle cx="130" cy="310" r="2"/><circle cx="382" cy="290" r="2.5"/><circle cx="148" cy="380" r="2"/><circle cx="366" cy="375" r="2.5"/></g>
+  </g>
+</svg>

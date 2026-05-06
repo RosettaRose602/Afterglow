@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="hl-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f8e4ee"/>
+      <stop offset="100%" stop-color="#ecc8dc"/>
+    </radialGradient>
+    <radialGradient id="hl-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#d4a0bc"/>
+      <stop offset="60%" stop-color="#b07898"/>
+      <stop offset="100%" stop-color="#8a5e78"/>
+    </radialGradient>
+    <linearGradient id="hl-cardigan" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#f0d8e8"/>
+      <stop offset="100%" stop-color="#d8b4cc"/>
+    </linearGradient>
+    <linearGradient id="hl-inner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde8f4"/>
+      <stop offset="100%" stop-color="#f0d0e4"/>
+    </linearGradient>
+    <radialGradient id="hl-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#c870a8"/>
+      <stop offset="60%" stop-color="#984880"/>
+      <stop offset="100%" stop-color="#683060"/>
+    </radialGradient>
+    <!-- Bunny white -->
+    <radialGradient id="hl-bunny" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0e8f8"/>
+    </radialGradient>
+    <radialGradient id="hl-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0b8d0" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#e0b8d0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hl-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="hl-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow (warm, amber-pink) -->
+  <g id="glow">
+    <ellipse cx="256" cy="310" rx="140" ry="100" fill="url(#hl-glow)" filter="url(#hl-blur)"/>
+    <ellipse cx="256" cy="165" rx="110" ry="90" fill="#f0c8d8" fill-opacity="0.09" filter="url(#hl-blur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="170" rx="96" ry="105" fill="url(#hl-hair)"/>
+    <!-- Side hair -->
+    <path d="M 173 202 Q 152 288 160 378 Q 164 396 177 396 Q 187 396 190 376 Q 194 308 202 248 Z" fill="#9a6880"/>
+    <path d="M 339 202 Q 360 288 352 378 Q 348 396 335 396 Q 325 396 322 376 Q 318 308 310 248 Z" fill="#9a6880"/>
+  </g>
+
+  <!-- Body (seated, cozy) -->
+  <g id="body">
+    <rect x="237" y="262" width="38" height="25" rx="8" fill="url(#hl-skin)"/>
+    <!-- Cardigan body -->
+    <path d="M 172 284 Q 193 268 256 266 Q 319 268 340 284 L 352 435 Q 304 458 256 460 Q 208 458 160 435 Z" fill="url(#hl-cardigan)"/>
+    <!-- Arms (cuddling) -->
+    <ellipse cx="164" cy="342" rx="24" ry="55" fill="url(#hl-cardigan)" transform="rotate(-11,164,342)"/>
+    <ellipse cx="348" cy="342" rx="24" ry="55" fill="url(#hl-cardigan)" transform="rotate(11,348,342)"/>
+    <!-- Hands -->
+    <ellipse cx="155" cy="393" rx="20" ry="16" fill="url(#hl-skin)"/>
+    <ellipse cx="357" cy="393" rx="20" ry="16" fill="url(#hl-skin)"/>
+  </g>
+
+  <!-- Outfit -->
+  <g id="outfit">
+    <!-- Cardigan front overlap -->
+    <path d="M 222 278 Q 246 272 256 274 Q 266 272 290 278 L 292 440 Q 276 462 256 465 Q 236 462 220 440 Z" fill="url(#hl-inner)"/>
+    <!-- Cardigan collar -->
+    <path d="M 220 278 Q 256 270 292 278 L 290 292 Q 256 284 222 292 Z" fill="#c8a0b8"/>
+    <!-- Cardigan buttons -->
+    <circle cx="256" cy="315" r="5" fill="#e8b8cc" stroke="#d0a0b8" stroke-width="1.2"/>
+    <circle cx="256" cy="345" r="5" fill="#e8b8cc" stroke="#d0a0b8" stroke-width="1.2"/>
+    <circle cx="256" cy="375" r="5" fill="#e8b8cc" stroke="#d0a0b8" stroke-width="1.2"/>
+    <!-- Hem -->
+    <path d="M 163 432 Q 256 456 349 432 L 352 442 Q 256 468 160 442 Z" fill="#c8a0b8"/>
+    <!-- Sleeve cuffs -->
+    <ellipse cx="164" cy="378" rx="26" ry="10" fill="none" stroke="#c8a0b8" stroke-width="2.5"/>
+    <ellipse cx="348" cy="378" rx="26" ry="10" fill="none" stroke="#c8a0b8" stroke-width="2.5"/>
+  </g>
+
+  <!-- Bunny being cuddled (tucked to right, not covering face) -->
+  <g id="props">
+    <!-- Bunny body (lower right, tucked in arm) -->
+    <ellipse cx="340" cy="390" rx="48" ry="42" fill="url(#hl-bunny)" stroke="#e0d8f0" stroke-width="1.5"/>
+    <!-- Bunny head (above body, below character face level) -->
+    <ellipse cx="348" cy="348" rx="35" ry="32" fill="url(#hl-bunny)" stroke="#e0d8f0" stroke-width="1.5"/>
+    <!-- Bunny ears -->
+    <ellipse cx="335" cy="318" rx="10" ry="22" fill="url(#hl-bunny)" stroke="#e0d8f0" stroke-width="1.5" transform="rotate(-8,335,318)"/>
+    <ellipse cx="361" cy="316" rx="10" ry="22" fill="url(#hl-bunny)" stroke="#e0d8f0" stroke-width="1.5" transform="rotate(8,361,316)"/>
+    <!-- Ear inner pink -->
+    <ellipse cx="335" cy="319" rx="5" ry="13" fill="#f8c8d8" transform="rotate(-8,335,319)"/>
+    <ellipse cx="361" cy="317" rx="5" ry="13" fill="#f8c8d8" transform="rotate(8,361,317)"/>
+    <!-- Bunny face -->
+    <ellipse cx="343" cy="344" rx="7" ry="5" fill="#3a2030" opacity="0.8"/>
+    <ellipse cx="357" cy="344" rx="7" ry="5" fill="#3a2030" opacity="0.8"/>
+    <ellipse cx="337" cy="340" rx="4" ry="3" fill="white" fill-opacity="0.8"/>
+    <ellipse cx="351" cy="340" rx="4" ry="3" fill="white" fill-opacity="0.8"/>
+    <ellipse cx="350" cy="354" rx="4" ry="2.5" fill="#f8a8b8"/>
+    <path d="M 344 358 Q 350 363 356 358" stroke="#d08898" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Bunny bow -->
+    <path d="M 340 380 L 350 374 L 360 380 L 358 386 L 350 382 L 342 386 Z" fill="#f0b0c8"/>
+  </g>
+
+  <!-- Face -->
+  <g id="face">
+    <ellipse cx="256" cy="170" rx="88" ry="92" fill="url(#hl-skin)"/>
+    <ellipse cx="170" cy="180" rx="13" ry="17" fill="url(#hl-skin)"/>
+    <ellipse cx="342" cy="180" rx="13" ry="17" fill="url(#hl-skin)"/>
+    <ellipse cx="170" cy="180" rx="7" ry="10" fill="#ecc8dc"/>
+    <ellipse cx="342" cy="180" rx="7" ry="10" fill="#ecc8dc"/>
+
+    <!-- Soft brows -->
+    <path d="M 208 131 Q 220 126 234 129" stroke="#8a6070" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 278 129 Q 292 126 304 131" stroke="#8a6070" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes (soft, reflective) -->
+    <ellipse cx="222" cy="160" rx="27" ry="23" fill="white"/>
+    <ellipse cx="290" cy="160" rx="27" ry="23" fill="white"/>
+    <ellipse cx="222" cy="162" rx="20" ry="21" fill="url(#hl-eye)"/>
+    <ellipse cx="290" cy="162" rx="20" ry="21" fill="url(#hl-eye)"/>
+    <ellipse cx="223" cy="164" rx="10" ry="12" fill="#2a1020"/>
+    <ellipse cx="291" cy="164" rx="10" ry="12" fill="#2a1020"/>
+    <ellipse cx="215" cy="153" rx="7" ry="6" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="283" cy="153" rx="7" ry="6" fill="white" fill-opacity="0.9"/>
+    <!-- Eyelids -->
+    <path d="M 197 148 Q 222 137 247 148" stroke="#6a3858" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 265 148 Q 290 137 315 148" stroke="#6a3858" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 200 172 Q 222 180 244 172" stroke="#9a7088" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 266 172 Q 290 180 312 172" stroke="#9a7088" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <ellipse cx="256" cy="186" rx="4.5" ry="3" fill="#e0a8c0" fill-opacity="0.6"/>
+    <!-- Content smile -->
+    <path d="M 239 201 Q 256 214 273 201" stroke="#c080a0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 245 208 Q 256 217 267 208" fill="#f5b8cc" stroke="none"/>
+    <!-- Blush -->
+    <ellipse cx="198" cy="184" rx="22" ry="12" fill="#f0a8c8" fill-opacity="0.38"/>
+    <ellipse cx="314" cy="184" rx="22" ry="12" fill="#f0a8c8" fill-opacity="0.38"/>
+  </g>
+
+  <!-- Hair front -->
+  <g id="hair-front">
+    <path d="M 171 150 Q 178 104 213 97 Q 233 92 256 92 Q 279 92 299 97 Q 334 104 341 150" fill="url(#hl-hair)"/>
+    <path d="M 236 94 Q 247 108 251 129 Q 255 138 259 129 Q 263 108 276 94 Q 265 89 256 89 Q 247 89 236 94 Z" fill="#a07090"/>
+    <path d="M 186 122 Q 196 111 210 118 Q 220 123 220 138 Q 210 133 200 135 Q 190 131 186 122 Z" fill="#8a5e78"/>
+    <path d="M 326 122 Q 316 111 302 118 Q 292 123 292 138 Q 302 133 312 135 Q 322 131 326 122 Z" fill="#8a5e78"/>
+    <!-- Small crescent pin in hair -->
+    <path d="M 196 108 Q 200 96 210 98 Q 203 104 202 113 Q 197 113 196 108 Z" fill="#f8d860" filter="url(#hl-soft)"/>
+    <!-- Hair shine -->
+    <ellipse cx="237" cy="115" rx="24" ry="14" fill="#ecd4e4" fill-opacity="0.6" transform="rotate(-12,237,115)"/>
+  </g>
+
+  <!-- Motif -->
+  <g id="motif">
+    <!-- Floating cherry blossoms -->
+    <g opacity="0.7">
+      <ellipse cx="142" cy="220" rx="11" ry="5.5" fill="#f8c0d8" transform="rotate(-25,142,220)"/>
+      <ellipse cx="370" cy="235" rx="10" ry="5" fill="#f8c0d8" transform="rotate(20,370,235)"/>
+      <ellipse cx="133" cy="330" rx="9" ry="4.5" fill="#f0b0cc" transform="rotate(-10,133,330)"/>
+    </g>
+    <!-- Moon outline (subtle) -->
+    <circle cx="148" cy="180" r="18" fill="none" stroke="#f0d8e8" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="155" cy="180" r="18" fill="#0a0a14" fill-opacity="0.0"/>
+  </g>
+
+  <!-- Particles -->
+  <g id="particles">
+    <circle cx="148" cy="258" r="3" fill="#d8a8c8" opacity="0.6"/>
+    <circle cx="368" cy="252" r="2.5" fill="#d8a8c8" opacity="0.5"/>
+    <circle cx="140" cy="370" r="2.5" fill="#e0b8d0" opacity="0.5"/>
+    <circle cx="374" cy="362" r="2" fill="#e0b8d0" opacity="0.4"/>
+    <circle cx="186" cy="468" r="4" fill="#d8b0c8" fill-opacity="0.4"/>
+    <circle cx="322" cy="466" r="3.5" fill="#d8b0c8" fill-opacity="0.4"/>
+    <circle cx="256" cy="472" r="5" fill="#e0c0d8" fill-opacity="0.3"/>
+  </g>
+</svg>

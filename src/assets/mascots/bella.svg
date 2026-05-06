@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="b-skinGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f0e4f8"/>
+      <stop offset="100%" stop-color="#dcc8ec"/>
+    </radialGradient>
+    <radialGradient id="b-hairGrad" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ccc0e0"/>
+      <stop offset="60%" stop-color="#a898cc"/>
+      <stop offset="100%" stop-color="#887ab0"/>
+    </radialGradient>
+    <linearGradient id="b-hairShine" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#ede8f8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ccc0e0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b-outfitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0eaf8"/>
+      <stop offset="100%" stop-color="#d8ccec"/>
+    </linearGradient>
+    <radialGradient id="b-eyeIris" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#9090d8"/>
+      <stop offset="60%" stop-color="#6060b0"/>
+      <stop offset="100%" stop-color="#3a3880"/>
+    </radialGradient>
+    <!-- Ice pack -->
+    <linearGradient id="b-iceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8eaf8"/>
+      <stop offset="50%" stop-color="#a8d8f0"/>
+      <stop offset="100%" stop-color="#88c4e8"/>
+    </linearGradient>
+    <!-- Soft dim glow -->
+    <radialGradient id="b-dimGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b8a8e0" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#b8a8e0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b-softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="b-gentleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Snowflake symbol -->
+    <symbol id="b-snowflake" viewBox="0 0 20 20">
+      <line x1="10" y1="1" x2="10" y2="19" stroke="#a8d8f8" stroke-width="1.5"/>
+      <line x1="1" y1="10" x2="19" y2="10" stroke="#a8d8f8" stroke-width="1.5"/>
+      <line x1="3.5" y1="3.5" x2="16.5" y2="16.5" stroke="#a8d8f8" stroke-width="1.5"/>
+      <line x1="16.5" y1="3.5" x2="3.5" y2="16.5" stroke="#a8d8f8" stroke-width="1.5"/>
+    </symbol>
+  </defs>
+
+  <!-- Soft dim ambient glow -->
+  <g id="glow">
+    <ellipse cx="256" cy="300" rx="130" ry="95" fill="url(#b-dimGlow)" filter="url(#b-softBlur)"/>
+    <ellipse cx="256" cy="155" rx="100" ry="85" fill="#b8a8e0" fill-opacity="0.08" filter="url(#b-softBlur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="170" rx="96" ry="105" fill="url(#b-hairGrad)"/>
+    <!-- Long back hair -->
+    <path d="M 172 202 Q 150 300 158 400 Q 162 418 175 418 Q 185 418 187 398 Q 190 318 198 248 Z" fill="#9888c0"/>
+    <path d="M 340 202 Q 362 300 354 400 Q 350 418 337 418 Q 327 418 325 398 Q 322 318 314 248 Z" fill="#9888c0"/>
+  </g>
+
+  <!-- Body (seated/resting pose) -->
+  <g id="body">
+    <!-- Neck -->
+    <rect x="238" y="262" width="36" height="26" rx="8" fill="url(#b-skinGrad)"/>
+    <!-- Body (cozy, slightly hunched) -->
+    <path d="M 178 285 Q 196 270 256 268 Q 316 270 334 285 L 344 415 Q 300 440 256 443 Q 212 440 168 415 Z" fill="url(#b-outfitGrad)"/>
+    <!-- Arm left (holding pillow) -->
+    <ellipse cx="165" cy="335" rx="22" ry="52" fill="url(#b-outfitGrad)" transform="rotate(-10,165,335)"/>
+    <!-- Arm right -->
+    <ellipse cx="347" cy="335" rx="22" ry="52" fill="url(#b-outfitGrad)" transform="rotate(10,347,335)"/>
+    <!-- Hands -->
+    <ellipse cx="157" cy="384" rx="18" ry="15" fill="url(#b-skinGrad)"/>
+    <ellipse cx="355" cy="384" rx="18" ry="15" fill="url(#b-skinGrad)"/>
+  </g>
+
+  <!-- Outfit -->
+  <g id="outfit">
+    <!-- Soft collar -->
+    <path d="M 218 280 Q 256 274 294 280 L 296 292 Q 256 285 216 292 Z" fill="#c8b8e0"/>
+    <!-- Small bow -->
+    <path d="M 244 290 Q 256 283 268 290 L 265 300 Q 256 295 247 300 Z" fill="#b8a8d8"/>
+    <!-- Hem -->
+    <path d="M 172 412 Q 256 436 340 412 L 344 422 Q 256 448 168 422 Z" fill="#c8b8e0"/>
+    <!-- Sleeve details -->
+    <ellipse cx="165" cy="365" rx="24" ry="9" fill="none" stroke="#c8b8e0" stroke-width="2"/>
+    <ellipse cx="347" cy="365" rx="24" ry="9" fill="none" stroke="#c8b8e0" stroke-width="2"/>
+  </g>
+
+  <!-- Face -->
+  <g id="face">
+    <ellipse cx="256" cy="170" rx="88" ry="93" fill="url(#b-skinGrad)"/>
+    <!-- Ears -->
+    <ellipse cx="170" cy="180" rx="13" ry="17" fill="url(#b-skinGrad)"/>
+    <ellipse cx="342" cy="180" rx="13" ry="17" fill="url(#b-skinGrad)"/>
+    <ellipse cx="170" cy="180" rx="7" ry="10" fill="#e0c8f0"/>
+    <ellipse cx="342" cy="180" rx="7" ry="10" fill="#e0c8f0"/>
+
+    <!-- Soft eyebrows (calm) -->
+    <path d="M 208 132 Q 220 127 234 130" stroke="#8878b0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 278 130 Q 292 127 304 132" stroke="#8878b0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eye whites -->
+    <ellipse cx="222" cy="160" rx="27" ry="24" fill="white"/>
+    <ellipse cx="290" cy="160" rx="27" ry="24" fill="white"/>
+
+    <!-- Iris (slightly droopy/calm) -->
+    <ellipse cx="222" cy="162" rx="20" ry="20" fill="url(#b-eyeIris)"/>
+    <ellipse cx="290" cy="162" rx="20" ry="20" fill="url(#b-eyeIris)"/>
+
+    <!-- Pupils -->
+    <ellipse cx="223" cy="164" rx="10" ry="12" fill="#1a1840"/>
+    <ellipse cx="291" cy="164" rx="10" ry="12" fill="#1a1840"/>
+
+    <!-- Eye highlights -->
+    <ellipse cx="215" cy="155" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="283" cy="155" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+
+    <!-- Calm upper eyelids (slightly heavier) -->
+    <path d="M 196 150 Q 222 138 248 150" stroke="#6050a0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 264 150 Q 290 138 316 150" stroke="#6050a0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Lower lids -->
+    <path d="M 200 172 Q 222 179 244 172" stroke="#9888c0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 266 172 Q 290 179 312 172" stroke="#9888c0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <ellipse cx="256" cy="187" rx="4.5" ry="3" fill="#d8b8e8" fill-opacity="0.6"/>
+
+    <!-- Gentle soft smile -->
+    <path d="M 240 203 Q 256 213 272 203" stroke="#c098c8" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Blush (soft) -->
+    <ellipse cx="200" cy="182" rx="20" ry="11" fill="#d0a8e0" fill-opacity="0.3"/>
+    <ellipse cx="312" cy="182" rx="20" ry="11" fill="#d0a8e0" fill-opacity="0.3"/>
+  </g>
+
+  <!-- Hair front -->
+  <g id="hair-front">
+    <path d="M 170 148 Q 177 103 212 97 Q 232 92 256 92 Q 280 92 300 97 Q 335 103 342 148" fill="url(#b-hairGrad)"/>
+    <!-- Center bang -->
+    <path d="M 237 94 Q 248 108 252 128 Q 256 136 260 128 Q 264 108 275 94 Q 265 90 256 90 Q 247 90 237 94 Z" fill="#9888c0"/>
+    <!-- Left bang -->
+    <path d="M 186 120 Q 196 110 210 117 Q 220 122 220 137 Q 210 132 200 134 Q 190 130 186 120 Z" fill="#887ab0"/>
+    <!-- Right bang -->
+    <path d="M 326 120 Q 316 110 302 117 Q 292 122 292 137 Q 302 132 312 134 Q 322 130 326 120 Z" fill="#887ab0"/>
+    <!-- Hair shine -->
+    <ellipse cx="238" cy="113" rx="26" ry="14" fill="url(#b-hairShine)" transform="rotate(-12,238,113)"/>
+  </g>
+
+  <!-- Ice pack motif -->
+  <g id="motif">
+    <!-- Ice pack body -->
+    <rect x="195" y="68" width="122" height="68" rx="20" fill="url(#b-iceGrad)" stroke="#90c8e8" stroke-width="2"/>
+    <!-- Ice pack tie/knot at top -->
+    <ellipse cx="256" cy="64" rx="18" ry="10" fill="#a8d4f0" stroke="#88bce0" stroke-width="1.5"/>
+    <path d="M 242 64 Q 256 58 270 64 L 272 70 Q 256 76 240 70 Z" fill="#c0e0f8"/>
+    <!-- Snowflake pattern on ice pack -->
+    <use href="#b-snowflake" x="222" y="80" width="20" height="20" opacity="0.6"/>
+    <use href="#b-snowflake" x="246" y="80" width="20" height="20" opacity="0.8"/>
+    <use href="#b-snowflake" x="270" y="80" width="20" height="20" opacity="0.6"/>
+    <!-- Ice pack glow -->
+    <rect x="195" y="68" width="122" height="68" rx="20" fill="#c8eeff" fill-opacity="0.15" filter="url(#b-gentleGlow)"/>
+  </g>
+
+  <!-- Props (pillow suggestion) -->
+  <g id="props">
+    <!-- Small snowflake floating left -->
+    <use href="#b-snowflake" x="126" y="275" width="24" height="24" opacity="0.5"/>
+    <!-- Small snowflake floating right -->
+    <use href="#b-snowflake" x="360" y="280" width="20" height="20" opacity="0.4"/>
+  </g>
+
+  <!-- Particles (soft ice sparkles) -->
+  <g id="particles">
+    <circle cx="148" cy="220" r="3.5" fill="#b8d8f8" opacity="0.7"/>
+    <circle cx="364" cy="210" r="3" fill="#b8d8f8" opacity="0.6"/>
+    <circle cx="138" cy="310" r="2.5" fill="#c8e4f8" opacity="0.5"/>
+    <circle cx="374" cy="300" r="3" fill="#c8e4f8" opacity="0.6"/>
+    <circle cx="175" cy="470" r="4" fill="#c0d8f0" fill-opacity="0.4"/>
+    <circle cx="336" cy="468" r="3.5" fill="#c0d8f0" fill-opacity="0.4"/>
+    <circle cx="256" cy="472" r="5" fill="#b8d0e8" fill-opacity="0.3"/>
+    <!-- Tiny ice crystals -->
+    <path d="M 152 350 L 154 346 L 156 350 L 160 348 L 156 352 L 160 356 L 156 354 L 154 358 L 152 354 L 148 356 L 152 352 L 148 348 Z" fill="#a8d0f0" opacity="0.5"/>
+    <path d="M 355 340 L 357 336 L 359 340 L 363 338 L 359 342 L 363 346 L 359 344 L 357 348 L 355 344 L 351 346 L 355 342 L 351 338 Z" fill="#a8d0f0" opacity="0.5"/>
+  </g>
+</svg>

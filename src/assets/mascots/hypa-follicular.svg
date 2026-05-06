@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="hf-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fde8f0"/>
+      <stop offset="100%" stop-color="#f0c8d8"/>
+    </radialGradient>
+    <radialGradient id="hf-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#d8a0c0"/>
+      <stop offset="60%" stop-color="#b07898"/>
+      <stop offset="100%" stop-color="#906080"/>
+    </radialGradient>
+    <linearGradient id="hf-dress" x1="0%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#f8e8f0"/>
+      <stop offset="100%" stop-color="#e8c8dc"/>
+    </linearGradient>
+    <radialGradient id="hf-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#d080b0"/>
+      <stop offset="60%" stop-color="#a05888"/>
+      <stop offset="100%" stop-color="#703868"/>
+    </radialGradient>
+    <radialGradient id="hf-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0b8d0" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#e0b8d0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hf-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="hf-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow (brighter than menstrual) -->
+  <g id="glow">
+    <ellipse cx="256" cy="300" rx="145" ry="105" fill="url(#hf-glow)" filter="url(#hf-blur)"/>
+    <ellipse cx="256" cy="155" rx="105" ry="85" fill="#f0d0e0" fill-opacity="0.1" filter="url(#hf-blur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="168" rx="96" ry="105" fill="url(#hf-hair)"/>
+    <!-- Flowing hair with floral accent -->
+    <path d="M 173 200 Q 152 285 160 375 Q 164 393 177 393 Q 187 393 190 373 Q 194 305 202 245 Z" fill="#a07090"/>
+    <path d="M 339 200 Q 360 285 352 375 Q 348 393 335 393 Q 325 393 322 373 Q 318 305 310 245 Z" fill="#a07090"/>
+    <!-- Flower in hair (left) -->
+    <g transform="translate(172,210)">
+      <circle cx="0" cy="0" r="10" fill="#f8c8d8" opacity="0.9"/>
+      <ellipse cx="0" cy="-8" rx="5" ry="8" fill="#f0b8c8" opacity="0.8"/>
+      <ellipse cx="0" cy="8" rx="5" ry="8" fill="#f0b8c8" opacity="0.8"/>
+      <ellipse cx="-8" cy="0" rx="8" ry="5" fill="#f0b8c8" opacity="0.8"/>
+      <ellipse cx="8" cy="0" rx="8" ry="5" fill="#f0b8c8" opacity="0.8"/>
+      <circle cx="0" cy="0" r="5" fill="#fde8a0"/>
+    </g>
+  </g>
+
+  <!-- Body -->
+  <g id="body">
+    <rect x="238" y="260" width="36" height="26" rx="8" fill="url(#hf-skin)"/>
+    <!-- Floral dress body -->
+    <path d="M 178 282 Q 196 267 256 265 Q 316 267 334 282 L 350 430 Q 302 452 256 455 Q 210 452 162 430 Z" fill="url(#hf-dress)"/>
+    <!-- Arms -->
+    <ellipse cx="168" cy="335" rx="22" ry="52" fill="url(#hf-dress)" transform="rotate(-8,168,335)"/>
+    <ellipse cx="344" cy="335" rx="22" ry="52" fill="url(#hf-dress)" transform="rotate(8,344,335)"/>
+    <ellipse cx="160" cy="382" rx="18" ry="14" fill="url(#hf-skin)"/>
+    <ellipse cx="352" cy="382" rx="18" ry="14" fill="url(#hf-skin)"/>
+  </g>
+
+  <!-- Outfit -->
+  <g id="outfit">
+    <!-- Floral collar bow -->
+    <path d="M 238 278 L 256 270 L 274 278 L 272 290 L 256 283 L 240 290 Z" fill="#f0c8d8"/>
+    <!-- Small flower pattern on dress -->
+    <g opacity="0.5">
+      <circle cx="220" cy="330" r="6" fill="#f8c0d0"/>
+      <circle cx="220" cy="330" r="3" fill="#fde8a0"/>
+      <circle cx="292" cy="350" r="5" fill="#f8c0d0"/>
+      <circle cx="292" cy="350" r="2.5" fill="#fde8a0"/>
+      <circle cx="255" cy="390" r="6" fill="#f8c0d0"/>
+      <circle cx="255" cy="390" r="3" fill="#fde8a0"/>
+    </g>
+    <!-- Sash/belt -->
+    <path d="M 185 305 Q 256 298 327 305 L 325 316 Q 256 308 187 316 Z" fill="#e8b0c8"/>
+    <!-- Hem with petals -->
+    <path d="M 165 428 Q 256 450 347 428" stroke="#e8b8d0" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Face (awake, optimistic) -->
+  <g id="face">
+    <ellipse cx="256" cy="168" rx="88" ry="92" fill="url(#hf-skin)"/>
+    <ellipse cx="170" cy="178" rx="13" ry="17" fill="url(#hf-skin)"/>
+    <ellipse cx="342" cy="178" rx="13" ry="17" fill="url(#hf-skin)"/>
+    <ellipse cx="170" cy="178" rx="7" ry="10" fill="#ecc8d8"/>
+    <ellipse cx="342" cy="178" rx="7" ry="10" fill="#ecc8d8"/>
+
+    <!-- Eyebrows (gentle arch) -->
+    <path d="M 208 130 Q 220 124 234 128" stroke="#906878" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 278 128 Q 292 124 304 130" stroke="#906878" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes (open, gentle) -->
+    <ellipse cx="222" cy="158" rx="27" ry="24" fill="white"/>
+    <ellipse cx="290" cy="158" rx="27" ry="24" fill="white"/>
+    <ellipse cx="222" cy="160" rx="20" ry="21" fill="url(#hf-eye)"/>
+    <ellipse cx="290" cy="160" rx="20" ry="21" fill="url(#hf-eye)"/>
+    <ellipse cx="223" cy="162" rx="10" ry="12" fill="#2a1020"/>
+    <ellipse cx="291" cy="162" rx="10" ry="12" fill="#2a1020"/>
+    <ellipse cx="215" cy="152" rx="7" ry="6" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="283" cy="152" rx="7" ry="6" fill="white" fill-opacity="0.9"/>
+    <!-- Eyelids -->
+    <path d="M 197 148 Q 222 137 247 148" stroke="#704060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 265 148 Q 290 137 315 148" stroke="#704060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 200 172 Q 222 180 244 172" stroke="#a07890" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 266 172 Q 290 180 312 172" stroke="#a07890" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <ellipse cx="256" cy="184" rx="4.5" ry="3" fill="#e0a8c0" fill-opacity="0.6"/>
+    <!-- Gentle smile -->
+    <path d="M 238 200 Q 256 214 274 200" stroke="#c080a0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 245 207 Q 256 216 267 207" fill="#f5b8cc" stroke="none"/>
+    <!-- Blush -->
+    <ellipse cx="198" cy="182" rx="22" ry="12" fill="#f0a8c8" fill-opacity="0.38"/>
+    <ellipse cx="314" cy="182" rx="22" ry="12" fill="#f0a8c8" fill-opacity="0.38"/>
+  </g>
+
+  <!-- Hair front -->
+  <g id="hair-front">
+    <path d="M 171 148 Q 178 103 213 96 Q 233 91 256 91 Q 279 91 299 96 Q 334 103 341 148" fill="url(#hf-hair)"/>
+    <path d="M 236 93 Q 247 107 251 128 Q 255 137 259 128 Q 263 107 276 93 Q 265 89 256 89 Q 247 89 236 93 Z" fill="#a07090"/>
+    <path d="M 186 120 Q 196 110 210 117 Q 220 122 220 137 Q 210 132 200 134 Q 190 130 186 120 Z" fill="#906080"/>
+    <path d="M 326 120 Q 316 110 302 117 Q 292 122 292 137 Q 302 132 312 134 Q 322 130 326 120 Z" fill="#906080"/>
+    <!-- Flower crown -->
+    <g opacity="0.9">
+      <circle cx="200" cy="105" r="9" fill="#f8c0d0"/>
+      <circle cx="200" cy="105" r="4" fill="#fde090"/>
+      <circle cx="220" cy="95" r="8" fill="#f8d0e0"/>
+      <circle cx="220" cy="95" r="3.5" fill="#fde090"/>
+      <circle cx="256" cy="90" r="10" fill="#f8b8cc"/>
+      <circle cx="256" cy="90" r="5" fill="#fde090"/>
+      <circle cx="292" cy="95" r="8" fill="#f8d0e0"/>
+      <circle cx="292" cy="95" r="3.5" fill="#fde090"/>
+      <circle cx="312" cy="105" r="9" fill="#f8c0d0"/>
+      <circle cx="312" cy="105" r="4" fill="#fde090"/>
+    </g>
+    <ellipse cx="238" cy="113" rx="24" ry="13" fill="#ead4e4" fill-opacity="0.6" transform="rotate(-10,238,113)"/>
+  </g>
+
+  <!-- Motif (petals drifting) -->
+  <g id="motif">
+    <!-- Floating petals -->
+    <ellipse cx="142" cy="200" rx="12" ry="6" fill="#f8c0d8" fill-opacity="0.8" transform="rotate(-30,142,200)"/>
+    <ellipse cx="370" cy="220" rx="10" ry="5" fill="#f8c0d8" fill-opacity="0.7" transform="rotate(20,370,220)"/>
+    <ellipse cx="130" cy="300" rx="9" ry="4.5" fill="#f0b0cc" fill-opacity="0.6" transform="rotate(-15,130,300)"/>
+    <ellipse cx="382" cy="310" rx="11" ry="5.5" fill="#f0b0cc" fill-opacity="0.7" transform="rotate(25,382,310)"/>
+    <ellipse cx="155" cy="380" rx="8" ry="4" fill="#f8c8d8" fill-opacity="0.5" transform="rotate(10,155,380)"/>
+    <ellipse cx="358" cy="370" rx="9" ry="4.5" fill="#f8c8d8" fill-opacity="0.6" transform="rotate(-20,358,370)"/>
+    <!-- Petal orbit ring (faint) -->
+    <ellipse cx="256" cy="330" rx="165" ry="48" fill="none" stroke="#f0b8d0" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="8 6"/>
+  </g>
+
+  <!-- Particles -->
+  <g id="particles">
+    <circle cx="148" cy="245" r="3.5" fill="#e8b8d0" opacity="0.7"/>
+    <circle cx="366" cy="238" r="3" fill="#e8b8d0" opacity="0.6"/>
+    <circle cx="140" cy="355" r="2.5" fill="#f0c8dc" opacity="0.5"/>
+    <circle cx="374" cy="345" r="3" fill="#f0c8dc" opacity="0.6"/>
+    <circle cx="190" cy="465" r="4.5" fill="#e8b0cc" fill-opacity="0.4"/>
+    <circle cx="322" cy="463" r="4" fill="#e8b0cc" fill-opacity="0.4"/>
+    <circle cx="256" cy="470" r="5" fill="#f0c0d8" fill-opacity="0.3"/>
+  </g>
+</svg>

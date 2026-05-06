@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="twg-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#e8e0f4"/>
+      <stop offset="100%" stop-color="#d0c8e8"/>
+    </radialGradient>
+    <radialGradient id="twg-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5058a0"/>
+      <stop offset="60%" stop-color="#3a4080"/>
+      <stop offset="100%" stop-color="#282860"/>
+    </radialGradient>
+    <linearGradient id="twg-outfit" x1="0%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#3a4488"/>
+      <stop offset="100%" stop-color="#282060"/>
+    </linearGradient>
+    <linearGradient id="twg-cap" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#4858a8"/>
+      <stop offset="100%" stop-color="#303878"/>
+    </linearGradient>
+    <radialGradient id="twg-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#a8a8f0"/>
+      <stop offset="60%" stop-color="#7878d0"/>
+      <stop offset="100%" stop-color="#5050b0"/>
+    </radialGradient>
+    <radialGradient id="twg-moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8d860" stop-opacity="0.75"/>
+      <stop offset="60%" stop-color="#f0c840" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f8d860" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="twg-moon" cx="38%" cy="40%" r="58%">
+      <stop offset="0%" stop-color="#fff8d8"/>
+      <stop offset="50%" stop-color="#f8e880"/>
+      <stop offset="100%" stop-color="#e8c840"/>
+    </radialGradient>
+    <radialGradient id="twg-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8878a8" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#7868a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="twg-starProp" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8e0"/>
+      <stop offset="100%" stop-color="#f8d860"/>
+    </radialGradient>
+    <filter id="twg-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="twg-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="twg-moonBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="twg-starGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="twg-moonClip"><circle cx="256" cy="44" r="28"/></clipPath>
+  </defs>
+
+  <!-- Ambient golden glow — stronger than first-quarter -->
+  <g id="glow">
+    <ellipse cx="256" cy="44" rx="80" ry="80" fill="url(#twg-moonGlow)" filter="url(#twg-blur)"/>
+    <ellipse cx="256" cy="340" rx="152" ry="96" fill="url(#twg-glow)" filter="url(#twg-blur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="200" rx="90" ry="100" fill="url(#twg-hair)"/>
+    <path d="M 177 228 Q 158 320 166 415 Q 170 432 182 432 Q 192 432 194 412 Q 198 335 206 268 Z" fill="#303070"/>
+    <path d="M 335 228 Q 354 320 346 415 Q 342 432 330 432 Q 320 432 318 412 Q 314 335 306 268 Z" fill="#303070"/>
+  </g>
+
+  <!-- Body -->
+  <g id="body">
+    <rect x="237" y="292" width="38" height="22" rx="9" fill="url(#twg-skin)"/>
+    <path d="M 178 312 Q 196 296 256 294 Q 316 296 334 312 L 345 450 Q 298 472 256 474 Q 214 472 167 450 Z" fill="url(#twg-outfit)"/>
+    <!-- Left arm raised slightly holding star prop -->
+    <ellipse cx="155" cy="355" rx="23" ry="52" fill="url(#twg-outfit)" transform="rotate(-18,155,355)"/>
+    <!-- Right arm normal -->
+    <ellipse cx="345" cy="370" rx="23" ry="54" fill="url(#twg-outfit)" transform="rotate(10,345,370)"/>
+    <!-- Left hand raised -->
+    <ellipse cx="142" cy="308" rx="18" ry="14" fill="url(#twg-skin)"/>
+    <!-- Right hand -->
+    <ellipse cx="354" cy="418" rx="19" ry="15" fill="url(#twg-skin)"/>
+    <!-- Star/cloud prop held in left (raised) hand -->
+    <g transform="translate(142,285)" filter="url(#twg-starGlow)">
+      <!-- Small 4-pointed star -->
+      <path d="M 0,-18 L 4,-4 L 18,0 L 4,4 L 0,18 L -4,4 L -18,0 L -4,-4 Z" fill="url(#twg-starProp)" opacity="0.95"/>
+      <!-- Inner star detail -->
+      <circle cx="0" cy="0" r="5" fill="white" fill-opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- Outfit detail -->
+  <g id="outfit">
+    <g fill="#8888c8" opacity="0.38">
+      <circle cx="220" cy="360" r="2.5"/>
+      <circle cx="292" cy="380" r="2"/>
+      <circle cx="256" cy="420" r="3"/>
+      <circle cx="230" cy="410" r="2"/>
+      <circle cx="282" cy="355" r="2"/>
+    </g>
+    <path d="M 180 310 Q 256 303 332 310 L 330 322 Q 256 314 182 322 Z" fill="#4a50a0"/>
+    <path d="M 170 447 Q 256 468 342 447 L 345 458 Q 256 480 167 458 Z" fill="#4a50a0"/>
+  </g>
+
+  <!-- Face — more alert, bigger open eyes -->
+  <g id="face">
+    <ellipse cx="256" cy="200" rx="86" ry="91" fill="url(#twg-skin)"/>
+    <ellipse cx="172" cy="210" rx="13" ry="17" fill="url(#twg-skin)"/>
+    <ellipse cx="340" cy="210" rx="13" ry="17" fill="url(#twg-skin)"/>
+    <ellipse cx="172" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+    <ellipse cx="340" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+
+    <!-- Alert arched brows -->
+    <path d="M 205 160 Q 218 154 233 158" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 279 158 Q 292 154 307 160" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Bigger open eyes (more awake) -->
+    <ellipse cx="220" cy="190" rx="27" ry="25" fill="white"/>
+    <ellipse cx="288" cy="190" rx="27" ry="25" fill="white"/>
+    <ellipse cx="220" cy="192" rx="21" ry="22" fill="url(#twg-eye)"/>
+    <ellipse cx="288" cy="192" rx="21" ry="22" fill="url(#twg-eye)"/>
+    <ellipse cx="221" cy="193" rx="11" ry="13" fill="#1a1840"/>
+    <ellipse cx="289" cy="193" rx="11" ry="13" fill="#1a1840"/>
+    <!-- Eye shine -->
+    <ellipse cx="213" cy="182" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="281" cy="182" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="226" cy="196" rx="3" ry="3" fill="white" fill-opacity="0.6"/>
+    <ellipse cx="294" cy="196" rx="3" ry="3" fill="white" fill-opacity="0.6"/>
+    <!-- Upper lid line -->
+    <path d="M 194 176 Q 220 163 246 176" stroke="#5060a8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 262 176 Q 288 163 314 176" stroke="#5060a8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Lower lid -->
+    <path d="M 198 210 Q 220 218 242 210" stroke="#9090c8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 266 210 Q 288 218 310 210" stroke="#9090c8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <ellipse cx="256" cy="214" rx="4.5" ry="3" fill="#c8b8e0" fill-opacity="0.6"/>
+    <!-- Small smile, slightly more expressive -->
+    <path d="M 238 228 Q 256 240 274 228" stroke="#a898cc" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M 244 232 Q 256 242 268 232" fill="#d8c8f0" stroke="none"/>
+    <!-- Blush -->
+    <ellipse cx="196" cy="212" rx="22" ry="12" fill="#d0a8e8" fill-opacity="0.28"/>
+    <ellipse cx="316" cy="212" rx="22" ry="12" fill="#d0a8e8" fill-opacity="0.28"/>
+  </g>
+
+  <!-- Hair front / sleep cap -->
+  <g id="hair-front">
+    <path d="M 172 178 Q 180 132 215 125 Q 235 120 256 120 Q 277 120 297 125 Q 332 132 340 178" fill="url(#twg-hair)"/>
+    <path d="M 170 175 Q 180 130 256 118 Q 332 130 342 175 Q 310 165 256 162 Q 202 165 170 175 Z" fill="url(#twg-cap)"/>
+    <path d="M 169 175 Q 256 182 343 175 Q 310 188 256 191 Q 202 188 169 175 Z" fill="#3848a0"/>
+    <path d="M 230 120 Q 256 55 282 120 Q 268 112 256 110 Q 244 112 230 120 Z" fill="url(#twg-cap)"/>
+    <circle cx="256" cy="56" r="14" fill="#4858a8"/>
+    <!-- Cap stars -->
+    <g fill="#d0e0f8" filter="url(#twg-soft)">
+      <path d="M 210 148 L 212 143 L 214 148 L 219 146 L 214 151 L 219 156 L 214 153 L 212 158 L 210 153 L 205 156 L 210 151 L 205 146 Z" opacity="0.85"/>
+      <path d="M 296 143 L 297 140 L 298 143 L 301 142 L 298 145 L 301 148 L 298 146 L 297 149 L 296 146 L 293 148 L 296 145 L 293 142 Z" opacity="0.75"/>
+    </g>
+    <!-- Left bang -->
+    <path d="M 190 178 Q 200 168 214 174 Q 219 184 212 190 Q 202 185 190 178 Z" fill="#3a4080"/>
+    <!-- Hair shine -->
+    <ellipse cx="234" cy="140" rx="22" ry="13" fill="#7080c0" fill-opacity="0.4" transform="rotate(-10,234,140)"/>
+  </g>
+
+  <!-- Moon motif — waxing gibbous (~80% lit, dark on left side) -->
+  <g id="motif">
+    <!-- Full moon base (golden) -->
+    <circle cx="256" cy="44" r="28" fill="url(#twg-moon)" filter="url(#twg-moonBlur)"/>
+    <!-- Dark mask on left side creating gibbous shape (~20% dark) -->
+    <ellipse cx="241" cy="44" rx="14" ry="28" fill="#0e0e1e" clip-path="url(#twg-moonClip)"/>
+    <!-- Outer glow ring -->
+    <circle cx="256" cy="44" r="38" fill="url(#twg-moonGlow)" filter="url(#twg-blur)"/>
+    <!-- Moon face — subtle crater texture -->
+    <circle cx="268" cy="36" r="4" fill="#e8d870" fill-opacity="0.35"/>
+    <circle cx="262" cy="52" r="3" fill="#e8d870" fill-opacity="0.25"/>
+    <!-- Small star beside -->
+    <path d="M 296 26 L 297.8 21.5 L 299.6 26 L 304.2 24.4 L 299.6 28.4 L 304.2 32.4 L 299.6 30.8 L 297.8 35.3 L 296 30.8 L 291.4 32.4 L 296 28.4 L 291.4 24.4 Z" fill="#f8e880" opacity="0.9" filter="url(#twg-soft)"/>
+    <!-- Second small star -->
+    <path d="M 214 28 L 215.4 24.5 L 216.8 28 L 220.5 26.7 L 216.8 30 L 220.5 33.3 L 216.8 32 L 215.4 35.5 L 214 32 L 210.3 33.3 L 214 30 L 210.3 26.7 Z" fill="#f8e880" opacity="0.75" filter="url(#twg-soft)"/>
+  </g>
+
+  <!-- Particles — cloud wisps + scattered stars -->
+  <g id="particles">
+    <ellipse cx="172" cy="438" rx="55" ry="25" fill="#3848a0" fill-opacity="0.5" filter="url(#twg-soft)"/>
+    <ellipse cx="172" cy="428" rx="40" ry="22" fill="#3a4490" fill-opacity="0.6"/>
+    <ellipse cx="338" cy="442" rx="50" ry="23" fill="#3848a0" fill-opacity="0.5" filter="url(#twg-soft)"/>
+    <ellipse cx="338" cy="432" rx="38" ry="20" fill="#3a4490" fill-opacity="0.6"/>
+    <!-- Scattered stars (more prominent, golden hue) -->
+    <g fill="#e8e0b0" opacity="0.72">
+      <circle cx="138" cy="198" r="2.5"/>
+      <circle cx="374" cy="194" r="2"/>
+      <circle cx="128" cy="308" r="2"/>
+      <circle cx="384" cy="288" r="2.5"/>
+      <circle cx="146" cy="378" r="2"/>
+      <circle cx="368" cy="373" r="2.5"/>
+      <circle cx="194" cy="478" r="3" fill-opacity="0.5"/>
+      <circle cx="318" cy="475" r="2.5" fill-opacity="0.5"/>
+    </g>
+    <!-- Extra glimmer stars near the held star prop -->
+    <g fill="#f8e880" opacity="0.6" filter="url(#twg-soft)">
+      <circle cx="108" cy="260" r="2"/>
+      <circle cx="118" cy="285" r="1.5"/>
+      <circle cx="100" cy="295" r="2.5"/>
+    </g>
+  </g>
+</svg>

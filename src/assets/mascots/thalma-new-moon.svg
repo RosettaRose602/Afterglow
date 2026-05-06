@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="tn-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#e8e0f4"/>
+      <stop offset="100%" stop-color="#d0c8e8"/>
+    </radialGradient>
+    <radialGradient id="tn-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5058a0"/>
+      <stop offset="60%" stop-color="#3a4080"/>
+      <stop offset="100%" stop-color="#282860"/>
+    </radialGradient>
+    <linearGradient id="tn-outfit" x1="0%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#3a4488"/>
+      <stop offset="100%" stop-color="#282060"/>
+    </linearGradient>
+    <linearGradient id="tn-cap" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#4858a8"/>
+      <stop offset="100%" stop-color="#303878"/>
+    </linearGradient>
+    <radialGradient id="tn-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#9898e8"/>
+      <stop offset="60%" stop-color="#6868c0"/>
+      <stop offset="100%" stop-color="#4040a0"/>
+    </radialGradient>
+    <radialGradient id="tn-cloudGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5868b8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5868b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tn-darkMoon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#181828"/>
+      <stop offset="100%" stop-color="#0a0a18"/>
+    </radialGradient>
+    <filter id="tn-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="tn-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tn-starGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Cloud + ambient glow -->
+  <g id="glow">
+    <ellipse cx="256" cy="340" rx="145" ry="90" fill="url(#tn-cloudGlow)" filter="url(#tn-blur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="200" rx="90" ry="100" fill="url(#tn-hair)"/>
+    <!-- Long back hair -->
+    <path d="M 177 228 Q 158 320 166 415 Q 170 432 182 432 Q 192 432 194 412 Q 198 335 206 268 Z" fill="#303070"/>
+    <path d="M 335 228 Q 354 320 346 415 Q 342 432 330 432 Q 320 432 318 412 Q 314 335 306 268 Z" fill="#303070"/>
+  </g>
+
+  <!-- Body (curled up, quiet) -->
+  <g id="body">
+    <rect x="237" y="292" width="38" height="22" rx="9" fill="url(#tn-skin)"/>
+    <path d="M 178 312 Q 196 296 256 294 Q 316 296 334 312 L 345 450 Q 298 472 256 474 Q 214 472 167 450 Z" fill="url(#tn-outfit)"/>
+    <ellipse cx="167" cy="370" rx="23" ry="54" fill="url(#tn-outfit)" transform="rotate(-10,167,370)"/>
+    <ellipse cx="345" cy="370" rx="23" ry="54" fill="url(#tn-outfit)" transform="rotate(10,345,370)"/>
+    <ellipse cx="158" cy="418" rx="19" ry="15" fill="url(#tn-skin)"/>
+    <ellipse cx="354" cy="418" rx="19" ry="15" fill="url(#tn-skin)"/>
+  </g>
+
+  <!-- Outfit detail -->
+  <g id="outfit">
+    <!-- Star pattern on outfit -->
+    <g fill="#7888c8" opacity="0.4">
+      <circle cx="220" cy="360" r="2.5"/>
+      <circle cx="292" cy="380" r="2"/>
+      <circle cx="256" cy="420" r="3"/>
+      <circle cx="230" cy="410" r="2"/>
+      <circle cx="282" cy="355" r="2"/>
+    </g>
+    <path d="M 180 310 Q 256 303 332 310 L 330 322 Q 256 314 182 322 Z" fill="#4a50a0"/>
+    <path d="M 170 447 Q 256 468 342 447 L 345 458 Q 256 480 167 458 Z" fill="#4a50a0"/>
+  </g>
+
+  <!-- Face (quiet, sleepy, mysterious) -->
+  <g id="face">
+    <ellipse cx="256" cy="200" rx="86" ry="91" fill="url(#tn-skin)"/>
+    <ellipse cx="172" cy="210" rx="13" ry="17" fill="url(#tn-skin)"/>
+    <ellipse cx="340" cy="210" rx="13" ry="17" fill="url(#tn-skin)"/>
+    <ellipse cx="172" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+    <ellipse cx="340" cy="210" rx="7" ry="10" fill="#c8c0e0"/>
+
+    <!-- Sleepy brows -->
+    <path d="M 208 162 Q 220 157 232 160" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 280 160 Q 292 157 304 162" stroke="#5060a0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Half-closed sleepy eyes -->
+    <ellipse cx="220" cy="190" rx="26" ry="20" fill="white"/>
+    <ellipse cx="288" cy="190" rx="26" ry="20" fill="white"/>
+    <ellipse cx="220" cy="194" rx="19" ry="16" fill="url(#tn-eye)"/>
+    <ellipse cx="288" cy="194" rx="19" ry="16" fill="url(#tn-eye)"/>
+    <ellipse cx="221" cy="196" rx="9" ry="10" fill="#1a1840"/>
+    <ellipse cx="289" cy="196" rx="9" ry="10" fill="#1a1840"/>
+    <ellipse cx="214" cy="185" rx="6" ry="5" fill="white" fill-opacity="0.85"/>
+    <ellipse cx="282" cy="185" rx="6" ry="5" fill="white" fill-opacity="0.85"/>
+    <!-- Heavy sleepy upper lids -->
+    <path d="M 196 178 Q 220 165 244 178 Q 232 190 220 192 Q 208 190 196 178 Z" fill="url(#tn-hair)" opacity="0.75"/>
+    <path d="M 264 178 Q 288 165 312 178 Q 300 190 288 192 Q 276 190 264 178 Z" fill="url(#tn-hair)" opacity="0.75"/>
+
+    <ellipse cx="256" cy="214" rx="4.5" ry="3" fill="#c8b8e0" fill-opacity="0.6"/>
+    <!-- Gentle closed mouth -->
+    <path d="M 241 229 Q 256 236 271 229" stroke="#a898cc" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Soft blush -->
+    <ellipse cx="198" cy="212" rx="20" ry="11" fill="#c0a8e0" fill-opacity="0.3"/>
+    <ellipse cx="314" cy="212" rx="20" ry="11" fill="#c0a8e0" fill-opacity="0.3"/>
+  </g>
+
+  <!-- Sleep cap with stars -->
+  <g id="hair-front">
+    <path d="M 172 178 Q 180 132 215 125 Q 235 120 256 120 Q 277 120 297 125 Q 332 132 340 178" fill="url(#tn-hair)"/>
+    <!-- Sleep cap -->
+    <path d="M 170 175 Q 180 130 256 118 Q 332 130 342 175 Q 310 165 256 162 Q 202 165 170 175 Z" fill="url(#tn-cap)"/>
+    <path d="M 169 175 Q 256 182 343 175 Q 310 188 256 191 Q 202 188 169 175 Z" fill="#3848a0"/>
+    <!-- Cap tip/point -->
+    <path d="M 230 120 Q 256 55 282 120 Q 268 112 256 110 Q 244 112 230 120 Z" fill="url(#tn-cap)"/>
+    <circle cx="256" cy="56" r="14" fill="#4858a8"/>
+    <!-- Stars on cap -->
+    <g fill="#c8d8f8" filter="url(#tn-starGlow)">
+      <path d="M 210 148 L 212 143 L 214 148 L 219 146 L 214 151 L 219 156 L 214 153 L 212 158 L 210 153 L 205 156 L 210 151 L 205 146 Z" opacity="0.8"/>
+      <path d="M 296 143 L 297 140 L 298 143 L 301 142 L 298 145 L 301 148 L 298 146 L 297 149 L 296 146 L 293 148 L 296 145 L 293 142 Z" opacity="0.7"/>
+    </g>
+    <!-- Left bang peek -->
+    <path d="M 190 178 Q 200 168 214 174 Q 219 184 212 190 Q 202 185 190 178 Z" fill="#3a4080"/>
+    <!-- Hair shine -->
+    <ellipse cx="234" cy="140" rx="22" ry="13" fill="#7080c0" fill-opacity="0.4" transform="rotate(-10,234,140)"/>
+  </g>
+
+  <!-- Moon motif (dark new moon above) -->
+  <g id="motif">
+    <!-- New moon (dark circle) -->
+    <circle cx="256" cy="44" r="26" fill="url(#tn-darkMoon)" stroke="#3a3a5a" stroke-width="1.5"/>
+    <!-- Subtle dark glow around new moon -->
+    <circle cx="256" cy="44" r="30" fill="none" stroke="#2a2a50" stroke-width="4" filter="url(#tn-soft)" opacity="0.5"/>
+    <!-- Stars brighter around new moon -->
+    <g fill="#d8e0f8" filter="url(#tn-starGlow)">
+      <path d="M 214 32 L 216 27 L 218 32 L 223 30 L 218 35 L 223 40 L 218 37 L 216 42 L 214 37 L 209 40 L 214 35 L 209 30 Z" opacity="0.9"/>
+      <path d="M 294 28 L 296 24 L 298 28 L 302 26 L 298 30 L 302 34 L 298 32 L 296 36 L 294 32 L 290 34 L 294 30 L 290 26 Z" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- Cloud wisps + stars -->
+  <g id="particles">
+    <!-- Cloud tucked behind -->
+    <ellipse cx="175" cy="430" rx="55" ry="25" fill="#3848a0" fill-opacity="0.5" filter="url(#tn-soft)"/>
+    <ellipse cx="175" cy="420" rx="40" ry="22" fill="#3a4490" fill-opacity="0.6"/>
+    <ellipse cx="340" cy="438" rx="50" ry="22" fill="#3848a0" fill-opacity="0.5" filter="url(#tn-soft)"/>
+    <ellipse cx="340" cy="428" rx="38" ry="20" fill="#3a4490" fill-opacity="0.6"/>
+    <!-- Stars scattered -->
+    <g fill="#d8e0f8" opacity="0.7">
+      <circle cx="138" cy="200" r="2.5"/>
+      <circle cx="374" cy="195" r="2"/>
+      <circle cx="130" cy="310" r="2"/>
+      <circle cx="382" cy="290" r="2.5"/>
+      <circle cx="148" cy="380" r="2"/>
+      <circle cx="366" cy="375" r="2.5"/>
+      <circle cx="196" cy="478" r="3" fill-opacity="0.5"/>
+      <circle cx="316" cy="475" r="2.5" fill-opacity="0.5"/>
+    </g>
+  </g>
+</svg>

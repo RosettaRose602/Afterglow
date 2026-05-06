@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="ho-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fde8f0"/>
+      <stop offset="100%" stop-color="#f0c0d0"/>
+    </radialGradient>
+    <radialGradient id="ho-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#e8b0c8"/>
+      <stop offset="50%" stop-color="#c888a8"/>
+      <stop offset="100%" stop-color="#a06880"/>
+    </radialGradient>
+    <linearGradient id="ho-gown" x1="0%" y1="0%" x2="30%" y2="100%">
+      <stop offset="0%" stop-color="#f8e0f0"/>
+      <stop offset="40%" stop-color="#f0c8e0"/>
+      <stop offset="100%" stop-color="#e8a8c8"/>
+    </linearGradient>
+    <linearGradient id="ho-gownGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8e060"/>
+      <stop offset="50%" stop-color="#f0c030"/>
+      <stop offset="100%" stop-color="#e8a820"/>
+    </linearGradient>
+    <radialGradient id="ho-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#e090c0"/>
+      <stop offset="60%" stop-color="#b06090"/>
+      <stop offset="100%" stop-color="#803060"/>
+    </radialGradient>
+    <radialGradient id="ho-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8e060" stop-opacity="0"/>
+      <stop offset="65%" stop-color="#f0c040" stop-opacity="0.5"/>
+      <stop offset="80%" stop-color="#f8e060" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#e8a820" stop-opacity="0.2"/>
+    </radialGradient>
+    <radialGradient id="ho-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8d0e8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f8d0e8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ho-bigBlur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="ho-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ho-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow (maximum, radiant) -->
+  <g id="glow">
+    <ellipse cx="256" cy="290" rx="180" ry="130" fill="url(#ho-glow)" filter="url(#ho-bigBlur)"/>
+    <ellipse cx="256" cy="140" rx="130" ry="110" fill="#f8e060" fill-opacity="0.12" filter="url(#ho-bigBlur)"/>
+    <!-- Radiant rays behind character -->
+    <g opacity="0.15" filter="url(#ho-bigBlur)">
+      <line x1="256" y1="256" x2="80" y2="80" stroke="#f8e060" stroke-width="30"/>
+      <line x1="256" y1="256" x2="432" y2="80" stroke="#f8e060" stroke-width="30"/>
+      <line x1="256" y1="256" x2="80" y2="432" stroke="#f8e060" stroke-width="25"/>
+      <line x1="256" y1="256" x2="432" y2="432" stroke="#f8e060" stroke-width="25"/>
+      <line x1="256" y1="256" x2="256" y2="50" stroke="#f8e060" stroke-width="30"/>
+      <line x1="256" y1="256" x2="50" y2="256" stroke="#f8e060" stroke-width="20"/>
+      <line x1="256" y1="256" x2="462" y2="256" stroke="#f8e060" stroke-width="20"/>
+    </g>
+  </g>
+
+  <!-- Hair back (elaborate) -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="162" rx="100" ry="108" fill="url(#ho-hair)"/>
+    <!-- Extra volume layers -->
+    <ellipse cx="230" cy="170" rx="75" ry="90" fill="#e0a8c0" opacity="0.4"/>
+    <ellipse cx="282" cy="170" rx="75" ry="90" fill="#e0a8c0" opacity="0.4"/>
+    <!-- Long flowing hair -->
+    <path d="M 168 195 Q 145 290 153 390 Q 157 412 172 412 Q 183 412 186 392 Q 191 310 199 242 Z" fill="#b87898"/>
+    <path d="M 344 195 Q 367 290 359 390 Q 355 412 340 412 Q 329 412 326 392 Q 321 310 313 242 Z" fill="#b87898"/>
+    <!-- Extra flowy bits -->
+    <path d="M 156 250 Q 132 320 140 390 Q 144 405 155 400 Q 160 396 158 385 Q 152 330 162 272 Z" fill="#a06880" opacity="0.7"/>
+    <path d="M 356 250 Q 380 320 372 390 Q 368 405 357 400 Q 352 396 354 385 Q 360 330 350 272 Z" fill="#a06880" opacity="0.7"/>
+  </g>
+
+  <!-- Body (extravagant gown) -->
+  <g id="body">
+    <rect x="237" y="256" width="38" height="26" rx="9" fill="url(#ho-skin)"/>
+    <!-- Gown body (wide, layered) -->
+    <path d="M 170 278 Q 192 260 256 258 Q 320 260 342 278 L 370 445 Q 316 472 256 475 Q 196 472 142 445 Z" fill="url(#ho-gown)"/>
+    <!-- Arms (elegant pose) -->
+    <ellipse cx="162" cy="322" rx="22" ry="52" fill="url(#ho-gown)" transform="rotate(-12,162,322)"/>
+    <ellipse cx="350" cy="322" rx="22" ry="52" fill="url(#ho-gown)" transform="rotate(12,350,322)"/>
+    <ellipse cx="152" cy="370" rx="18" ry="14" fill="url(#ho-skin)"/>
+    <ellipse cx="360" cy="370" rx="18" ry="14" fill="url(#ho-skin)"/>
+  </g>
+
+  <!-- Outfit (extravagant gown detail) -->
+  <g id="outfit">
+    <!-- Gold trim collar -->
+    <path d="M 215 270 Q 256 263 297 270 L 299 283 Q 256 276 213 283 Z" fill="url(#ho-gownGold)"/>
+    <!-- Layered skirt ruffles -->
+    <path d="M 155 360 Q 256 378 357 360 Q 320 380 256 385 Q 192 380 155 360 Z" fill="#f0c8e0" opacity="0.7"/>
+    <path d="M 142 400 Q 256 422 370 400 Q 330 425 256 430 Q 182 425 142 400 Z" fill="#f0b8d8" opacity="0.6"/>
+    <!-- Gold sparkle trim on skirt -->
+    <path d="M 148 398 Q 256 420 364 398" stroke="url(#ho-gownGold)" stroke-width="2.5" fill="none" stroke-dasharray="8 4"/>
+    <!-- Center star emblem -->
+    <g fill="url(#ho-gownGold)" filter="url(#ho-soft)">
+      <path d="M 256 310 L 260 320 L 271 320 L 263 327 L 266 338 L 256 332 L 246 338 L 249 327 L 241 320 L 252 320 Z"/>
+    </g>
+    <!-- Ribbon sleeves -->
+    <path d="M 152 340 Q 135 330 128 315 Q 125 305 135 308 Q 145 315 156 325 Z" fill="#f0c8e0"/>
+    <path d="M 360 340 Q 377 330 384 315 Q 387 305 377 308 Q 367 315 356 325 Z" fill="#f0c8e0"/>
+  </g>
+
+  <!-- Face (radiant, confident) -->
+  <g id="face">
+    <ellipse cx="256" cy="162" rx="90" ry="95" fill="url(#ho-skin)"/>
+    <ellipse cx="168" cy="172" rx="14" ry="18" fill="url(#ho-skin)"/>
+    <ellipse cx="344" cy="172" rx="14" ry="18" fill="url(#ho-skin)"/>
+    <ellipse cx="168" cy="172" rx="8" ry="11" fill="#f0c8d8"/>
+    <ellipse cx="344" cy="172" rx="8" ry="11" fill="#f0c8d8"/>
+
+    <!-- Eyebrows (confident arch) -->
+    <path d="M 205 122 Q 219 115 235 119" stroke="#8a5070" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M 277 119 Q 293 115 307 122" stroke="#8a5070" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Sparkle eyes (wide, excited) -->
+    <ellipse cx="221" cy="152" rx="30" ry="27" fill="white"/>
+    <ellipse cx="291" cy="152" rx="30" ry="27" fill="white"/>
+    <ellipse cx="221" cy="154" rx="23" ry="24" fill="url(#ho-eye)"/>
+    <ellipse cx="291" cy="154" rx="23" ry="24" fill="url(#ho-eye)"/>
+    <ellipse cx="222" cy="156" rx="12" ry="14" fill="#2a0818"/>
+    <ellipse cx="292" cy="156" rx="12" ry="14" fill="#2a0818"/>
+    <!-- Multi-sparkle highlights -->
+    <ellipse cx="212" cy="145" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <ellipse cx="280" cy="145" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <ellipse cx="228" cy="160" rx="4" ry="3.5" fill="white" fill-opacity="0.7"/>
+    <ellipse cx="298" cy="160" rx="4" ry="3.5" fill="white" fill-opacity="0.7"/>
+    <!-- Star sparkle in eye -->
+    <path d="M 214 143 L 215 141 L 216 143 L 218 142 L 216 144 L 218 146 L 216 145 L 215 147 L 214 145 L 212 146 L 214 144 L 212 142 Z" fill="white"/>
+    <path d="M 282 143 L 283 141 L 284 143 L 286 142 L 284 144 L 286 146 L 284 145 L 283 147 L 282 145 L 280 146 L 282 144 L 280 142 Z" fill="white"/>
+    <!-- Eyelids -->
+    <path d="M 193 140 Q 221 127 249 140" stroke="#6a3050" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 263 140 Q 291 127 319 140" stroke="#6a3050" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 196 174 Q 221 183 246 174" stroke="#a07088" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 264 174 Q 291 183 318 174" stroke="#a07088" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <ellipse cx="256" cy="178" rx="5" ry="3.5" fill="#e0a8c0" fill-opacity="0.6"/>
+    <!-- Radiant smile -->
+    <path d="M 234 196 Q 256 212 278 196" stroke="#c070a0" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 241 204 Q 256 218 271 204" fill="#f8b8cc" stroke="none"/>
+    <!-- Blush (bright) -->
+    <ellipse cx="194" cy="176" rx="24" ry="14" fill="#f8a8c8" fill-opacity="0.5"/>
+    <ellipse cx="318" cy="176" rx="24" ry="14" fill="#f8a8c8" fill-opacity="0.5"/>
+  </g>
+
+  <!-- Hair front (elaborate with crescent ornament) -->
+  <g id="hair-front">
+    <path d="M 168 142 Q 176 96 212 89 Q 232 84 256 84 Q 280 84 300 89 Q 336 96 344 142" fill="url(#ho-hair)"/>
+    <!-- Center elaborate bang -->
+    <path d="M 232 87 Q 244 103 248 126 Q 254 136 260 126 Q 264 103 280 87 Q 267 82 256 82 Q 245 82 232 87 Z" fill="#c888a8"/>
+    <!-- Left elegant bang -->
+    <path d="M 184 116 Q 194 105 210 113 Q 222 120 220 136 Q 210 130 200 132 Q 189 128 184 116 Z" fill="#b07898"/>
+    <!-- Right elegant bang -->
+    <path d="M 328 116 Q 318 105 302 113 Q 290 120 292 136 Q 302 130 312 132 Q 323 128 328 116 Z" fill="#b07898"/>
+    <!-- Golden hairpin/crescent -->
+    <g filter="url(#ho-glow)">
+      <path d="M 285 95 Q 295 82 308 84 Q 300 90 298 100 Q 290 100 285 95 Z" fill="#f8e060" stroke="#e0a820" stroke-width="1.5"/>
+      <circle cx="308" cy="84" r="4" fill="#f8e060"/>
+    </g>
+    <!-- Hair shine -->
+    <ellipse cx="235" cy="108" rx="30" ry="18" fill="#f0d0e0" fill-opacity="0.65" transform="rotate(-12,235,108)"/>
+  </g>
+
+  <!-- Motif (crescent moon halo + sparkles) -->
+  <g id="motif">
+    <!-- Halo ring -->
+    <ellipse cx="256" cy="75" rx="75" ry="15" fill="none" stroke="url(#ho-gownGold)" stroke-width="3.5" stroke-opacity="0.8" filter="url(#ho-glow)"/>
+    <!-- Crescent moon above -->
+    <path d="M 240 55 Q 244 28 266 28 Q 250 38 248 55 Q 244 62 240 55 Z" fill="url(#ho-gownGold)" filter="url(#ho-glow)"/>
+    <circle cx="268" cy="28" r="16" fill="#f8e8c0" filter="url(#ho-bigBlur)" opacity="0.5"/>
+
+    <!-- Large sparkle constellation -->
+    <g fill="#f8e060" filter="url(#ho-soft)">
+      <path d="M 130 175 L 133 169 L 136 175 L 142 172 L 136 178 L 142 184 L 136 181 L 133 187 L 130 181 L 124 184 L 130 178 L 124 172 Z" opacity="0.8"/>
+      <path d="M 378 185 L 381 179 L 384 185 L 390 182 L 384 188 L 390 194 L 384 191 L 381 197 L 378 191 L 372 194 L 378 188 L 372 182 Z" opacity="0.8"/>
+      <path d="M 145 400 L 147 396 L 149 400 L 153 398 L 149 402 L 153 406 L 149 404 L 147 408 L 145 404 L 141 406 L 145 402 L 141 398 Z" opacity="0.6"/>
+      <path d="M 362 408 L 364 404 L 366 408 L 370 406 L 366 410 L 370 414 L 366 412 L 364 416 L 362 412 L 358 414 L 362 410 L 358 406 Z" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- Particles (gold shimmer) -->
+  <g id="particles">
+    <circle cx="142" cy="235" r="4" fill="#f8e060" opacity="0.8"/>
+    <circle cx="370" cy="228" r="3.5" fill="#f8e060" opacity="0.7"/>
+    <circle cx="133" cy="340" r="3" fill="#f0d040" opacity="0.6"/>
+    <circle cx="379" cy="332" r="3.5" fill="#f0d040" opacity="0.7"/>
+    <circle cx="138" cy="440" r="3" fill="#f8d060" opacity="0.5"/>
+    <circle cx="374" cy="434" r="2.5" fill="#f8d060" opacity="0.5"/>
+    <circle cx="196" cy="472" r="5" fill="#f0c840" fill-opacity="0.5"/>
+    <circle cx="316" cy="470" r="4.5" fill="#f0c840" fill-opacity="0.5"/>
+    <circle cx="256" cy="476" r="6" fill="#f8e060" fill-opacity="0.4"/>
+    <!-- Petal sparkles -->
+    <ellipse cx="115" cy="280" rx="10" ry="5" fill="#f8c0d8" fill-opacity="0.6" transform="rotate(-25,115,280)"/>
+    <ellipse cx="397" cy="295" rx="9" ry="4.5" fill="#f8c0d8" fill-opacity="0.6" transform="rotate(20,397,295)"/>
+    <ellipse cx="108" cy="360" rx="8" ry="4" fill="#f0b8d0" fill-opacity="0.5" transform="rotate(-10,108,360)"/>
+    <ellipse cx="404" cy="358" rx="10" ry="5" fill="#f0b8d0" fill-opacity="0.5" transform="rotate(15,404,358)"/>
+  </g>
+</svg>

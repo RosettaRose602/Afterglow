@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="hm-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f8e4ec"/>
+      <stop offset="100%" stop-color="#ecc8d8"/>
+    </radialGradient>
+    <radialGradient id="hm-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#c898b8"/>
+      <stop offset="60%" stop-color="#a07890"/>
+      <stop offset="100%" stop-color="#806070"/>
+    </radialGradient>
+    <linearGradient id="hm-pj" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8d0e0"/>
+      <stop offset="100%" stop-color="#c8a8c0"/>
+    </linearGradient>
+    <linearGradient id="hm-pj2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4b0c8"/>
+      <stop offset="100%" stop-color="#e8d0e0"/>
+    </linearGradient>
+    <radialGradient id="hm-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#c070a0"/>
+      <stop offset="60%" stop-color="#904878"/>
+      <stop offset="100%" stop-color="#602858"/>
+    </radialGradient>
+    <radialGradient id="hm-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c898b8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c898b8" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Candle glow -->
+    <radialGradient id="hm-candleGlow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffcc60" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff8020" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hm-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="hm-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow -->
+  <g id="glow">
+    <ellipse cx="256" cy="310" rx="130" ry="90" fill="url(#hm-glow)" filter="url(#hm-blur)"/>
+  </g>
+
+  <!-- Hair back -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="175" rx="96" ry="108" fill="url(#hm-hair)"/>
+    <!-- Sleep cap on hair -->
+    <path d="M 170 155 Q 175 110 256 100 Q 337 110 342 155 Q 300 145 256 142 Q 212 145 170 155 Z" fill="#d8b0c8"/>
+    <!-- Sleep cap pom pom side falls -->
+    <path d="M 167 152 Q 145 175 148 200 Q 152 220 162 215 Q 168 210 165 195 Q 162 178 172 165 Z" fill="#d0a8c0"/>
+    <path d="M 345 152 Q 367 175 364 200 Q 360 220 350 215 Q 344 210 347 195 Q 350 178 340 165 Z" fill="#d0a8c0"/>
+  </g>
+
+  <!-- Body (seated, cozy) -->
+  <g id="body">
+    <rect x="238" y="268" width="36" height="22" rx="8" fill="url(#hm-skin)"/>
+    <!-- Cozy blanket/body -->
+    <path d="M 165 290 Q 190 275 256 272 Q 322 275 347 290 L 360 430 Q 310 455 256 458 Q 202 455 152 430 Z" fill="url(#hm-pj)"/>
+    <!-- Arm left (hugging) -->
+    <ellipse cx="163" cy="348" rx="24" ry="58" fill="url(#hm-pj)" transform="rotate(-12,163,348)"/>
+    <!-- Arm right (hugging) -->
+    <ellipse cx="349" cy="348" rx="24" ry="58" fill="url(#hm-pj)" transform="rotate(12,349,348)"/>
+    <!-- Hands -->
+    <ellipse cx="153" cy="400" rx="20" ry="16" fill="url(#hm-skin)"/>
+    <ellipse cx="359" cy="400" rx="20" ry="16" fill="url(#hm-skin)"/>
+  </g>
+
+  <!-- Outfit (pajamas) -->
+  <g id="outfit">
+    <!-- PJ collar -->
+    <path d="M 220 282 Q 256 276 292 282 L 294 294 Q 256 287 218 294 Z" fill="#d4b0c0"/>
+    <!-- Tiny heart pattern on PJ -->
+    <g fill="#e8a0c0" opacity="0.5">
+      <path d="M 210 330 Q 212 324 216 326 Q 220 324 222 330 Q 222 336 216 340 Q 210 336 210 330 Z"/>
+      <path d="M 290 340 Q 292 334 296 336 Q 300 334 302 340 Q 302 346 296 350 Q 290 346 290 340 Z"/>
+    </g>
+    <!-- PJ cuffs -->
+    <ellipse cx="163" cy="386" rx="26" ry="10" fill="none" stroke="#d0a8c0" stroke-width="2"/>
+    <ellipse cx="349" cy="386" rx="26" ry="10" fill="none" stroke="#d0a8c0" stroke-width="2"/>
+    <!-- Hem -->
+    <path d="M 156 428 Q 256 452 356 428 L 360 438 Q 256 465 152 438 Z" fill="#d4b0c0"/>
+  </g>
+
+  <!-- Face (sleepy/resting) -->
+  <g id="face">
+    <ellipse cx="256" cy="175" rx="88" ry="92" fill="url(#hm-skin)"/>
+    <ellipse cx="170" cy="185" rx="13" ry="17" fill="url(#hm-skin)"/>
+    <ellipse cx="342" cy="185" rx="13" ry="17" fill="url(#hm-skin)"/>
+    <ellipse cx="170" cy="185" rx="7" ry="10" fill="#e8c8d8"/>
+    <ellipse cx="342" cy="185" rx="7" ry="10" fill="#e8c8d8"/>
+
+    <!-- Sleepy eyebrows (lower, angled inward) -->
+    <path d="M 210 135 Q 222 130 232 133" stroke="#9070808" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 280 133 Q 290 130 302 135" stroke="#907080" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Sleepy half-closed eyes -->
+    <ellipse cx="222" cy="162" rx="27" ry="22" fill="white"/>
+    <ellipse cx="290" cy="162" rx="27" ry="22" fill="white"/>
+    <!-- Iris (lower due to sleepy) -->
+    <ellipse cx="222" cy="166" rx="20" ry="18" fill="url(#hm-eye)"/>
+    <ellipse cx="290" cy="166" rx="20" ry="18" fill="url(#hm-eye)"/>
+    <!-- Pupils -->
+    <ellipse cx="223" cy="168" rx="10" ry="10" fill="#2a1020"/>
+    <ellipse cx="291" cy="168" rx="10" ry="10" fill="#2a1020"/>
+    <!-- Highlights -->
+    <ellipse cx="216" cy="159" rx="6" ry="5" fill="white" fill-opacity="0.85"/>
+    <ellipse cx="284" cy="159" rx="6" ry="5" fill="white" fill-opacity="0.85"/>
+    <!-- Heavy upper eyelids (sleepy) -->
+    <path d="M 197 148 Q 222 135 247 148 Q 235 158 222 160 Q 209 158 197 148 Z" fill="url(#hm-hair)" opacity="0.8"/>
+    <path d="M 265 148 Q 290 135 315 148 Q 303 158 290 160 Q 277 158 265 148 Z" fill="url(#hm-hair)" opacity="0.8"/>
+    <!-- Zzz marks -->
+    <text x="318" y="145" font-size="16" fill="#c098b0" opacity="0.7" font-family="sans-serif">z</text>
+    <text x="332" y="130" font-size="12" fill="#c098b0" opacity="0.5" font-family="sans-serif">z</text>
+    <text x="344" y="120" font-size="9" fill="#c098b0" opacity="0.4" font-family="sans-serif">z</text>
+
+    <!-- Nose -->
+    <ellipse cx="256" cy="190" rx="4.5" ry="3" fill="#dca8c8" fill-opacity="0.6"/>
+    <!-- Soft sleepy smile -->
+    <path d="M 241 206 Q 256 215 271 206" stroke="#c088a8" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Blush -->
+    <ellipse cx="198" cy="187" rx="22" ry="12" fill="#e8a0c0" fill-opacity="0.4"/>
+    <ellipse cx="314" cy="187" rx="22" ry="12" fill="#e8a0c0" fill-opacity="0.4"/>
+  </g>
+
+  <!-- Hair front (with sleep cap) -->
+  <g id="hair-front">
+    <path d="M 170 158 Q 178 112 214 105 Q 234 100 256 100 Q 278 100 298 105 Q 334 112 342 158" fill="url(#hm-hair)"/>
+    <!-- Sleep cap overtop -->
+    <path d="M 168 155 Q 180 115 256 110 Q 332 115 344 155 Q 310 148 256 146 Q 202 148 168 155 Z" fill="#d8b8cc"/>
+    <!-- Cap detail band -->
+    <path d="M 168 155 Q 256 162 344 155 Q 310 165 256 167 Q 202 165 168 155 Z" fill="#c8a0b8"/>
+    <!-- Pom pom at top -->
+    <circle cx="256" cy="108" r="16" fill="#ecd0e0" stroke="#d8b8cc" stroke-width="1.5"/>
+    <circle cx="256" cy="108" r="11" fill="#f0dce8"/>
+    <!-- Moon on cap -->
+    <path d="M 248 110 Q 252 98 262 102 Q 253 106 250 114 Q 246 114 248 110 Z" fill="#f8e0c8" opacity="0.8"/>
+    <!-- Left bang peek -->
+    <path d="M 188 155 Q 196 145 210 150 Q 215 160 208 166 Q 198 162 188 155 Z" fill="#a07890"/>
+    <!-- Hair shine -->
+    <ellipse cx="235" cy="125" rx="22" ry="13" fill="#e0c8d8" fill-opacity="0.6" transform="rotate(-10,235,125)"/>
+  </g>
+
+  <!-- Motif (subtle moon + petals resting) -->
+  <g id="motif">
+    <!-- Candle to the right -->
+    <g transform="translate(362, 330)">
+      <rect x="-7" y="0" width="14" height="50" rx="4" fill="#f0e8d8" stroke="#d0c0a8" stroke-width="1"/>
+      <ellipse cx="0" cy="0" rx="7" ry="4" fill="#ffe4c0"/>
+      <!-- Flame -->
+      <ellipse cx="0" cy="-12" rx="5" ry="9" fill="url(#hm-candleGlow)" filter="url(#hm-soft)"/>
+      <ellipse cx="0" cy="-10" rx="3" ry="6" fill="#ffa030" opacity="0.9"/>
+      <ellipse cx="0" cy="-8" rx="1.5" ry="4" fill="#ffe060"/>
+    </g>
+    <!-- Tiny crescent moon peeking -->
+    <path d="M 148 200 Q 142 185 150 172 Q 145 180 148 192 Z" fill="#f8e0c8" opacity="0.6"/>
+    <!-- Resting petals -->
+    <ellipse cx="182" cy="450" rx="15" ry="7" fill="#e8a8c8" fill-opacity="0.4" transform="rotate(-20,182,450)"/>
+    <ellipse cx="330" cy="452" rx="12" ry="6" fill="#e8a8c8" fill-opacity="0.4" transform="rotate(15,330,452)"/>
+  </g>
+
+  <!-- Particles -->
+  <g id="particles">
+    <circle cx="145" cy="260" r="3" fill="#d8a8c8" opacity="0.5"/>
+    <circle cx="368" cy="255" r="2.5" fill="#d8a8c8" opacity="0.5"/>
+    <circle cx="140" cy="370" r="2" fill="#e0b8d0" opacity="0.4"/>
+    <circle cx="372" cy="365" r="2.5" fill="#e0b8d0" opacity="0.4"/>
+  </g>
+</svg>

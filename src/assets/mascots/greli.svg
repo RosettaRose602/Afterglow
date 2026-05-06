@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="gr-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f0ead8"/>
+      <stop offset="100%" stop-color="#dcc8a8"/>
+    </radialGradient>
+    <radialGradient id="gr-hair" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#90b848"/>
+      <stop offset="60%" stop-color="#6a9030"/>
+      <stop offset="100%" stop-color="#486820"/>
+    </radialGradient>
+    <linearGradient id="gr-leafCape" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#7ab840"/>
+      <stop offset="50%" stop-color="#5a9030"/>
+      <stop offset="100%" stop-color="#3a6818"/>
+    </linearGradient>
+    <linearGradient id="gr-innerDress" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8f0d8"/>
+      <stop offset="100%" stop-color="#e8d8b0"/>
+    </linearGradient>
+    <radialGradient id="gr-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#90b840"/>
+      <stop offset="60%" stop-color="#608020"/>
+      <stop offset="100%" stop-color="#3a5010"/>
+    </radialGradient>
+    <radialGradient id="gr-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#90b840" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#90b840" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gr-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0b840" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f0b840" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gr-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="gr-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow (earthy green + warm amber) -->
+  <g id="glow">
+    <ellipse cx="256" cy="300" rx="145" ry="100" fill="url(#gr-glow)" filter="url(#gr-blur)"/>
+    <ellipse cx="256" cy="155" rx="110" ry="90" fill="url(#gr-amber)" filter="url(#gr-blur)"/>
+  </g>
+
+  <!-- Hair back + leaf cape back layer -->
+  <g id="hair-back">
+    <ellipse cx="256" cy="168" rx="95" ry="105" fill="url(#gr-hair)"/>
+    <!-- Leaf cape back -->
+    <path d="M 165 240 Q 148 310 156 410 Q 160 430 175 428 Q 186 426 186 408 Q 188 328 198 265 Z" fill="url(#gr-leafCape)"/>
+    <path d="M 347 240 Q 364 310 356 410 Q 352 430 337 428 Q 326 426 326 408 Q 324 328 314 265 Z" fill="url(#gr-leafCape)"/>
+    <!-- Leaf veins on cape back -->
+    <path d="M 170 270 Q 178 340 178 400" stroke="#3a6018" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M 342 270 Q 334 340 334 400" stroke="#3a6018" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Body -->
+  <g id="body">
+    <rect x="237" y="264" width="38" height="24" rx="9" fill="url(#gr-skin)"/>
+    <!-- Dress under cape -->
+    <path d="M 185 285 Q 200 270 256 268 Q 312 270 327 285 L 338 435 Q 294 455 256 458 Q 218 455 174 435 Z" fill="url(#gr-innerDress)"/>
+    <!-- Arms -->
+    <ellipse cx="172" cy="340" rx="22" ry="52" fill="url(#gr-leafCape)" transform="rotate(-9,172,340)"/>
+    <ellipse cx="340" cy="340" rx="22" ry="52" fill="url(#gr-leafCape)" transform="rotate(9,340,340)"/>
+    <ellipse cx="163" cy="387" rx="18" ry="14" fill="url(#gr-skin)"/>
+    <ellipse cx="349" cy="387" rx="18" ry="14" fill="url(#gr-skin)"/>
+    <!-- Flower pot prop in right hand -->
+    <g transform="translate(349,396)">
+      <path d="M -12 -5 L -10 20 L 10 20 L 12 -5 Z" fill="#a06838" stroke="#805020" stroke-width="1.2"/>
+      <rect x="-14" y="-9" width="28" height="7" rx="3" fill="#b87840"/>
+      <!-- Small plant -->
+      <path d="M 0 -8 Q -8 -22 -4 -32 Q 0 -20 0 -8" fill="#68a830"/>
+      <path d="M 0 -8 Q 8 -22 4 -32 Q 0 -20 0 -8" fill="#78b838"/>
+      <circle cx="0" cy="-34" r="5" fill="#90c040"/>
+    </g>
+  </g>
+
+  <!-- Outfit (leaf cape) -->
+  <g id="outfit">
+    <!-- Leaf cape front (overlapping body) -->
+    <path d="M 185 285 Q 200 278 256 276 Q 312 278 327 285 L 325 310 Q 290 300 256 298 Q 222 300 187 310 Z" fill="url(#gr-leafCape)"/>
+    <!-- Cape collar leaf shape -->
+    <path d="M 220 276 Q 256 268 292 276 L 290 290 Q 256 282 222 290 Z" fill="#5a9030"/>
+    <!-- Leaf pattern on dress -->
+    <g fill="#78b038" opacity="0.4">
+      <path d="M 218 330 Q 222 322 228 326 Q 224 334 218 330 Z"/>
+      <path d="M 284 348 Q 288 340 294 344 Q 290 352 284 348 Z"/>
+      <path d="M 250 390 Q 254 382 260 386 Q 256 394 250 390 Z"/>
+    </g>
+    <!-- Belt with leaf buckle -->
+    <path d="M 188 305 Q 256 298 324 305 L 322 316 Q 256 308 190 316 Z" fill="#4a7820"/>
+    <!-- Hem -->
+    <path d="M 177 432 Q 256 454 335 432 L 338 442 Q 256 466 174 442 Z" fill="#5a9030"/>
+  </g>
+
+  <!-- Face (encouraging smile) -->
+  <g id="face">
+    <ellipse cx="256" cy="168" rx="88" ry="92" fill="url(#gr-skin)"/>
+    <ellipse cx="170" cy="178" rx="13" ry="17" fill="url(#gr-skin)"/>
+    <ellipse cx="342" cy="178" rx="13" ry="17" fill="url(#gr-skin)"/>
+    <ellipse cx="170" cy="178" rx="7" ry="10" fill="#e8d8c0"/>
+    <ellipse cx="342" cy="178" rx="7" ry="10" fill="#e8d8c0"/>
+    <!-- Eyebrows (cheerful arch) -->
+    <path d="M 207 129 Q 220 122 235 126" stroke="#507020" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+    <path d="M 277 126 Q 292 122 305 129" stroke="#507020" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+    <!-- Eyes (bright, open) -->
+    <ellipse cx="221" cy="158" rx="28" ry="25" fill="white"/>
+    <ellipse cx="291" cy="158" rx="28" ry="25" fill="white"/>
+    <ellipse cx="221" cy="160" rx="21" ry="22" fill="url(#gr-eye)"/>
+    <ellipse cx="291" cy="160" rx="21" ry="22" fill="url(#gr-eye)"/>
+    <ellipse cx="222" cy="162" rx="11" ry="13" fill="#1e2808"/>
+    <ellipse cx="292" cy="162" rx="11" ry="13" fill="#1e2808"/>
+    <ellipse cx="213" cy="152" rx="7" ry="6" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="283" cy="152" rx="7" ry="6" fill="white" fill-opacity="0.9"/>
+    <!-- Eyelids -->
+    <path d="M 195 147 Q 221 135 247 147" stroke="#3a5818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 263 147 Q 291 135 317 147" stroke="#3a5818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 198 172 Q 221 180 244 172" stroke="#6a9030" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 266 172 Q 291 180 314 172" stroke="#6a9030" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Nose -->
+    <ellipse cx="256" cy="185" rx="5" ry="3.5" fill="#d8c090" fill-opacity="0.6"/>
+    <!-- Big encouraging smile (open mouth) -->
+    <path d="M 234 202 Q 256 220 278 202" stroke="#a07838" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 239 210 Q 256 224 273 210 Q 270 220 256 224 Q 242 220 239 210 Z" fill="#f8e0c8"/>
+    <!-- Blush -->
+    <ellipse cx="196" cy="183" rx="23" ry="13" fill="#e8a858" fill-opacity="0.35"/>
+    <ellipse cx="316" cy="183" rx="23" ry="13" fill="#e8a858" fill-opacity="0.35"/>
+  </g>
+
+  <!-- Hair front + sprout -->
+  <g id="hair-front">
+    <path d="M 170 148 Q 178 102 213 95 Q 233 90 256 90 Q 279 90 299 95 Q 334 102 342 148" fill="url(#gr-hair)"/>
+    <!-- Center bang -->
+    <path d="M 234 92 Q 246 107 250 128 Q 255 137 261 128 Q 265 107 278 92 Q 266 87 256 87 Q 246 87 234 92 Z" fill="#6a9030"/>
+    <!-- Side bangs -->
+    <path d="M 185 120 Q 196 109 210 116 Q 221 122 220 137 Q 210 131 200 134 Q 189 129 185 120 Z" fill="#5a8028"/>
+    <path d="M 327 120 Q 316 109 302 116 Q 291 122 292 137 Q 302 131 312 134 Q 323 129 327 120 Z" fill="#5a8028"/>
+    <!-- Hair shine -->
+    <ellipse cx="237" cy="112" rx="25" ry="14" fill="#b8d060" fill-opacity="0.5" transform="rotate(-12,237,112)"/>
+  </g>
+
+  <!-- Sprout/leaf head motif -->
+  <g id="motif" filter="url(#gr-soft)">
+    <!-- Sprout stem -->
+    <path d="M 252 86 Q 250 68 254 50 Q 256 38 258 50 Q 262 68 260 86 Z" fill="#78b038"/>
+    <!-- Main sprout leaves -->
+    <path d="M 254 65 Q 234 52 228 36 Q 244 44 256 58 Z" fill="#90c848" stroke="#68a030" stroke-width="1"/>
+    <path d="M 258 65 Q 278 52 284 36 Q 268 44 256 58 Z" fill="#a0d050" stroke="#78b038" stroke-width="1"/>
+    <!-- Second leaf pair (smaller) -->
+    <path d="M 253 52 Q 238 42 232 28 Q 246 37 255 50 Z" fill="#80b840" opacity="0.8"/>
+    <path d="M 259 52 Q 274 42 280 28 Q 266 37 257 50 Z" fill="#90c848" opacity="0.8"/>
+    <!-- Leaf shine -->
+    <path d="M 236 50 Q 238 44 244 46" stroke="#c8e878" stroke-width="1" fill="none" opacity="0.7"/>
+    <path d="M 276 50 Q 274 44 268 46" stroke="#c8e878" stroke-width="1" fill="none" opacity="0.7"/>
+    <!-- Tiny amber particles around sprout -->
+    <circle cx="228" cy="30" r="3" fill="#f0c040" opacity="0.7"/>
+    <circle cx="284" cy="30" r="2.5" fill="#f0c040" opacity="0.6"/>
+    <circle cx="256" cy="20" r="2" fill="#f8d050" opacity="0.5"/>
+  </g>
+
+  <!-- Particles (leaves + amber glow dots) -->
+  <g id="particles">
+    <ellipse cx="140" cy="220" rx="12" ry="6" fill="#78b038" fill-opacity="0.6" transform="rotate(-25,140,220)"/>
+    <ellipse cx="372" cy="235" rx="10" ry="5" fill="#78b038" fill-opacity="0.5" transform="rotate(20,372,235)"/>
+    <ellipse cx="132" cy="340" rx="9" ry="4.5" fill="#68a030" fill-opacity="0.5" transform="rotate(-10,132,340)"/>
+    <ellipse cx="380" cy="330" rx="11" ry="5.5" fill="#68a030" fill-opacity="0.5" transform="rotate(15,380,330)"/>
+    <circle cx="148" cy="275" r="3.5" fill="#f0c040" opacity="0.6"/>
+    <circle cx="365" cy="268" r="3" fill="#f0c040" opacity="0.5"/>
+    <circle cx="142" cy="388" r="2.5" fill="#e0b030" opacity="0.5"/>
+    <circle cx="370" cy="380" r="3" fill="#e0b030" opacity="0.5"/>
+    <circle cx="194" cy="468" r="4.5" fill="#88a830" fill-opacity="0.4"/>
+    <circle cx="318" cy="466" r="4" fill="#88a830" fill-opacity="0.4"/>
+    <circle cx="256" cy="472" r="5.5" fill="#98b840" fill-opacity="0.3"/>
+  </g>
+</svg>

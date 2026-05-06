@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="os-skin" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#e8f8fe"/>
+      <stop offset="100%" stop-color="#c8ecf8"/>
+    </radialGradient>
+    <radialGradient id="os-hair" cx="50%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#88e0f8"/>
+      <stop offset="50%" stop-color="#50c8f0"/>
+      <stop offset="100%" stop-color="#28a8d8"/>
+    </radialGradient>
+    <linearGradient id="os-dress" x1="0%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#d0f4ff"/>
+      <stop offset="100%" stop-color="#a8e4f8"/>
+    </linearGradient>
+    <linearGradient id="os-overlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8faff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#c0eeff" stop-opacity="0.6"/>
+    </linearGradient>
+    <radialGradient id="os-eye" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#58c8f0"/>
+      <stop offset="60%" stop-color="#28a0d0"/>
+      <stop offset="100%" stop-color="#087098"/>
+    </radialGradient>
+    <radialGradient id="os-droplet" cx="35%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#d0f0ff"/>
+      <stop offset="60%" stop-color="#80d0f0"/>
+      <stop offset="100%" stop-color="#40b0e0"/>
+    </radialGradient>
+    <radialGradient id="os-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58c8f0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#58c8f0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="os-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="os-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="os-dropGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Water/aqua glow -->
+  <g id="glow">
+    <ellipse cx="256" cy="320" rx="160" ry="100" fill="url(#os-glow)" filter="url(#os-blur)"/>
+    <ellipse cx="256" cy="155" rx="115" ry="95" fill="#58c8f0" fill-opacity="0.1" filter="url(#os-blur)"/>
+    <!-- Ripple rings at base -->
+    <ellipse cx="256" cy="460" rx="110" ry="25" fill="none" stroke="#80d8f0" stroke-width="2" stroke-opacity="0.3"/>
+    <ellipse cx="256" cy="468" rx="145" ry="30" fill="none" stroke="#60c8e8" stroke-width="1.5" stroke-opacity="0.2"/>
+  </g>
+
+  <!-- Hair back (very wavy, flowing) -->
+  <g id="hair-back">
+    <!-- Back hair — lots of wavy volume -->
+    <path d="M 163 185 Q 145 230 148 280 Q 152 330 156 380 Q 148 410 155 435 Q 162 450 175 445 Q 185 440 182 420 Q 178 395 182 350 Q 185 295 183 250 Q 180 210 163 185 Z" fill="#40b8e8"/>
+    <path d="M 349 185 Q 367 230 364 280 Q 360 330 356 380 Q 364 410 357 435 Q 350 450 337 445 Q 327 440 330 420 Q 334 395 330 350 Q 327 295 329 250 Q 332 210 349 185 Z" fill="#40b8e8"/>
+    <!-- Extra wavy hair body -->
+    <path d="M 165 190 Q 140 260 145 340 Q 148 380 142 415 Q 140 430 150 432 Q 158 430 158 415 Q 162 380 158 340 Q 152 265 168 198 Z" fill="#38a8d8" opacity="0.7"/>
+    <path d="M 347 190 Q 372 260 367 340 Q 364 380 370 415 Q 372 430 362 432 Q 354 430 354 415 Q 350 380 354 340 Q 360 265 344 198 Z" fill="#38a8d8" opacity="0.7"/>
+    <ellipse cx="256" cy="168" rx="98" ry="108" fill="url(#os-hair)"/>
+  </g>
+
+  <!-- Body -->
+  <g id="body">
+    <rect x="237" y="264" width="38" height="26" rx="9" fill="url(#os-skin)"/>
+    <!-- Dress body -->
+    <path d="M 178 285 Q 196 268 256 266 Q 316 268 334 285 L 348 435 Q 300 458 256 460 Q 212 458 164 435 Z" fill="url(#os-dress)"/>
+    <!-- Overlay sheen -->
+    <path d="M 178 285 Q 196 268 256 266 Q 316 268 334 285 L 320 340 Q 280 330 256 328 Q 232 330 192 340 L 178 285 Z" fill="url(#os-overlay)"/>
+    <!-- Arms -->
+    <ellipse cx="166" cy="336" rx="22" ry="52" fill="url(#os-dress)" transform="rotate(-9,166,336)"/>
+    <ellipse cx="346" cy="336" rx="22" ry="52" fill="url(#os-dress)" transform="rotate(9,346,336)"/>
+    <ellipse cx="157" cy="383" rx="18" ry="14" fill="url(#os-skin)"/>
+    <ellipse cx="355" cy="383" rx="18" ry="14" fill="url(#os-skin)"/>
+    <!-- Water bubble held right hand -->
+    <circle cx="355" cy="380" r="20" fill="#a8e8f8" fill-opacity="0.5" stroke="#60c8e8" stroke-width="1.5"/>
+    <ellipse cx="350" cy="373" rx="7" ry="5" fill="white" fill-opacity="0.5" transform="rotate(-20,350,373)"/>
+  </g>
+
+  <!-- Outfit -->
+  <g id="outfit">
+    <!-- Lacy/ruffled collar -->
+    <path d="M 218 278 Q 256 271 294 278 L 296 292 Q 256 284 216 292 Z" fill="#80d8f0"/>
+    <!-- Polka-dot / bubble pattern -->
+    <g fill="#60c0e8" opacity="0.3">
+      <circle cx="215" cy="325" r="7"/>
+      <circle cx="298" cy="340" r="6"/>
+      <circle cx="255" cy="395" r="8"/>
+      <circle cx="230" cy="382" r="5"/>
+      <circle cx="280" cy="365" r="6"/>
+    </g>
+    <!-- Bow at waist -->
+    <path d="M 234 302 L 256 294 L 278 302 L 275 314 L 256 307 L 237 314 Z" fill="#a0e0f8"/>
+    <!-- Hem ruffle -->
+    <path d="M 168 432 Q 200 448 256 452 Q 312 448 344 432 Q 320 442 256 446 Q 192 442 168 432 Z" fill="#80d8f0"/>
+    <!-- Sleeve ruffles -->
+    <ellipse cx="166" cy="370" rx="25" ry="10" fill="none" stroke="#80d8f0" stroke-width="2"/>
+    <ellipse cx="346" cy="370" rx="25" ry="10" fill="none" stroke="#80d8f0" stroke-width="2"/>
+  </g>
+
+  <!-- Face (bright, chipper) -->
+  <g id="face">
+    <ellipse cx="256" cy="168" rx="88" ry="92" fill="url(#os-skin)"/>
+    <ellipse cx="170" cy="178" rx="13" ry="17" fill="url(#os-skin)"/>
+    <ellipse cx="342" cy="178" rx="13" ry="17" fill="url(#os-skin)"/>
+    <ellipse cx="170" cy="178" rx="7" ry="10" fill="#b8eaf8"/>
+    <ellipse cx="342" cy="178" rx="7" ry="10" fill="#b8eaf8"/>
+    <!-- Eyebrows (cheerful) -->
+    <path d="M 207 128 Q 220 122 234 126" stroke="#2890c0" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+    <path d="M 278 126 Q 292 122 305 128" stroke="#2890c0" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+    <!-- Eyes (large, bright) -->
+    <ellipse cx="221" cy="158" rx="29" ry="26" fill="white"/>
+    <ellipse cx="291" cy="158" rx="29" ry="26" fill="white"/>
+    <ellipse cx="221" cy="160" rx="22" ry="23" fill="url(#os-eye)"/>
+    <ellipse cx="291" cy="160" rx="22" ry="23" fill="url(#os-eye)"/>
+    <ellipse cx="222" cy="162" rx="12" ry="14" fill="#052040"/>
+    <ellipse cx="292" cy="162" rx="12" ry="14" fill="#052040"/>
+    <ellipse cx="212" cy="151" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <ellipse cx="282" cy="151" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <ellipse cx="228" cy="167" rx="4" ry="3.5" fill="white" fill-opacity="0.6"/>
+    <ellipse cx="298" cy="167" rx="4" ry="3.5" fill="white" fill-opacity="0.6"/>
+    <!-- Eyelids -->
+    <path d="M 194 146 Q 221 134 248 146" stroke="#1878a8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M 262 146 Q 291 134 318 146" stroke="#1878a8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M 198 172 Q 221 181 244 172" stroke="#4898c0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 266 172 Q 291 181 314 172" stroke="#4898c0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Nose -->
+    <ellipse cx="256" cy="185" rx="5" ry="3.5" fill="#a8d8f0" fill-opacity="0.7"/>
+    <!-- Big happy smile -->
+    <path d="M 233 201 Q 256 218 279 201" stroke="#2888b8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M 239 210 Q 256 226 273 210 Q 270 222 256 226 Q 242 222 239 210 Z" fill="#c8f0ff"/>
+    <!-- Blush -->
+    <ellipse cx="196" cy="182" rx="24" ry="13" fill="#78d8f8" fill-opacity="0.35"/>
+    <ellipse cx="316" cy="182" rx="24" ry="13" fill="#78d8f8" fill-opacity="0.35"/>
+  </g>
+
+  <!-- Hair front (wavy, with droplet) -->
+  <g id="hair-front">
+    <path d="M 168 148 Q 176 100 212 92 Q 232 87 256 87 Q 280 87 300 92 Q 336 100 344 148" fill="url(#os-hair)"/>
+    <!-- Center wavy bang -->
+    <path d="M 232 89 Q 244 106 248 130 Q 254 140 260 130 Q 264 106 280 89 Q 266 83 256 83 Q 246 83 232 89 Z" fill="#48b8e8"/>
+    <!-- Left wavy bang -->
+    <path d="M 184 118 Q 196 106 212 114 Q 224 122 222 138 Q 212 130 202 134 Q 190 128 184 118 Z" fill="#38a8d8"/>
+    <!-- Right wavy bang -->
+    <path d="M 328 118 Q 316 106 300 114 Q 288 122 290 138 Q 300 130 310 134 Q 322 128 328 118 Z" fill="#38a8d8"/>
+    <!-- Extra wave in hair -->
+    <path d="M 168 148 Q 175 160 168 175 Q 165 165 168 148 Z" fill="#40b0e0"/>
+    <path d="M 344 148 Q 337 160 344 175 Q 347 165 344 148 Z" fill="#40b0e0"/>
+    <!-- Hair shine -->
+    <ellipse cx="235" cy="108" rx="28" ry="16" fill="#c0f0ff" fill-opacity="0.55" transform="rotate(-12,235,108)"/>
+  </g>
+
+  <!-- Droplet crown motif -->
+  <g id="motif" filter="url(#os-dropGlow)">
+    <!-- Water droplet -->
+    <path d="M 256 72 Q 270 88 270 100 Q 270 115 256 120 Q 242 115 242 100 Q 242 88 256 72 Z" fill="url(#os-droplet)" stroke="#58b8e0" stroke-width="1.5"/>
+    <!-- Droplet shine -->
+    <ellipse cx="250" cy="88" rx="6" ry="9" fill="white" fill-opacity="0.55" transform="rotate(-15,250,88)"/>
+    <!-- Teardrop outline glow -->
+    <path d="M 256 72 Q 270 88 270 100 Q 270 115 256 120 Q 242 115 242 100 Q 242 88 256 72 Z" fill="none" stroke="#a0e8f8" stroke-width="2" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- Particles (bubbles) -->
+  <g id="particles">
+    <!-- Bubbles floating up -->
+    <g fill="none" stroke="#78d8f8" stroke-width="1.5">
+      <circle cx="138" cy="230" r="14" stroke-opacity="0.55"/>
+      <circle cx="374" cy="215" r="11" stroke-opacity="0.5"/>
+      <circle cx="130" cy="310" r="8" stroke-opacity="0.45"/>
+      <circle cx="382" cy="305" r="12" stroke-opacity="0.5"/>
+      <circle cx="145" cy="388" r="9" stroke-opacity="0.4"/>
+      <circle cx="368" cy="380" r="7" stroke-opacity="0.4"/>
+    </g>
+    <!-- Bubble highlights -->
+    <ellipse cx="133" cy="224" rx="4" ry="3" fill="white" fill-opacity="0.4" transform="rotate(-30,133,224)"/>
+    <ellipse cx="369" cy="209" rx="3" ry="2.5" fill="white" fill-opacity="0.4" transform="rotate(-25,369,209)"/>
+    <ellipse cx="126" cy="304" rx="3" ry="2" fill="white" fill-opacity="0.35" transform="rotate(-30,126,304)"/>
+    <!-- Sparkle dots -->
+    <circle cx="155" cy="272" r="3" fill="#b0e8f8" opacity="0.6"/>
+    <circle cx="358" cy="265" r="2.5" fill="#b0e8f8" opacity="0.5"/>
+    <circle cx="148" cy="440" r="4" fill="#a0d8f0" fill-opacity="0.5"/>
+    <circle cx="364" cy="435" r="3.5" fill="#a0d8f0" fill-opacity="0.5"/>
+    <circle cx="256" cy="474" r="5" fill="#88d0f0" fill-opacity="0.35"/>
+    <!-- Ripple rings at feet -->
+    <ellipse cx="256" cy="454" rx="80" ry="18" fill="none" stroke="#68c8e8" stroke-width="2" stroke-opacity="0.35"/>
+  </g>
+</svg>

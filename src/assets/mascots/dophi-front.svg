@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Skin -->
+    <radialGradient id="df-skinGrad" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#f5c9a0"/>
+      <stop offset="60%" stop-color="#e8aa78"/>
+      <stop offset="100%" stop-color="#d4925c"/>
+    </radialGradient>
+    <!-- Hair -->
+    <radialGradient id="df-hairGrad" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#f4a07a"/>
+      <stop offset="55%" stop-color="#e8805a"/>
+      <stop offset="100%" stop-color="#c05840"/>
+    </radialGradient>
+    <linearGradient id="df-hairShine" x1="25%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#ffd4b8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#f4a07a" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Ponytail -->
+    <linearGradient id="df-ponytailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4a07a"/>
+      <stop offset="60%" stop-color="#e8805a"/>
+      <stop offset="100%" stop-color="#c05840"/>
+    </linearGradient>
+    <!-- Gold ribbon -->
+    <linearGradient id="df-ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe280"/>
+      <stop offset="50%" stop-color="#ffd966"/>
+      <stop offset="100%" stop-color="#e8a820"/>
+    </linearGradient>
+    <!-- Eyes -->
+    <radialGradient id="df-eyeIris" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#f0a060"/>
+      <stop offset="50%" stop-color="#d46030"/>
+      <stop offset="100%" stop-color="#8b3010"/>
+    </radialGradient>
+    <!-- Outfit -->
+    <linearGradient id="df-jacketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f09070"/>
+      <stop offset="100%" stop-color="#d86848"/>
+    </linearGradient>
+    <linearGradient id="df-shortsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e87050"/>
+      <stop offset="100%" stop-color="#c04828"/>
+    </linearGradient>
+    <linearGradient id="df-legGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8a878"/>
+      <stop offset="100%" stop-color="#c88858"/>
+    </linearGradient>
+    <linearGradient id="df-shoeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f09060"/>
+      <stop offset="100%" stop-color="#c85030"/>
+    </linearGradient>
+    <!-- Glow -->
+    <radialGradient id="df-ambientGlow" cx="50%" cy="55%" r="50%">
+      <stop offset="0%" stop-color="#f08060" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f08060" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="df-softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="df-glowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient glow -->
+  <g id="glow">
+    <ellipse cx="256" cy="310" rx="145" ry="100" fill="url(#df-ambientGlow)" filter="url(#df-softBlur)"/>
+    <ellipse cx="256" cy="165" rx="110" ry="95" fill="#f08060" fill-opacity="0.07" filter="url(#df-softBlur)"/>
+  </g>
+
+  <!-- Hair back + ponytail (behind body) -->
+  <g id="hair-back">
+    <!-- Back hair mass -->
+    <ellipse cx="256" cy="172" rx="102" ry="110" fill="url(#df-hairGrad)"/>
+    <!-- Ponytail base sweeping to upper right — clearly visible -->
+    <path d="M 308 118 Q 355 95 400 80 Q 440 68 468 82 Q 482 95 474 115 Q 462 132 428 138 Q 390 144 355 148 Q 328 150 316 145 Q 308 138 308 118 Z" fill="url(#df-ponytailGrad)"/>
+    <!-- Ponytail volume extension -->
+    <path d="M 355 148 Q 370 165 360 182 Q 350 195 336 190 Q 320 183 316 160 Q 318 145 330 143 Q 342 142 355 148 Z" fill="url(#df-ponytailGrad)"/>
+    <!-- Hair strand lines on ponytail -->
+    <path d="M 330 120 Q 385 92 455 82" stroke="#c05840" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 328 136 Q 380 112 448 108" stroke="#f4a07a" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <path d="M 322 148 Q 365 138 415 140" stroke="#c05840" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <path d="M 332 158 Q 355 162 368 178" stroke="#c05840" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <!-- Ponytail tip curl -->
+    <path d="M 462 82 Q 492 68 494 88 Q 496 108 472 118 Q 452 124 442 112 Q 436 98 462 82 Z" fill="url(#df-ponytailGrad)" stroke="#c05840" stroke-width="1"/>
+  </g>
+
+  <!-- Body -->
+  <g id="body">
+    <!-- Neck -->
+    <rect x="240" y="268" width="32" height="30" rx="10" fill="url(#df-skinGrad)" stroke="#c07850" stroke-width="0.5"/>
+    <!-- Torso athletic jacket -->
+    <path d="M 186 294 Q 210 278 256 276 Q 302 278 326 294 L 334 422 Q 298 448 256 450 Q 214 448 178 422 Z" fill="url(#df-jacketGrad)" stroke="#c06040" stroke-width="1"/>
+    <!-- Arm left (relaxed, slight outward angle) -->
+    <path d="M 186 300 Q 164 315 150 348 Q 143 370 148 392 Q 158 396 170 388 Q 172 366 182 344 Q 194 320 200 304 Z" fill="url(#df-jacketGrad)" stroke="#c06040" stroke-width="0.8"/>
+    <!-- Arm right -->
+    <path d="M 326 300 Q 348 315 362 348 Q 369 370 364 392 Q 354 396 342 388 Q 340 366 330 344 Q 318 320 312 304 Z" fill="url(#df-jacketGrad)" stroke="#c06040" stroke-width="0.8"/>
+    <!-- Hands -->
+    <ellipse cx="158" cy="394" rx="18" ry="15" fill="url(#df-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <ellipse cx="354" cy="394" rx="18" ry="15" fill="url(#df-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Legs -->
+    <rect x="210" y="420" width="44" height="72" rx="13" fill="url(#df-legGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <rect x="258" y="420" width="44" height="72" rx="13" fill="url(#df-legGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Shoes -->
+    <ellipse cx="232" cy="496" rx="32" ry="15" fill="url(#df-shoeGrad)" stroke="#a04030" stroke-width="1"/>
+    <ellipse cx="280" cy="496" rx="32" ry="15" fill="url(#df-shoeGrad)" stroke="#a04030" stroke-width="1"/>
+    <!-- Shoe gold accents -->
+    <ellipse cx="216" cy="494" rx="11" ry="6" fill="#ffd966" fill-opacity="0.75"/>
+    <ellipse cx="264" cy="494" rx="11" ry="6" fill="#ffd966" fill-opacity="0.75"/>
+  </g>
+
+  <!-- Outfit details -->
+  <g id="outfit">
+    <!-- Gold jacket stripe left -->
+    <path d="M 190 298 Q 170 344 166 394 L 178 396 Q 183 346 202 300 Z" fill="#ffd966" fill-opacity="0.72"/>
+    <!-- Gold jacket stripe right -->
+    <path d="M 322 298 Q 342 344 346 394 L 334 396 Q 329 346 310 300 Z" fill="#ffd966" fill-opacity="0.72"/>
+    <!-- Sports shorts -->
+    <path d="M 193 402 Q 218 418 256 420 Q 294 418 319 402 L 317 432 Q 294 448 256 450 Q 218 448 195 432 Z" fill="url(#df-shortsGrad)" stroke="#a03828" stroke-width="0.8"/>
+    <!-- Jacket zip line -->
+    <line x1="256" y1="280" x2="256" y2="408" stroke="#ffd966" stroke-width="2.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+    <!-- Collar -->
+    <path d="M 220 284 Q 256 278 292 284 L 294 296 Q 256 288 218 296 Z" fill="#e06040" stroke="#c04828" stroke-width="0.8"/>
+    <!-- Wing/feather motif left chest -->
+    <path d="M 208 322 Q 218 312 230 318 Q 222 326 218 334 Q 210 330 208 322 Z" fill="#ffd966" fill-opacity="0.88" stroke="#e8a820" stroke-width="0.8"/>
+    <path d="M 204 334 Q 215 324 226 330 Q 218 340 214 346 Q 206 342 204 334 Z" fill="#ffd966" fill-opacity="0.7" stroke="#e8a820" stroke-width="0.8"/>
+    <path d="M 202 346 Q 212 336 222 342 Q 215 352 211 357 Q 204 353 202 346 Z" fill="#ffd966" fill-opacity="0.55" stroke="#e8a820" stroke-width="0.8"/>
+    <!-- Sleeve cuffs -->
+    <path d="M 148 382 Q 170 386 173 394 L 164 398 Q 158 392 144 388 Z" fill="#e06040"/>
+    <path d="M 364 382 Q 342 386 339 394 L 348 398 Q 354 392 368 388 Z" fill="#e06040"/>
+  </g>
+
+  <!-- Face -->
+  <g id="face">
+    <!-- Head -->
+    <ellipse cx="256" cy="172" rx="92" ry="96" fill="url(#df-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Ears -->
+    <ellipse cx="166" cy="182" rx="14" ry="18" fill="url(#df-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <ellipse cx="346" cy="182" rx="14" ry="18" fill="url(#df-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <ellipse cx="166" cy="182" rx="8" ry="11" fill="#e8906a" fill-opacity="0.45"/>
+    <ellipse cx="346" cy="182" rx="8" ry="11" fill="#e8906a" fill-opacity="0.45"/>
+
+    <!-- Eyebrows (friendly soft arch) -->
+    <path d="M 205 130 Q 220 121 238 125" stroke="#a04828" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M 274 125 Q 292 121 307 130" stroke="#a04828" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eye whites -->
+    <ellipse cx="220" cy="162" rx="29" ry="27" fill="white"/>
+    <ellipse cx="292" cy="162" rx="29" ry="27" fill="white"/>
+
+    <!-- Iris -->
+    <ellipse cx="220" cy="164" rx="22" ry="22" fill="url(#df-eyeIris)"/>
+    <ellipse cx="292" cy="164" rx="22" ry="22" fill="url(#df-eyeIris)"/>
+
+    <!-- Pupils -->
+    <ellipse cx="221" cy="166" rx="12" ry="14" fill="#2a1008"/>
+    <ellipse cx="293" cy="166" rx="12" ry="14" fill="#2a1008"/>
+
+    <!-- Eye shine highlights -->
+    <ellipse cx="212" cy="156" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <ellipse cx="284" cy="156" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <circle cx="228" cy="171" r="3.5" fill="white" fill-opacity="0.55"/>
+    <circle cx="300" cy="171" r="3.5" fill="white" fill-opacity="0.55"/>
+
+    <!-- Upper eyelid -->
+    <path d="M 193 150 Q 220 137 247 150" stroke="#7a2a10" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M 265 150 Q 292 137 319 150" stroke="#7a2a10" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <!-- Lower eyelid -->
+    <path d="M 197 177 Q 220 186 243 177" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 269 177 Q 292 186 315 177" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <ellipse cx="256" cy="190" rx="5.5" ry="4" fill="#c07850" fill-opacity="0.5"/>
+
+    <!-- Smile -->
+    <path d="M 233 210 Q 256 226 279 210" stroke="#a05030" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Smile teeth hint -->
+    <path d="M 238 212 Q 256 222 274 212 Q 256 224 238 212 Z" fill="white" fill-opacity="0.65"/>
+
+    <!-- Blush -->
+    <ellipse cx="194" cy="186" rx="24" ry="13" fill="#f08060" fill-opacity="0.28"/>
+    <ellipse cx="318" cy="186" rx="24" ry="13" fill="#f08060" fill-opacity="0.28"/>
+  </g>
+
+  <!-- Hair front / bangs -->
+  <g id="hair-front">
+    <!-- Main front hairline -->
+    <path d="M 166 153 Q 174 98 216 90 Q 236 86 256 86 Q 276 86 296 90 Q 338 98 346 153" fill="url(#df-hairGrad)" stroke="#c05840" stroke-width="0.5"/>
+    <!-- Center bang -->
+    <path d="M 238 88 Q 250 108 256 134 Q 262 108 274 88 Q 265 84 256 84 Q 247 84 238 88 Z" fill="#c05840"/>
+    <!-- Left bang -->
+    <path d="M 183 124 Q 196 108 215 116 Q 227 123 226 142 Q 214 136 200 138 Q 188 134 183 124 Z" fill="#b04838"/>
+    <!-- Right bang -->
+    <path d="M 329 124 Q 316 108 297 116 Q 285 123 286 142 Q 298 136 312 138 Q 324 134 329 124 Z" fill="#b04838"/>
+    <!-- Hair shine -->
+    <ellipse cx="237" cy="110" rx="30" ry="16" fill="url(#df-hairShine)" transform="rotate(-10,237,110)"/>
+    <!-- Ribbon/hair tie at ponytail base (upper right) -->
+    <ellipse cx="320" cy="134" rx="15" ry="10" fill="url(#df-ribbonGrad)" stroke="#c89020" stroke-width="1.5"/>
+    <!-- Ribbon bow loops -->
+    <path d="M 306 130 Q 296 120 300 134 Q 304 148 316 140 Z" fill="url(#df-ribbonGrad)" stroke="#c89020" stroke-width="1"/>
+    <path d="M 334 130 Q 344 120 340 134 Q 336 148 324 140 Z" fill="url(#df-ribbonGrad)" stroke="#c89020" stroke-width="1"/>
+    <!-- Ribbon center knot -->
+    <ellipse cx="320" cy="134" rx="5" ry="5" fill="#ffe280" stroke="#c89020" stroke-width="1"/>
+  </g>
+
+  <!-- Wing/feather chest motif -->
+  <g id="motif">
+    <path d="M 246 342 Q 237 328 241 319 Q 250 314 256 322 Q 262 314 271 319 Q 275 328 266 342 Q 256 335 246 342 Z" fill="#ffd966" fill-opacity="0.8" stroke="#e8a820" stroke-width="1.2"/>
+    <line x1="256" y1="320" x2="251" y2="340" stroke="#e8a820" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="256" y1="320" x2="261" y2="340" stroke="#e8a820" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="250" y1="326" x2="243" y2="330" stroke="#e8a820" stroke-width="1" stroke-linecap="round"/>
+    <line x1="262" y1="326" x2="269" y2="330" stroke="#e8a820" stroke-width="1" stroke-linecap="round"/>
+  </g>
+
+  <!-- Particles -->
+  <g id="particles">
+    <circle cx="138" cy="228" r="3.5" fill="#ffd966" opacity="0.65"/>
+    <circle cx="376" cy="218" r="3" fill="#ffd966" opacity="0.6"/>
+    <circle cx="128" cy="318" r="2.5" fill="#f08060" opacity="0.5"/>
+    <circle cx="386" cy="308" r="3" fill="#f08060" opacity="0.55"/>
+    <circle cx="152" cy="424" r="4" fill="#ffd966" fill-opacity="0.45"/>
+    <circle cx="362" cy="418" r="3.5" fill="#ffd966" fill-opacity="0.45"/>
+    <!-- Sparkle left -->
+    <path d="M 142 268 L 144 261 L 146 268 L 153 266 L 146 270 L 153 274 L 146 272 L 144 279 L 142 272 L 135 274 L 142 270 L 135 266 Z" fill="#ffd966" opacity="0.62"/>
+    <!-- Sparkle right -->
+    <path d="M 366 278 L 368 271 L 370 278 L 377 276 L 370 280 L 377 284 L 370 282 L 368 289 L 366 282 L 359 284 L 366 280 L 359 276 Z" fill="#f08060" opacity="0.55"/>
+  </g>
+</svg>

@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="dme-skinGrad" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#f5c9a0"/>
+      <stop offset="60%" stop-color="#e8aa78"/>
+      <stop offset="100%" stop-color="#d4925c"/>
+    </radialGradient>
+    <radialGradient id="dme-hairGrad" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#f4a07a"/>
+      <stop offset="55%" stop-color="#e8805a"/>
+      <stop offset="100%" stop-color="#c05840"/>
+    </radialGradient>
+    <linearGradient id="dme-hairShine" x1="25%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#ffd4b8" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#f4a07a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dme-ponytailGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#f4a07a"/>
+      <stop offset="55%" stop-color="#e8805a"/>
+      <stop offset="100%" stop-color="#c05840"/>
+    </linearGradient>
+    <linearGradient id="dme-ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe280"/>
+      <stop offset="50%" stop-color="#ffd966"/>
+      <stop offset="100%" stop-color="#e8a820"/>
+    </linearGradient>
+    <radialGradient id="dme-eyeIris" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#f0a060"/>
+      <stop offset="50%" stop-color="#d46030"/>
+      <stop offset="100%" stop-color="#8b3010"/>
+    </radialGradient>
+    <linearGradient id="dme-jacketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f09070"/>
+      <stop offset="100%" stop-color="#d86848"/>
+    </linearGradient>
+    <linearGradient id="dme-shortsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e87050"/>
+      <stop offset="100%" stop-color="#c04828"/>
+    </linearGradient>
+    <linearGradient id="dme-legGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8a878"/>
+      <stop offset="100%" stop-color="#c88858"/>
+    </linearGradient>
+    <!-- Motion trail gradient -->
+    <linearGradient id="dme-trailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f08060" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#f08060" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f08060" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dme-trailGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd966" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffd966" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#ffd966" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="dme-ambientGlow" cx="50%" cy="58%" r="50%">
+      <stop offset="0%" stop-color="#f08060" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f08060" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dme-softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="dme-trailBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Glow + ground shadow -->
+  <g id="glow">
+    <ellipse cx="252" cy="325" rx="148" ry="98" fill="url(#dme-ambientGlow)" filter="url(#dme-softBlur)"/>
+    <ellipse cx="252" cy="168" rx="108" ry="94" fill="#f08060" fill-opacity="0.08" filter="url(#dme-softBlur)"/>
+    <ellipse cx="252" cy="492" rx="100" ry="14" fill="#d4925c" fill-opacity="0.18"/>
+  </g>
+
+  <!-- Motion trails (moderate, behind character) -->
+  <g filter="url(#dme-trailBlur)">
+    <!-- Coral motion arcs -->
+    <path d="M 64 248 Q 108 238 148 245" stroke="#f08060" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.38"/>
+    <path d="M 48 296 Q 98 284 145 291" stroke="#f4a07a" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.34"/>
+    <path d="M 56 344 Q 102 334 146 340" stroke="#f08060" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.30"/>
+    <path d="M 68 388 Q 110 380 146 386" stroke="#ffd966" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.28"/>
+    <!-- Smaller speed lines -->
+    <path d="M 80 224 Q 115 218 148 224" stroke="#f4a07a" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.28"/>
+    <path d="M 72 415 Q 108 410 146 415" stroke="#ffd966" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.25"/>
+  </g>
+
+  <!-- Hair back + ponytail streaming back from jogging -->
+  <g id="hair-back">
+    <!-- Back hair mass (slight lean forward) -->
+    <ellipse cx="252" cy="164" rx="98" ry="106" fill="url(#dme-hairGrad)" transform="rotate(-6,252,164)"/>
+    <!-- Ponytail streaming back/right from movement — more dynamic -->
+    <path d="M 295 108 Q 355 85 418 72 Q 465 62 488 78 Q 500 94 490 114 Q 475 132 438 140 Q 394 148 350 148 Q 318 146 302 136 Q 292 124 295 108 Z" fill="url(#dme-ponytailGrad)" stroke="#c05840" stroke-width="0.8"/>
+    <!-- Ponytail volume -->
+    <path d="M 350 148 Q 370 168 358 188 Q 346 206 330 200 Q 312 192 308 170 Q 306 152 322 144 Q 336 140 350 148 Z" fill="url(#dme-ponytailGrad)"/>
+    <!-- Ponytail hair strands -->
+    <path d="M 312 114 Q 378 88 462 74" stroke="#c05840" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.52"/>
+    <path d="M 310 130 Q 374 106 455 96" stroke="#f4a07a" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.46"/>
+    <path d="M 308 144 Q 365 128 430 126" stroke="#c05840" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.42"/>
+    <path d="M 334 152 Q 358 162 370 180" stroke="#c05840" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <!-- Ponytail tip flick -->
+    <path d="M 482 78 Q 510 62 512 84 Q 512 104 486 114 Q 468 120 458 108 Q 452 94 482 78 Z" fill="url(#dme-ponytailGrad)" stroke="#c05840" stroke-width="1"/>
+  </g>
+
+  <!-- Body (jog pose — slight lean, one foot forward) -->
+  <g id="body">
+    <!-- Neck (slight lean forward) -->
+    <rect x="237" y="260" width="30" height="28" rx="9" fill="url(#dme-skinGrad)" stroke="#c07850" stroke-width="0.5" transform="rotate(-8,252,274)"/>
+    <!-- Torso (leaning forward in jog) -->
+    <path d="M 192 286 Q 217 268 256 264 Q 295 268 318 286 L 322 396 Q 296 420 256 422 Q 216 420 186 396 Z" fill="url(#dme-jacketGrad)" stroke="#c06040" stroke-width="1" transform="rotate(-4,254,344)"/>
+    <!-- Left arm pumping forward -->
+    <path d="M 196 290 Q 168 308 150 342 Q 140 366 147 390 Q 158 394 170 384 Q 170 362 178 338 Q 188 312 196 294 Z" fill="url(#dme-jacketGrad)" stroke="#c06040" stroke-width="0.8" transform="rotate(-4,170,342)"/>
+    <!-- Right arm pumping back -->
+    <path d="M 310 290 Q 336 306 350 338 Q 358 362 352 384 Q 342 390 333 382 Q 332 360 325 336 Q 316 310 308 294 Z" fill="url(#dme-jacketGrad)" stroke="#c06040" stroke-width="0.8" transform="rotate(-4,330,337)"/>
+    <!-- Hands -->
+    <ellipse cx="156" cy="392" rx="17" ry="14" fill="url(#dme-skinGrad)" stroke="#c07850" stroke-width="0.8" transform="rotate(-4,156,392)"/>
+    <ellipse cx="346" cy="386" rx="17" ry="14" fill="url(#dme-skinGrad)" stroke="#c07850" stroke-width="0.8" transform="rotate(-4,346,386)"/>
+
+    <!-- Jogging legs (one foot forward, one pushing off) -->
+    <!-- Front leg stepping forward -->
+    <path d="M 210 400 Q 200 436 188 464 Q 180 480 188 490 L 218 490 Q 224 476 234 456 Q 244 434 246 408 Z" fill="url(#dme-legGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Back leg pushing off (bent at knee) -->
+    <path d="M 262 400 Q 275 428 288 450 Q 298 470 302 486 L 326 486 Q 326 470 318 450 Q 308 426 302 402 Z" fill="url(#dme-legGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <!-- Front foot flat on ground -->
+    <ellipse cx="200" cy="492" rx="30" ry="13" fill="#d86848" stroke="#a04030" stroke-width="1"/>
+    <!-- Back foot up (pushing off, toes down) -->
+    <ellipse cx="315" cy="488" rx="24" ry="11" fill="#d86848" stroke="#a04030" stroke-width="1" transform="rotate(15,315,488)"/>
+    <!-- Shoe accents -->
+    <ellipse cx="186" cy="490" rx="10" ry="5.5" fill="#ffd966" fill-opacity="0.72"/>
+    <ellipse cx="304" cy="486" rx="9" ry="5" fill="#ffd966" fill-opacity="0.68"/>
+  </g>
+
+  <!-- Outfit details -->
+  <g id="outfit">
+    <!-- Gold jacket stripes -->
+    <path d="M 196 292 Q 174 346 168 398 L 180 400 Q 187 350 208 294 Z" fill="#ffd966" fill-opacity="0.7" transform="rotate(-4,188,346)"/>
+    <path d="M 314 292 Q 334 346 337 398 L 325 400 Q 320 350 304 294 Z" fill="#ffd966" fill-opacity="0.7" transform="rotate(-4,320,346)"/>
+    <!-- Shorts -->
+    <path d="M 197 386 Q 222 404 256 406 Q 290 404 315 386 L 313 412 Q 291 426 256 428 Q 221 426 199 412 Z" fill="url(#dme-shortsGrad)" stroke="#a03828" stroke-width="0.8"/>
+    <!-- Collar -->
+    <path d="M 220 272 Q 256 264 292 272 L 292 285 Q 256 277 220 285 Z" fill="#e06040" stroke="#c04828" stroke-width="0.8"/>
+    <!-- Wing feather motif left chest -->
+    <path d="M 206 310 Q 218 298 230 304 Q 222 314 218 322 Q 210 318 206 310 Z" fill="#ffd966" fill-opacity="0.88" stroke="#e8a820" stroke-width="0.8"/>
+    <path d="M 202 322 Q 215 310 227 317 Q 219 328 215 334 Q 208 330 202 322 Z" fill="#ffd966" fill-opacity="0.72" stroke="#e8a820" stroke-width="0.8"/>
+    <path d="M 200 334 Q 212 322 224 328 Q 216 340 212 346 Q 205 342 200 334 Z" fill="#ffd966" fill-opacity="0.55" stroke="#e8a820" stroke-width="0.8"/>
+  </g>
+
+  <!-- Face (focused — determined expression, brows slightly furrowed) -->
+  <g id="face">
+    <ellipse cx="252" cy="168" rx="90" ry="94" fill="url(#dme-skinGrad)" stroke="#c07850" stroke-width="0.8" transform="rotate(-6,252,168)"/>
+    <!-- Ears -->
+    <ellipse cx="163" cy="178" rx="13" ry="17" fill="url(#dme-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <ellipse cx="343" cy="175" rx="13" ry="17" fill="url(#dme-skinGrad)" stroke="#c07850" stroke-width="0.8"/>
+    <ellipse cx="163" cy="178" rx="7" ry="10" fill="#e8906a" fill-opacity="0.43"/>
+    <ellipse cx="343" cy="175" rx="7" ry="10" fill="#e8906a" fill-opacity="0.43"/>
+
+    <!-- Eyebrows — slightly furrowed/determined -->
+    <path d="M 198 122 Q 215 112 234 117" stroke="#8a3820" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 271 117 Q 290 112 308 122" stroke="#8a3820" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <!-- Brow furrow lines (slight, not angry) -->
+    <path d="M 234 115 Q 238 110 242 115" stroke="#a04020" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 270 115 Q 266 110 262 115" stroke="#a04020" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Eyes (wider, focused, looking slightly up/forward) -->
+    <ellipse cx="216" cy="158" rx="28" ry="26" fill="white"/>
+    <ellipse cx="288" cy="155" rx="28" ry="26" fill="white"/>
+    <ellipse cx="216" cy="160" rx="21" ry="22" fill="url(#dme-eyeIris)"/>
+    <ellipse cx="288" cy="157" rx="21" ry="22" fill="url(#dme-eyeIris)"/>
+    <ellipse cx="217" cy="158" rx="12" ry="14" fill="#2a1008"/>
+    <ellipse cx="289" cy="155" rx="12" ry="14" fill="#2a1008"/>
+    <!-- Eye shines (energized) -->
+    <ellipse cx="207" cy="150" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <ellipse cx="279" cy="147" rx="8" ry="7" fill="white" fill-opacity="0.95"/>
+    <circle cx="224" cy="165" r="3.5" fill="white" fill-opacity="0.55"/>
+    <circle cx="296" cy="162" r="3.5" fill="white" fill-opacity="0.55"/>
+    <!-- Eyelid -->
+    <path d="M 189 146 Q 216 131 243 146" stroke="#7a2a10" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 261 143 Q 288 128 315 143" stroke="#7a2a10" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 193 172 Q 216 182 239 172" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 265 169 Q 288 179 311 169" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <ellipse cx="252" cy="186" rx="5" ry="3.5" fill="#c07850" fill-opacity="0.52"/>
+
+    <!-- Determined pursed smile (not fully open, focused) -->
+    <path d="M 232 205 Q 252 214 272 205" stroke="#a05030" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 237 207 Q 252 213 267 207 Q 252 215 237 207 Z" fill="white" fill-opacity="0.5"/>
+    <!-- Small effort dimple lines at mouth corners -->
+    <path d="M 232 205 Q 228 210 230 215" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 272 205 Q 276 210 274 215" stroke="#c07050" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Blush (effort-flushed) -->
+    <ellipse cx="190" cy="182" rx="24" ry="13" fill="#f06050" fill-opacity="0.35"/>
+    <ellipse cx="318" cy="178" rx="24" ry="13" fill="#f06050" fill-opacity="0.35"/>
+
+    <!-- Sweat drop (effort) -->
+    <path d="M 330 138 Q 335 130 340 138 Q 340 147 335 148 Q 330 147 330 138 Z" fill="#a8d8f8" fill-opacity="0.72" stroke="#80c0e8" stroke-width="0.8"/>
+  </g>
+
+  <!-- Hair front / bangs -->
+  <g id="hair-front">
+    <path d="M 164 148 Q 174 96 216 86 Q 236 82 252 82 Q 272 82 294 86 Q 336 96 342 148" fill="url(#dme-hairGrad)" stroke="#c05840" stroke-width="0.5" transform="rotate(-6,252,120)"/>
+    <path d="M 234 84 Q 246 106 252 130 Q 258 106 270 84 Q 261 80 252 80 Q 244 80 234 84 Z" fill="#c05840"/>
+    <path d="M 180 120 Q 193 103 212 111 Q 222 118 222 137 Q 211 131 197 133 Q 185 129 180 120 Z" fill="#b04838"/>
+    <path d="M 325 118 Q 312 101 293 109 Q 283 116 284 135 Q 295 129 308 131 Q 320 127 325 118 Z" fill="#b04838"/>
+    <ellipse cx="236" cy="106" rx="28" ry="14" fill="url(#dme-hairShine)" transform="rotate(-10,236,106)"/>
+    <!-- Ribbon (slightly wind-blown) -->
+    <ellipse cx="314" cy="128" rx="14" ry="9" fill="url(#dme-ribbonGrad)" stroke="#c89020" stroke-width="1.5"/>
+    <path d="M 301 124 Q 291 114 295 128 Q 299 142 311 134 Z" fill="url(#dme-ribbonGrad)" stroke="#c89020" stroke-width="1"/>
+    <path d="M 327 124 Q 337 114 333 128 Q 329 142 317 134 Z" fill="url(#dme-ribbonGrad)" stroke="#c89020" stroke-width="1"/>
+    <ellipse cx="314" cy="128" rx="5" ry="5" fill="#ffe280" stroke="#c89020" stroke-width="1"/>
+  </g>
+
+  <!-- Chest wing motif -->
+  <g id="motif">
+    <path d="M 244 338 Q 234 324 238 314 Q 248 308 252 318 Q 256 308 266 314 Q 270 324 260 338 Q 252 330 244 338 Z" fill="#ffd966" fill-opacity="0.8" stroke="#e8a820" stroke-width="1.2"/>
+    <line x1="252" y1="315" x2="247" y2="336" stroke="#e8a820" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="252" y1="315" x2="257" y2="336" stroke="#e8a820" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="246" y1="321" x2="238" y2="325" stroke="#e8a820" stroke-width="1" stroke-linecap="round"/>
+    <line x1="258" y1="321" x2="266" y2="325" stroke="#e8a820" stroke-width="1" stroke-linecap="round"/>
+  </g>
+
+  <!-- Particles (moderate trail dots and small sparks) -->
+  <g id="particles">
+    <circle cx="96" cy="252" r="3.5" fill="#ffd966" opacity="0.6"/>
+    <circle cx="80" cy="298" r="3" fill="#f4a07a" opacity="0.55"/>
+    <circle cx="88" cy="346" r="3.5" fill="#ffd966" opacity="0.52"/>
+    <circle cx="95" cy="394" r="3" fill="#f4a07a" opacity="0.48"/>
+    <circle cx="378" cy="210" r="2.5" fill="#ffd966" opacity="0.5"/>
+    <circle cx="388" cy="252" r="2" fill="#f4a07a" opacity="0.45"/>
+    <!-- Effort sparkle -->
+    <path d="M 84 270 L 86 264 L 88 270 L 94 268 L 88 272 L 94 276 L 88 274 L 86 280 L 84 274 L 78 276 L 84 272 L 78 268 Z" fill="#ffd966" opacity="0.58"/>
+    <path d="M 90 320 L 92 315 L 94 320 L 99 318 L 94 322 L 99 326 L 94 324 L 92 329 L 90 324 L 85 326 L 90 322 L 85 318 Z" fill="#f08060" opacity="0.52"/>
+    <!-- Ponytail trail dot -->
+    <circle cx="492" cy="126" r="3" fill="#f4a07a" opacity="0.45"/>
+    <circle cx="504" cy="108" r="2" fill="#ffd966" opacity="0.38"/>
+  </g>
+</svg>
