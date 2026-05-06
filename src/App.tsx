@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
 import { Dashboard } from '@/pages/Dashboard'
 import { AttackMode } from '@/pages/AttackMode'
+import { CheckInPage } from '@/pages/CheckInPage'
 import { TrackersHub } from '@/pages/TrackersHub'
 import { HypaPage } from '@/pages/trackers/HypaPage'
 import { ThalmaPage } from '@/pages/trackers/ThalmaPage'
@@ -26,6 +27,7 @@ export default function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="check-in" element={<CheckInPage />} />
             <Route path="trackers" element={<TrackersHub />} />
             <Route path="trackers/hypa" element={<HypaPage />} />
             <Route path="trackers/thalma" element={<ThalmaPage />} />

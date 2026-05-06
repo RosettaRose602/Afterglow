@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronRight, ChevronLeft, Volume2, VolumeX } from 'lucide-react'
 import { AnimatedMascot } from '@/components/mascots/AnimatedMascot'
 import { useAppStore } from '@/store/appStore'
+import { useERWarning } from '@/hooks/useERWarning'
+import { ERWarningBanner } from '@/components/er-warning/ERWarningBanner'
 import { cn } from '@/lib/utils'
 
 type AttackStep =
@@ -284,6 +286,7 @@ export function AttackMode() {
   const [symptoms, setSymptoms] = useState<string[]>([])
   const [muted, setMuted] = useState(false)
   const setAttackMode = useAppStore((s) => s.setAttackMode)
+  const erWarning = useERWarning()
 
   const handleExit = () => setAttackMode(false)
 
@@ -334,6 +337,13 @@ export function AttackMode() {
               )}
             />
           ))}
+        </div>
+      )}
+
+      {/* ER warning banner (shown when relevant) */}
+      {erWarning.level !== 'none' && (
+        <div className="px-4 pt-3">
+          <ERWarningBanner warning={erWarning} />
         </div>
       )}
 

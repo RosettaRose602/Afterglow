@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Zap, CheckCircle, Plus, ChevronRight } from 'lucide-react'
+import { Zap, CheckCircle, Plus, ChevronRight, ClipboardCheck } from 'lucide-react'
 import { AnimatedMascot } from '@/components/mascots/AnimatedMascot'
 import { useAppStore } from '@/store/appStore'
 import { getMoonPhase } from '@/lib/moonPhase'
@@ -64,19 +64,22 @@ function ThresholdMeter({ score, zone }: { score: number; zone: string }) {
   )
 }
 
-function QuickLogCard() {
+function QuickLogCard({ onCheckIn }: { onCheckIn: () => void }) {
+  const navigate = useNavigate()
+  const items = [
+    { label: 'Check-in', icon: '💜', color: 'border-accentViolet/30 hover:border-accentViolet/60', onClick: onCheckIn },
+    { label: 'Water', icon: '💧', color: 'border-accentIce/30 hover:border-accentIce/60', onClick: () => navigate('/trackers/osma') },
+    { label: 'Meal', icon: '🌿', color: 'border-accentGreen/30 hover:border-accentGreen/60', onClick: () => navigate('/trackers/greli') },
+    { label: 'Exercise', icon: '⚡', color: 'border-accentGold/30 hover:border-accentGold/60', onClick: () => navigate('/trackers/dophi') },
+  ]
   return (
     <div className="card p-4">
       <h3 className="text-sm font-semibold text-textSecondary mb-3">Quick Log</h3>
       <div className="grid grid-cols-2 gap-2">
-        {[
-          { label: 'Check-in', icon: '💜', color: 'border-accentViolet/30 hover:border-accentViolet/60' },
-          { label: 'Water', icon: '💧', color: 'border-accentIce/30 hover:border-accentIce/60' },
-          { label: 'Meal', icon: '🌿', color: 'border-accentGreen/30 hover:border-accentGreen/60' },
-          { label: 'Exercise', icon: '⚡', color: 'border-accentGold/30 hover:border-accentGold/60' },
-        ].map(({ label, icon, color }) => (
+        {items.map(({ label, icon, color, onClick }) => (
           <button
             key={label}
+            onClick={onClick}
             className={cn(
               'flex items-center gap-2 p-3 rounded-xl border bg-surfaceHigh transition-all duration-150 text-sm font-medium text-textSecondary hover:text-textPrimary min-h-[44px]',
               color,
@@ -123,10 +126,11 @@ function TodayFactors({ factors }: { factors: { key: string; label: string; impa
 
 export function Dashboard() {
   const navigate = useNavigate()
-  const { threshold, setAttackMode, cyclePhase, periodStartDate, moonPhaseCache, setMoonPhaseCache, setCyclePhase } = useAppStore()
+  const { threshold, setAttackMode, cyclePhase, periodStartDate, moonPhaseCache, setMoonPhaseCache, setCyclePhase, checkIns } = useAppStore()
+  const today = format(new Date(), 'yyyy-MM-dd')
+  const checkedInToday = checkIns.some((c) => c.date === today)
 
   // Compute moon phase (cached daily)
-  const today = format(new Date(), 'yyyy-MM-dd')
   useEffect(() => {
     if (!moonPhaseCache || moonPhaseCache.date !== today) {
       const info = getMoonPhase()
@@ -201,8 +205,25 @@ export function Dashboard() {
         {/* Threshold meter */}
         <ThresholdMeter score={threshold.score} zone={threshold.zone} />
 
+        {/* Daily check-in CTA (shown when not yet done) */}
+        {!checkedInToday && (
+          <button
+            onClick={() => navigate('/check-in')}
+            className="w-full card p-4 border-accentViolet/20 hover:border-accentViolet/40 hover:bg-accentViolet/5 transition-all duration-150 flex items-center gap-3 text-left"
+          >
+            <div className="w-10 h-10 rounded-xl bg-accentViolet/15 flex items-center justify-center flex-shrink-0">
+              <ClipboardCheck size={18} className="text-accentViolet" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-textPrimary">Daily check-in</p>
+              <p className="text-xs text-textMuted">Update your threshold score — takes 2 minutes</p>
+            </div>
+            <ChevronRight size={16} className="text-textMuted ml-auto flex-shrink-0" />
+          </button>
+        )}
+
         {/* Quick log */}
-        <QuickLogCard />
+        <QuickLogCard onCheckIn={() => navigate('/check-in')} />
 
         {/* Active factors */}
         <TodayFactors factors={threshold.factors} />

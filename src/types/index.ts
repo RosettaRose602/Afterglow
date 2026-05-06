@@ -99,9 +99,23 @@ export interface ExerciseEntry {
 export interface DailyCheckIn {
   id: string
   date: string
+  // Core
   mood: 1 | 2 | 3 | 4 | 5
   stress: 1 | 2 | 3 | 4 | 5
   energy: 1 | 2 | 3 | 4 | 5
+  // Body
+  neckStiffness?: 1 | 2 | 3 | 4 | 5
+  // Sensitivities
+  lightSensitivity?: 1 | 2 | 3 | 4 | 5
+  soundSensitivity?: 1 | 2 | 3 | 4 | 5
+  weatherSensitivity?: 1 | 2 | 3 | 4 | 5
+  // Prodrome signals
+  foodCravings?: boolean
+  excessiveYawning?: boolean
+  visionChanges?: boolean
+  nausea?: boolean
+  // Hydration fallback (if no Osma entry today)
+  hydrationGlasses?: number
   notes?: string
 }
 

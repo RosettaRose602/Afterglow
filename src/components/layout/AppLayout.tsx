@@ -1,8 +1,10 @@
 import { Outlet } from 'react-router-dom'
 import { BottomNav } from './BottomNav'
 import { Sidebar } from './Sidebar'
+import { useThresholdScore } from '@/hooks/useThresholdScore'
 
 export function AppLayout() {
+  useThresholdScore()
   return (
     <div className="flex min-h-dvh bg-bg">
       {/* Sidebar — visible only on lg+ */}
