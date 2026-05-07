@@ -2,6 +2,7 @@ import { differenceInHours, parseISO } from 'date-fns'
 import type {
   DailyCheckIn, SleepEntry, HydrationEntry,
   NourishmentEntry, ExerciseEntry, ThresholdFactor, ThresholdState, ThresholdZone,
+  DreamEntry,
 } from '@/types'
 import type { CyclePhaseName } from '@/lib/cyclePhase'
 
@@ -12,6 +13,7 @@ export interface ThresholdInput {
   hydrationEntries: HydrationEntry[]
   nourishmentEntries: NourishmentEntry[]
   exerciseEntries: ExerciseEntry[]
+  recentDreamEntry?: DreamEntry | null
 }
 
 function zone(score: number): ThresholdZone {
@@ -21,7 +23,7 @@ function zone(score: number): ThresholdZone {
 }
 
 export function computeThreshold(input: ThresholdInput): ThresholdState {
-  const { checkIn, sleepEntry, cyclePhase, hydrationEntries, nourishmentEntries, exerciseEntries } = input
+  const { checkIn, sleepEntry, cyclePhase, hydrationEntries, nourishmentEntries, exerciseEntries, recentDreamEntry } = input
 
   // If nothing logged yet, return a neutral default
   const hasAnyData =
@@ -148,6 +150,12 @@ export function computeThreshold(input: ThresholdInput): ThresholdState {
   if (checkIn?.nausea) {
     risk += 3
     factors.push({ key: 'nausea', label: 'Nausea present', impact: -3, icon: '🤢' })
+  }
+
+  // ── Vivid dream signal (+2 pts) — Thalma prodrome proxy ─────────────────
+  if (recentDreamEntry && !recentDreamEntry.isMedicationRelated && (recentDreamEntry.vividness ?? 0) >= 4) {
+    risk += 2
+    factors.push({ key: 'vivid-dream', label: 'Vivid dream (prodrome signal)', impact: -2, icon: '🌙' })
   }
 
   // ── Meal gap (Greli, max 10 pts) ──────────────────────────────────────────

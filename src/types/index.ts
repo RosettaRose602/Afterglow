@@ -92,6 +92,27 @@ export interface SleepEntry {
   notes?: string
 }
 
+export type DreamEmotionalTone = 'neutral' | 'pleasant' | 'anxious' | 'scary' | 'strange' | 'mixed'
+export type DreamTag =
+  | 'chasing'
+  | 'falling'
+  | 'flying'
+  | 'people-i-know'
+  | 'unfamiliar-places'
+  | 'recurring'
+  | 'cant-explain'
+
+export interface DreamEntry {
+  id: string
+  date: string
+  dreamed: boolean | null       // null = not sure
+  vividness?: 1 | 2 | 3 | 4 | 5
+  emotionalTone?: DreamEmotionalTone
+  tags: DreamTag[]
+  note?: string
+  isMedicationRelated: boolean
+}
+
 export type HungerLevel = 1 | 2 | 3 | 4 | 5
 export interface NourishmentEntry {
   id: string

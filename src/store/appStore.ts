@@ -4,6 +4,7 @@ import type {
   MigraineAttack, CycleEntry, SleepEntry, NourishmentEntry,
   HydrationEntry, ExerciseEntry, DailyCheckIn, UserProfile,
   ThresholdState, ThresholdZone, SelectedSymptom, WaveEntry, AttackCheckIn,
+  DreamEntry,
 } from '@/types'
 import type { MoonPhaseName } from '@/lib/moonPhase'
 import type { CyclePhaseName } from '@/lib/cyclePhase'
@@ -45,6 +46,10 @@ interface AppStore {
   // ─── Sleep ───────────────────────────────────────────────────────────────────
   sleepEntries: SleepEntry[]
   addSleepEntry: (e: SleepEntry) => void
+
+  // ─── Dreams ──────────────────────────────────────────────────────────────────
+  dreamEntries: DreamEntry[]
+  addDreamEntry: (e: DreamEntry) => void
 
   // ─── Moon phase cache ─────────────────────────────────────────────────────────
   moonPhaseCache: { date: string; phase: MoonPhaseName } | null
@@ -134,6 +139,9 @@ export const useAppStore = create<AppStore>()(
       sleepEntries: [],
       addSleepEntry: (e) => set((s) => ({ sleepEntries: [e, ...s.sleepEntries] })),
 
+      dreamEntries: [],
+      addDreamEntry: (e) => set((s) => ({ dreamEntries: [e, ...s.dreamEntries] })),
+
       moonPhaseCache: null,
       setMoonPhaseCache: (c) => set({ moonPhaseCache: c }),
 
@@ -157,6 +165,7 @@ export const useAppStore = create<AppStore>()(
         cyclePhase: s.cyclePhase,
         periodStartDate: s.periodStartDate,
         sleepEntries: s.sleepEntries,
+        dreamEntries: s.dreamEntries,
         moonPhaseCache: s.moonPhaseCache,
         nourishmentEntries: s.nourishmentEntries,
         hydrationEntries: s.hydrationEntries,
