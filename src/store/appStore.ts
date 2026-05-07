@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware'
 import type {
   MigraineAttack, CycleEntry, SleepEntry, NourishmentEntry,
   HydrationEntry, ExerciseEntry, DailyCheckIn, UserProfile,
-  ThresholdState, ThresholdZone,
+  ThresholdState, ThresholdZone, SelectedSymptom, WaveEntry, AttackCheckIn,
 } from '@/types'
 import type { MoonPhaseName } from '@/lib/moonPhase'
 import type { CyclePhaseName } from '@/lib/cyclePhase'
@@ -24,6 +24,15 @@ interface AppStore {
   // ─── Active attack ────────────────────────────────────────────────────────────
   activeAttack: MigraineAttack | null
   setActiveAttack: (a: MigraineAttack | null) => void
+  updateActiveAttackNotes: (notes: string) => void
+  updateActiveAttackSymptoms: (symptoms: SelectedSymptom[]) => void
+  updateActiveAttackPain: (pain: number) => void
+  addWaveEntry: (entry: WaveEntry) => void
+  addAttackCheckIn: (checkIn: AttackCheckIn) => void
+
+  // ─── Completed attacks ────────────────────────────────────────────────────────
+  completedAttacks: MigraineAttack[]
+  addCompletedAttack: (a: MigraineAttack) => void
 
   // ─── Cycle ────────────────────────────────────────────────────────────────────
   cycleEntries: CycleEntry[]
@@ -78,6 +87,42 @@ export const useAppStore = create<AppStore>()(
 
       activeAttack: null,
       setActiveAttack: (a) => set({ activeAttack: a }),
+      updateActiveAttackNotes: (notes) =>
+        set((s) => s.activeAttack ? { activeAttack: { ...s.activeAttack, notes } } : {}),
+      updateActiveAttackSymptoms: (symptoms) =>
+        set((s) =>
+          s.activeAttack
+            ? {
+                activeAttack: {
+                  ...s.activeAttack,
+                  selectedSymptoms: symptoms,
+                  symptoms: symptoms.map((x) => x.id),
+                },
+              }
+            : {},
+        ),
+      updateActiveAttackPain: (pain) =>
+        set((s) =>
+          s.activeAttack
+            ? { activeAttack: { ...s.activeAttack, painLevel: pain as MigraineAttack['painLevel'] } }
+            : {},
+        ),
+      addWaveEntry: (entry) =>
+        set((s) =>
+          s.activeAttack
+            ? { activeAttack: { ...s.activeAttack, waveLog: [...s.activeAttack.waveLog, entry] } }
+            : {},
+        ),
+      addAttackCheckIn: (checkIn) =>
+        set((s) =>
+          s.activeAttack
+            ? { activeAttack: { ...s.activeAttack, checkIns: [...s.activeAttack.checkIns, checkIn] } }
+            : {},
+        ),
+
+      completedAttacks: [],
+      addCompletedAttack: (a) =>
+        set((s) => ({ completedAttacks: [a, ...s.completedAttacks] })),
 
       cycleEntries: [],
       cyclePhase: 'follicular',
@@ -107,6 +152,7 @@ export const useAppStore = create<AppStore>()(
     {
       name: 'afterglow-store',
       partialize: (s) => ({
+        completedAttacks: s.completedAttacks,
         cycleEntries: s.cycleEntries,
         cyclePhase: s.cyclePhase,
         periodStartDate: s.periodStartDate,
@@ -122,3 +168,4 @@ export const useAppStore = create<AppStore>()(
     },
   ),
 )
+

@@ -1,70 +1,86 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ChevronLeft, Plus, Minus } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { AnimatedMascot } from '@/components/mascots/AnimatedMascot'
 import { useAppStore } from '@/store/appStore'
 import { cn } from '@/lib/utils'
-import { format } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import type { HydrationEntry } from '@/types'
 
-const QUICK_AMOUNTS = [150, 250, 350, 500]
+const QUICK_DRINKS = [
+  { label: 'Water', ml: 250, emoji: '💧' },
+  { label: 'Water', ml: 500, emoji: '💧' },
+  { label: 'Tea', ml: 250, emoji: '🍵' },
+  { label: 'Coffee', ml: 200, emoji: '☕' },
+  { label: 'Juice', ml: 200, emoji: '🧃' },
+  { label: 'Sports drink', ml: 500, emoji: '🥤' },
+]
+
+const TARGET_ML = 2000
 
 function HydrationRing({ current, target }: { current: number; target: number }) {
   const pct = Math.min(1, current / target)
-  const size = 120
-  const r = 50
+  const r = 52
   const circumference = 2 * Math.PI * r
   const offset = circumference * (1 - pct)
 
+  const color = pct >= 0.75 ? '#0d9488' : pct >= 0.5 ? '#3b82f6' : pct >= 0.25 ? '#f59e0b' : '#ef4444'
+
   return (
-    <div className="flex flex-col items-center gap-2">
-      <svg width={size} height={size} viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r={r} fill="none" stroke="#1a1a2e" strokeWidth="10" />
-        <circle
-          cx="60"
-          cy="60"
+    <div className="relative w-36 h-36 flex items-center justify-center mx-auto">
+      <svg width="144" height="144" className="-rotate-90">
+        <circle cx="72" cy="72" r={r} fill="none" stroke="#1a1a38" strokeWidth="12" />
+        <motion.circle
+          cx="72"
+          cy="72"
           r={r}
           fill="none"
-          stroke={pct >= 1 ? '#4caf8a' : pct >= 0.6 ? '#6ab4d4' : '#e0943a'}
-          strokeWidth="10"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
+          stroke={color}
+          strokeWidth="12"
           strokeLinecap="round"
-          transform="rotate(-90 60 60)"
-          style={{ transition: 'stroke-dashoffset 0.4s ease' }}
+          strokeDasharray={circumference}
+          initial={{ strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset: offset }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         />
-        <text x="60" y="56" textAnchor="middle" fill="#e8e0f0" fontSize="16" fontWeight="700">
-          {Math.round(current / 1000 * 10) / 10}L
-        </text>
-        <text x="60" y="72" textAnchor="middle" fill="#505070" fontSize="10">
-          / {target / 1000}L
-        </text>
       </svg>
-      <p className="text-xs text-textMuted">{Math.round(pct * 100)}% of daily goal</p>
+      <div className="absolute text-center">
+        <p className="text-xl font-bold text-textPrimary">{Math.round(current / 100) / 10}L</p>
+        <p className="text-[10px] text-textMuted">{Math.round(pct * 100)}%</p>
+      </div>
     </div>
   )
 }
 
 export function OsmaPage() {
   const navigate = useNavigate()
-  const { hydrationEntries, addHydrationEntry, user } = useAppStore()
-  const [customAmount, setCustomAmount] = useState(250)
-  const [saved, setSaved] = useState(false)
+  const { hydrationEntries, addHydrationEntry } = useAppStore()
+  const [customMl, setCustomMl] = useState(250)
+  const [logged, setLogged] = useState(false)
 
-  const target = user?.preferences.hydrationTarget ?? 2000
   const today = format(new Date(), 'yyyy-MM-dd')
-  const todayEntries = hydrationEntries.filter((e) => e.loggedAt.startsWith(today))
-  const todayTotal = todayEntries.reduce((sum, e) => sum + e.amountMl, 0)
+  const todayEntries = hydrationEntries
+    .filter((e) => e.loggedAt.startsWith(today))
+    .sort((a, b) => new Date(a.loggedAt).getTime() - new Date(b.loggedAt).getTime())
 
-  const logAmount = (ml: number) => {
+  const totalMl = todayEntries.reduce((sum, e) => sum + e.amountMl, 0)
+
+  const hydrationStatus =
+    totalMl >= TARGET_ML * 0.75 ? { label: 'Well hydrated', color: 'text-safeGreen' }
+    : totalMl >= TARGET_ML * 0.5  ? { label: 'Okay', color: 'text-accentIce' }
+    : totalMl >= TARGET_ML * 0.25 ? { label: 'Low', color: 'text-warningAmber' }
+    : { label: 'Dehydrated', color: 'text-dangerRed' }
+
+  function log(ml: number) {
     const entry: HydrationEntry = {
       id: crypto.randomUUID(),
       loggedAt: new Date().toISOString(),
       amountMl: ml,
     }
     addHydrationEntry(entry)
-    setSaved(true)
-    setTimeout(() => setSaved(false), 1500)
+    setLogged(true)
+    setTimeout(() => setLogged(false), 1200)
   }
 
   return (
@@ -79,75 +95,81 @@ export function OsmaPage() {
 
       <div className="px-4 pb-6 space-y-4">
         {/* Mascot + ring */}
-        <div className="card p-5 flex items-center justify-around">
-          <AnimatedMascot mascot="osma" size={120} animation="bounce" />
-          <HydrationRing current={todayTotal} target={target} />
+        <div className="flex items-center gap-4">
+          <AnimatedMascot mascot="osma" animation="float" size={110} />
+          <div className="flex-1 space-y-1">
+            <HydrationRing current={totalMl} target={TARGET_ML} />
+            <p className={cn('text-center text-sm font-semibold', hydrationStatus.color)}>
+              {hydrationStatus.label}
+            </p>
+            <p className="text-center text-xs text-textMuted">
+              {totalMl}ml of {TARGET_ML}ml
+            </p>
+          </div>
         </div>
 
+        {/* Quick add */}
         <div className="card p-4">
-          <p className="text-sm text-textSecondary leading-relaxed">
-            {todayTotal < target * 0.5
-              ? "You haven't had much water yet today! Dehydration is a big migraine trigger. 💧"
-              : todayTotal < target
-              ? "You're on the right track! Keep going — almost there. 💙"
-              : "Excellent! You've hit your hydration goal today! 🌊"}
-          </p>
-        </div>
-
-        {/* Quick log */}
-        <div className="card p-4 space-y-4">
-          <h3 className="text-sm font-semibold text-textPrimary">Quick log</h3>
-          <div className="grid grid-cols-4 gap-2">
-            {QUICK_AMOUNTS.map((ml) => (
+          <h3 className="text-sm font-semibold text-textSecondary mb-3">Add a drink</h3>
+          <div className="grid grid-cols-3 gap-2 mb-3">
+            {QUICK_DRINKS.map((d) => (
               <button
-                key={ml}
-                onClick={() => logAmount(ml)}
-                className="flex flex-col items-center p-3 rounded-xl border border-sky-800/30 bg-sky-900/20 hover:bg-sky-900/40 transition-all min-h-[60px] text-center"
+                key={`${d.label}-${d.ml}`}
+                onClick={() => log(d.ml)}
+                className="flex flex-col items-center gap-1 py-3 rounded-xl border border-border bg-surfaceHigh hover:border-accentIce/40 transition-all min-h-[64px]"
               >
-                <span className="text-lg">💧</span>
-                <span className="text-xs font-semibold text-sky-400">{ml}ml</span>
+                <span className="text-xl">{d.emoji}</span>
+                <span className="text-[10px] text-textMuted">{d.label} {d.ml}ml</span>
               </button>
             ))}
           </div>
 
           {/* Custom amount */}
-          <div>
-            <label className="label-base">Custom amount</label>
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3 pt-3 border-t border-border">
+            <span className="text-sm text-textMuted flex-shrink-0">Custom:</span>
+            <div className="flex items-center gap-2 flex-1">
               <button
-                onClick={() => setCustomAmount((v) => Math.max(50, v - 50))}
-                className="btn-ghost p-2 min-h-0 w-10 h-10"
+                onClick={() => setCustomMl((v) => Math.max(50, v - 50))}
+                className="w-10 h-10 rounded-xl border border-border bg-surfaceHigh flex items-center justify-center text-textSecondary hover:text-textPrimary"
               >
-                <Minus size={16} />
+                <Minus size={14} />
               </button>
-              <div className="flex-1 input-base text-center font-semibold">{customAmount} ml</div>
+              <span className="flex-1 text-center font-semibold text-textPrimary">{customMl}ml</span>
               <button
-                onClick={() => setCustomAmount((v) => v + 50)}
-                className="btn-ghost p-2 min-h-0 w-10 h-10"
+                onClick={() => setCustomMl((v) => v + 50)}
+                className="w-10 h-10 rounded-xl border border-border bg-surfaceHigh flex items-center justify-center text-textSecondary hover:text-textPrimary"
               >
-                <Plus size={16} />
+                <Plus size={14} />
               </button>
             </div>
             <button
-              onClick={() => logAmount(customAmount)}
-              className={cn('btn-primary w-full mt-2', saved && 'bg-safeGreen')}
+              onClick={() => log(customMl)}
+              className="px-4 py-2 rounded-xl bg-accentIce/15 border border-accentIce/30 text-accentIce text-sm font-semibold hover:bg-accentIce/25 transition-colors"
             >
-              {saved ? '✓ Logged!' : `+ Log ${customAmount}ml`}
+              Log
             </button>
           </div>
         </div>
 
+        {logged && (
+          <p className="text-center text-sm text-safeGreen font-semibold">💧 Logged!</p>
+        )}
+
         {/* Today's log */}
         {todayEntries.length > 0 && (
           <div className="card p-4">
-            <h3 className="text-sm font-semibold text-textSecondary mb-3">Today's log ({todayTotal}ml total)</h3>
-            <div className="space-y-2">
-              {todayEntries.slice().reverse().map((e) => (
-                <div key={e.id} className="flex items-center justify-between text-sm py-1 border-b border-border last:border-0">
-                  <span className="text-textMuted">{format(new Date(e.loggedAt), 'h:mm a')}</span>
-                  <span className="text-sky-400 font-medium">💧 {e.amountMl}ml</span>
+            <h3 className="text-sm font-semibold text-textSecondary mb-3">Today's intake</h3>
+            <div className="space-y-1.5">
+              {todayEntries.map((e) => (
+                <div key={e.id} className="flex items-center justify-between text-sm">
+                  <span className="text-textMuted text-xs">{format(parseISO(e.loggedAt), 'h:mm a')}</span>
+                  <span className="text-textSecondary">{e.amountMl}ml</span>
                 </div>
               ))}
+              <div className="pt-2 border-t border-border flex items-center justify-between text-sm font-semibold">
+                <span className="text-textMuted">Total</span>
+                <span className="text-textPrimary">{totalMl}ml</span>
+              </div>
             </div>
           </div>
         )}

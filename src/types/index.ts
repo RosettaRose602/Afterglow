@@ -21,6 +21,28 @@ export type MigrainePhase = 'prodrome' | 'aura' | 'headache' | 'postdrome'
 export type PainSide = 'left' | 'right' | 'both' | 'migrating'
 export type PainScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 
+export interface SelectedSymptom {
+  id: string
+  severity: 1 | 2 | 3 | 4 | 5
+}
+
+export interface WaveEntry {
+  id: string
+  attackId: string
+  loggedAt: string
+  pain: number        // 1–10
+  nausea?: number     // 1–5
+}
+
+export interface AttackCheckIn {
+  id: string
+  attackId: string
+  loggedAt: string
+  symptoms: SelectedSymptom[]
+  painLevel: number
+  notes?: string
+}
+
 export interface MigraineAttack {
   id: string
   startedAt: string
@@ -29,10 +51,14 @@ export interface MigraineAttack {
   painLevel: PainScale
   painSide: PainSide
   symptoms: string[]
+  selectedSymptoms: SelectedSymptom[]
   triggers: string[]
   treatments: Treatment[]
   notes?: string
+  attackStory?: string
   erWarning: boolean
+  waveLog: WaveEntry[]
+  checkIns: AttackCheckIn[]
 }
 
 export interface Treatment {

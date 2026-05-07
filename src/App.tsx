@@ -3,6 +3,7 @@ import { AppLayout } from '@/components/layout/AppLayout'
 import { Dashboard } from '@/pages/Dashboard'
 import { AttackMode } from '@/pages/AttackMode'
 import { CheckInPage } from '@/pages/CheckInPage'
+import { DebriefPage } from '@/pages/DebriefPage'
 import { TrackersHub } from '@/pages/TrackersHub'
 import { HypaPage } from '@/pages/trackers/HypaPage'
 import { ThalmaPage } from '@/pages/trackers/ThalmaPage'
@@ -21,6 +22,7 @@ export default function App() {
       {isAttackMode ? (
         <Routes>
           <Route path="/attack" element={<AttackMode />} />
+          <Route path="/debrief" element={<DebriefPage />} />
           <Route path="*" element={<Navigate to="/attack" replace />} />
         </Routes>
       ) : (

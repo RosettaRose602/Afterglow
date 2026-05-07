@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Zap, CheckCircle, Plus, ChevronRight, ClipboardCheck } from 'lucide-react'
+import { Zap, CheckCircle, ChevronRight, ClipboardCheck } from 'lucide-react'
 import { AnimatedMascot } from '@/components/mascots/AnimatedMascot'
+import { AmIStartingFlow } from '@/components/dashboard/AmIStartingFlow'
 import { useAppStore } from '@/store/appStore'
 import { getMoonPhase } from '@/lib/moonPhase'
 import { getCyclePhase } from '@/lib/cyclePhase'
@@ -224,6 +225,9 @@ export function Dashboard() {
 
         {/* Quick log */}
         <QuickLogCard onCheckIn={() => navigate('/check-in')} />
+
+        {/* "Something feels off" triage */}
+        <AmIStartingFlow onStartAttack={handleAttackMode} />
 
         {/* Active factors */}
         <TodayFactors factors={threshold.factors} />
