@@ -18,7 +18,7 @@ export interface MascotEntry {
   meta: MascotMeta
 }
 
-const BASE = '/src/assets/mascots'
+const BASE = '/mascots'
 
 export const mascotRegistry = {
   cere: {
