@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import type { CyclePhaseName } from '@/types'
 import type { MoonPhaseName } from '@/lib/moonPhase'
 import {
   getCereSrc, getBellaSrc, getHypaSrc,
   getThalmasSrc, getGreliSrc, getOsmaSrc, getDophiSrc,
+  mascotRegistry,
   type DophiVariant,
 } from './mascotRegistry'
 
@@ -73,6 +75,29 @@ function getSrc(props: AnimatedMascotProps): string {
   }
 }
 
+// Colored circle placeholder shown while PNGs are missing
+function MascotPlaceholder({ mascot, size }: { mascot: MascotName; size: number | string }) {
+  const meta = mascotRegistry[mascot].meta
+  const px = typeof size === 'number' ? `${size}px` : size
+  const initials = meta.label[0]
+  return (
+    <div
+      style={{
+        width: px, height: px,
+        borderRadius: '50%',
+        background: `radial-gradient(circle at 35% 35%, ${meta.accentColor}, ${meta.primaryColor})`,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        flexShrink: 0,
+        opacity: 0.85,
+      }}
+    >
+      <span style={{ fontSize: typeof size === 'number' ? size * 0.38 : 40, lineHeight: 1 }}>
+        {initials}
+      </span>
+    </div>
+  )
+}
+
 export function AnimatedMascot({
   mascot,
   cyclePhase,
@@ -85,6 +110,7 @@ export function AnimatedMascot({
   alt,
 }: AnimatedMascotProps) {
   const prefersReduced = useReducedMotion()
+  const [imgError, setImgError] = useState(false)
 
   const src = getSrc({ mascot, cyclePhase, moonPhase, dophiVariant })
 
@@ -94,14 +120,18 @@ export function AnimatedMascot({
     objectFit: 'contain',
   }
 
+  if (imgError) {
+    return <MascotPlaceholder mascot={mascot} size={size} />
+  }
+
+  const onError = () => setImgError(true)
+
   if (prefersReduced || animation === 'none') {
     return (
       <img
-        src={src}
-        alt={alt ?? mascot}
-        style={imgStyle}
-        className={className}
-        draggable={false}
+        src={src} alt={alt ?? mascot}
+        style={imgStyle} className={className}
+        draggable={false} onError={onError}
       />
     )
   }
@@ -109,11 +139,9 @@ export function AnimatedMascot({
   if (mascot === 'cere' && animation === 'pulse') {
     return (
       <motion.img
-        src={src}
-        alt={alt ?? mascot}
-        style={imgStyle}
-        className={className}
-        draggable={false}
+        src={src} alt={alt ?? mascot}
+        style={imgStyle} className={className}
+        draggable={false} onError={onError}
         animate={pulseVariants[intensity]}
       />
     )
@@ -122,13 +150,10 @@ export function AnimatedMascot({
   if (animation === 'breathe') {
     return (
       <motion.img
-        src={src}
-        alt={alt ?? 'mascot'}
-        style={imgStyle}
-        className={className}
-        draggable={false}
-        variants={breatheVariants}
-        animate="animate"
+        src={src} alt={alt ?? 'mascot'}
+        style={imgStyle} className={className}
+        draggable={false} onError={onError}
+        variants={breatheVariants} animate="animate"
       />
     )
   }
@@ -136,26 +161,20 @@ export function AnimatedMascot({
   if (animation === 'bounce') {
     return (
       <motion.img
-        src={src}
-        alt={alt ?? 'mascot'}
-        style={imgStyle}
-        className={className}
-        draggable={false}
-        variants={bounceVariants}
-        animate="animate"
+        src={src} alt={alt ?? 'mascot'}
+        style={imgStyle} className={className}
+        draggable={false} onError={onError}
+        variants={bounceVariants} animate="animate"
       />
     )
   }
 
   return (
     <motion.img
-      src={src}
-      alt={alt ?? 'mascot'}
-      style={imgStyle}
-      className={className}
-      draggable={false}
-      variants={floatVariants}
-      animate="animate"
+      src={src} alt={alt ?? 'mascot'}
+      style={imgStyle} className={className}
+      draggable={false} onError={onError}
+      variants={floatVariants} animate="animate"
     />
   )
 }

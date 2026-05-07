@@ -19,10 +19,11 @@ export interface MascotEntry {
 }
 
 const BASE = '/mascots'
+const EXT = '.png'
 
 export const mascotRegistry = {
   cere: {
-    src: `${BASE}/cere.svg`,
+    src: `${BASE}/cere${EXT}`,
     meta: {
       domain: 'migraine',
       mode: 'prevention',
@@ -33,7 +34,7 @@ export const mascotRegistry = {
   },
 
   bella: {
-    src: `${BASE}/bella.svg`,
+    src: `${BASE}/bella${EXT}`,
     meta: {
       domain: 'migraine',
       mode: 'attack',
@@ -45,10 +46,10 @@ export const mascotRegistry = {
 
   hypa: {
     phases: {
-      menstrual: `${BASE}/hypa-menstrual.svg`,
-      follicular: `${BASE}/hypa-follicular.svg`,
-      ovulation: `${BASE}/hypa-ovulation.svg`,
-      luteal: `${BASE}/hypa-luteal.svg`,
+      menstrual: `${BASE}/hypa-menstrual${EXT}`,
+      follicular: `${BASE}/hypa-follicular${EXT}`,
+      ovulation: `${BASE}/hypa-ovulation${EXT}`,
+      luteal: `${BASE}/hypa-luteal${EXT}`,
     } satisfies Record<CyclePhaseName, string>,
     meta: {
       domain: 'cycle',
@@ -60,14 +61,14 @@ export const mascotRegistry = {
 
   thalma: {
     moonPhases: {
-      'new-moon': `${BASE}/thalma-new-moon.svg`,
-      'waxing-crescent': `${BASE}/thalma-waxing-crescent.svg`,
-      'first-quarter': `${BASE}/thalma-first-quarter.svg`,
-      'waxing-gibbous': `${BASE}/thalma-waxing-gibbous.svg`,
-      'full-moon': `${BASE}/thalma-full-moon.svg`,
-      'waning-gibbous': `${BASE}/thalma-waning-gibbous.svg`,
-      'last-quarter': `${BASE}/thalma-last-quarter.svg`,
-      'waning-crescent': `${BASE}/thalma-waning-crescent.svg`,
+      'new-moon': `${BASE}/thalma-new-moon${EXT}`,
+      'waxing-crescent': `${BASE}/thalma-waxing-crescent${EXT}`,
+      'first-quarter': `${BASE}/thalma-first-quarter${EXT}`,
+      'waxing-gibbous': `${BASE}/thalma-waxing-gibbous${EXT}`,
+      'full-moon': `${BASE}/thalma-full-moon${EXT}`,
+      'waning-gibbous': `${BASE}/thalma-waning-gibbous${EXT}`,
+      'last-quarter': `${BASE}/thalma-last-quarter${EXT}`,
+      'waning-crescent': `${BASE}/thalma-waning-crescent${EXT}`,
     } satisfies Record<MoonPhaseName, string>,
     meta: {
       domain: 'sleep',
@@ -78,7 +79,7 @@ export const mascotRegistry = {
   },
 
   greli: {
-    src: `${BASE}/greli.svg`,
+    src: `${BASE}/greli${EXT}`,
     meta: {
       domain: 'nourishment',
       label: 'Greli',
@@ -88,7 +89,7 @@ export const mascotRegistry = {
   },
 
   osma: {
-    src: `${BASE}/osma.svg`,
+    src: `${BASE}/osma${EXT}`,
     meta: {
       domain: 'hydration',
       label: 'Osma',
@@ -99,15 +100,15 @@ export const mascotRegistry = {
 
   dophi: {
     views: {
-      front: `${BASE}/dophi-front.svg`,
-      side: `${BASE}/dophi-side.svg`,
-      back: `${BASE}/dophi-back.svg`,
+      front: `${BASE}/dophi-front${EXT}`,
+      side: `${BASE}/dophi-side${EXT}`,
+      back: `${BASE}/dophi-back${EXT}`,
     } satisfies Record<DophiView, string>,
     energy: {
-      rest: `${BASE}/dophi-rest.svg`,
-      'low-energy': `${BASE}/dophi-low-energy.svg`,
-      'medium-effort': `${BASE}/dophi-medium-effort.svg`,
-      energized: `${BASE}/dophi-energized.svg`,
+      rest: `${BASE}/dophi-rest${EXT}`,
+      'low-energy': `${BASE}/dophi-low-energy${EXT}`,
+      'medium-effort': `${BASE}/dophi-medium-effort${EXT}`,
+      energized: `${BASE}/dophi-energized${EXT}`,
     } satisfies Record<DophiEnergyState, string>,
     meta: {
       domain: 'exercise',
